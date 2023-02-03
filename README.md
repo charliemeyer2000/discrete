@@ -6,4 +6,4 @@ The main reason I did this is becuase a lot of the readings are all over the pla
 
 As you can tell, this is also the first class where I've seriously put effort into making good notes, using LaTeX and markdown simultaneously with Pandoc to make my notes functional, accurate, readable, and accessible. 
 
-If you want to take this dowm, email me: abs6bd@virginia.edu
+Start a pull request if you want to add anything to this. Also, if you want to contact me about anything, email me: abs6bd@virginia.edu

@@ -4,4 +4,6 @@ This repository is all of my notes and practice for CS2120. Since the policy of 
 
 The main reason I did this is becuase a lot of the readings are all over the place, both on different textbooks, different websites, and different sub-pages in websites. I also like to have the answers to practice questions readily available, as the practice, while super helpful, was hard for me to keep track of the answers because of the way the website was structured. I was a bit overwhelmed by all of this at the start, so making this organized helped me learn better. I think i've organized everything well so it's all in one (roughly) organized place. 
 
+As you can tell, this is also the first class where I've seriously put effort into making good notes, using LaTeX and markdown simultaneously with Pandoc to make my notes functional, accurate, readable, and accessible. 
+
 If you want to take this dowm, email me: abs6bd@virginia.edu

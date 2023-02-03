@@ -13,6 +13,38 @@ cd notes
 pandoc -f markdown-implicit_figures -s -o class-notes.pdf class-notes.md
 
 -->
+# Feb 3 - Quiz 1 In-Class! 
+
+## Review before Quiz
+
+Note that what's on review is _really_ important.
+
+### Cartesian (Cross) Product
+
+If $x = 3,$ then what is $x\in A \times B$? = False
+The point is, the cartesian product returns the set of ordered pairs! Think of the cartesian product as a table:
+
+### Power Set
+
+Recall that a power set returns a set of all possible subsets. It is a set of sets!
+
+### Other
+
+What is $\vert \{\{x, y\} \vert x, y \in H\ \vert$ when H = {1, 2, 3}?
+
+Think of it as a table, again! This is cartesian product of H with itself!
+
+* $\vert$ { {1}, {2}, {3}, {1, 2}, {2, 3}, {1, 3} } $\vert$ = 6
+
+What is $\{x + y \vert (x \in \{1, 2\}) \land (y \in \mathbb{N}) \land (y < x)\}$? = {1, 2, 3}
+
+Which of the following contain the empty set as a number when H = {} and K = {}
+
+* $\mathbb{N}$? No.
+* P($\mathbb{Z}$)? Yes.
+* $\{x \vert x \in (K \backslash H)\}$? 
+* $\{x \vert (x \subseteq K ) \land (x \subseteq H)\}$? True
+* $\{\{x+y, x-y\} \vert (x \in H) \land (y \in H) \}$
 
 # Feb 1 - Popular Sets, Power Set, Set-Builder Notation, Disjoint Sets
 

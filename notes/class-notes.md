@@ -142,17 +142,6 @@ $\{\{a, b\} \vert (a \in X) \land (b \in Y)\}$ = ?
 * = { {1, 2}, {1, 3}, {1, 4}, {2}, {2, 3}, {2, 4}, {3}, {3, 4} }
 
 
-
-
-
-
-
-
-
-
-
-
-
 # Jan 30 - propositions, operators, set-builder notation
 
 <!-- 
@@ -165,9 +154,11 @@ https://docs.google.com/presentation/d/1BXSO-TkmlSSkd3IIVM2yxjG03KVn0roCMBNhjLEH
 Listing out the elements of a set works well for sets that are small and finite. What about larger sets? Use set builder notation!!
 
 $S = \{x \in A \vert x \space is \space blue\}$
+
 * _S_ us the set of all _x_ in A such that...
 
 $E = \{x \in \mathbb{N} \vert x > 2\}$ 
+
 * E is {3, 4, 5, ..., $\infty$} 
 * Recall that 0 is a natural number btw. 
 * The cardinality of _E_ is infinity. 
@@ -215,7 +206,7 @@ You have to consider the universe _u_, not just the "venn diagram" too. See imag
     * no order
     * has cardinality
 * Sequences
-    *can have duplicates
+    * can have duplicates
     * has order
     * has length
     * lists, arrays, ordered pairs, tuples, etc!
@@ -277,6 +268,7 @@ Same thing as subset, but flipped direction!
 Set a is a __proper subset__ of B, $A \subset B$ if and only if $A \subseteq B$ and $A \neq B$. 
 
 Consequences of this definition, $A \subset B$:
+
 * $A \subseteq A$  (this is trivial but true)
 * $\vert A \vert < \vert B \vert$ 
 

@@ -27,7 +27,7 @@ Q1 Set builder Triple {x, y, z}: What is the cardinality of $\{\{x, y, z\} \vert
 Q2: What is the following set: $\{\{x\} \times \{y\} \vert x \in \{-1, 0,1, 2\} \land y \in \mathbb{N} \land y < x\}$
 
 * This is the set of ordered pairs (x, y) such that $x \in \{-1, 0, 1, 2\} \land y \in \mathbb{N} \land y < x$
-* {(1, 0), (2, 0), (2,1)}
+* {{(1, 0)}, {(2, 0)}, {(2,1)}}
 
 Q3: For each subquestion below, indicate whether the provided set is disjoint with its own power set. Recall that a set is disjoint with another set when the only element it shares is teh empty set.
 
@@ -38,11 +38,11 @@ Q3.1 - $\{0, \{0\}\}$
 
 Q3.2 - $\{\{\}, 0\}$
 
-* P($\{\{\}, 0\}$) = {{{}}, {0}}. Thus, the original set and its power set are disjoint.
+* P($\{\{\}, 0\}$) = {{{}}, {0}}. Thus, the original set and its power set are NOT disjoint.
 
 Q3.3 - $\{\{\}\}$
 
-* P({ {} }) = { {} {{}} }. , the set is disjoint with its own powerset.
+* P({ {} }) = { {} {{}} }. , the set is NOT disjoint with its own powerset.
 
 Q3.4 - $\{\{0\}, \{1\}\}$
 

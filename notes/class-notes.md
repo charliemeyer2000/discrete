@@ -13,6 +13,11 @@ cd notes
 pandoc -f markdown-implicit_figures -s -o class-notes.pdf class-notes.md
 
 -->
+
+# Feb 6
+
+
+
 # Feb 3 - Quiz 1 In-Class! 
 
 ## Review before Quiz
@@ -217,7 +222,7 @@ You have to consider the universe _u_, not just the "venn diagram" too. See imag
 
 ### Cartesian Products of Sets
 
-__Ordered Pair:__ An ordered pair is a __sequence with 2 elements.__ It is a pair of obejcts where one element is designated as first and the other element is designated as second, denoted (a, b)
+__Ordered Pair:__ An ordered pair is a __sequence with 2 elements.__ It is a pair of objects where one element is designated as first and the other element is designated as second, denoted (a, b)
 
 __Cartesian Product:__ The Cartesian product of two sets A and B is denoted $A \times B$, si the set of all possible ordered pairs where the elements of A are the first and the elements of B are second. This is also called the "cross product." 
 

@@ -14,8 +14,218 @@ pandoc -f markdown-implicit_figures -s -o class-notes.pdf class-notes.md
 
 -->
 
-# Feb 6
+# Feb 8 
 
+## Reminders from Quizzes
+
+* Any powerset must be a set, i.e. $P(S) = \{\emptyset, ..., S\}
+* Sequences are in params (...)
+* Sets are in curly braces {...}
+* $\{\emptyset\} \neq \{\}$
+
+## Regrade Requests
+
+Drop by a TA office hours _first_, then if the TA affirms that you got it right, then request points back. 
+
+## Do Now - Thought Experiment
+
+There are four cars below, each with a letter __on one side__, and a __number on the other__ side.I make the unsubstantiated claim that __"if a card has a number less than 18, then there must be a vowel (A) on the other side of that card.__" You are allowed to flip over __only two cards__ to prove or disprove my claim.
+
+![Do Now](/notes/images/donow.png)
+
+### Evaluating Propositions
+
+A proposition: __"If a card has a number less than 18, then there must be a vowel on the other side of that card."__
+
+How do we evaluate this proposition with this thought experiment? Use a truth table!
+
+||A |B
+|-|-|-|
+n < 18 | T | F
+$\neg ( n < 18)$ | T | T
+
+Note that: $\neg(n < 18) \equiv (n \ge 18)$
+
+A proposition: __"Either card does _not_ have a number less than 18, or it has a vowel."__ Let's rephrase it as __"either the number the number is $\ge 18$ or it has a vowel."__
+
+
+
+
+
+
+
+
+
+
+
+# Feb 6 - Conditionals
+
+## Review
+
+### Quiz Review
+
+$\{\{x\} \times \{y\} \vert x \in \{-1, 0, 1, 2\} y \in \mathbb{N} \ y < x\}$
+
+* {{(1, 0)}, {(2, 0)}, {(2,1)}}
+
+$S = \{x - y \vert (x, y) \in (\{8\} \times \{3, 5\})\}$
+
+* $\{3, 5\} \subset S$ is False.
+
+### Symbols
+
+
+* $\in$ element of 
+* $\subset$ proper subset of
+* $\subseteq$ subset of
+* P(S) power set of s
+* $\vert S \vert$ cardinality
+* $S \times T$ S cross T
+* $S^{2}$ S cross S
+
+## Propositions
+
+A proposition is a statement that is either true or false.
+
+|Examples of a proposition| Examples of things that aren't a proposition|
+|-|-|
+Jeremy got the question right| What score did you get on the quiz?
+There is only one Jeremy in the class | Is Jeremy the only jeremy in the class?
+Taco bell can be used as a laxative | How are you?
+Something that is true or false | any imperative statement (i.e. do this, don't do this)
+
+When dealing with propositions, we abstract away difficulties of defining, and we can give them letters (define variables), like P. So, we can say (2+2=5)=P, or ("I am a human") = Q.
+
+### True vs. False
+
+|Concept|Java/C|Python|This class| Bitwise|Name|other
+|-------|------|------|----------|--------|----|-----|
+true|`true`|`True`|$\top$ or 1| -1|tautology|T
+false|`false`|`false`|$\bot$ or 0|0|contradiction|F
+
+The most "mathematically rigorous" way to describe True or False is: $\top$: True; and $\bot$: False. You can also use 1: True; 0: False. 
+
+### Connectives
+
+A proposition is a statement that is either true or false. We can modify, combine, and relate propositions with connectives:
+
+$\land$, (logical and), $\lor$, (logical or), $\neg$, (not), $\leftrightarrow$, (iff), $\rightarrow$, (implication), $\oplus$, exclusive or.
+
+### Propositions
+
+We can modify, combine, and relate propositions with _connectives_:
+
+* $\lor$ is "or"
+* $\land$ is "and"
+* $\neg$ is "not"
+
+### Truth Table
+
+How to define: make a truth table!
+
+There are two possible inputs to a "not" operator - it is either a $\top$ input or a $\bot$ input. Note that the first column, "P" is the input and $\neg P$ is the output. Notice how "not" only takes in one input, it is a "unary operator."
+
+|P|$\neg P$|
+|-|-|
+0|1
+1|0
+
+Here is an image that contains all the truth tables for the truth table values for "not" 
+
+![Truth Table](/notes/images/truth%20table.png)
+
+### "And" Operator
+
+Think of this as the "intersection" for example. Note how this is a "binary operator" as there are two inputs. Thus, there are four possible cases - there are _four_ regions in the venn diagram! 
+
+* if you have three intersecting venn diagrams, you have 8 possible inputs.
+* if you have n venn diagrams, you have $2^{n}$ inputs
+
+|p|q|$p \land q$
+|-|-|-|
+1|1|1
+1|0|0
+0|1|0
+0|0|0
+
+### "Or" Operator
+
+Think of this as the "union" sign, for example. 
+
+|p|q|$p \lor q$
+|-|-|-|
+0|0|0
+0|1|0
+1|0|1
+1|1|1
+
+### "Xor" operator
+
+An example: 
+* I want fries __or__ a drink. - you can have both!
+* I want it for here __or__ I want it to go. - you can only have one!! Note that this is the use of $\oplus$
+
+![Xor](/notes/images/xor.png)
+
+Truth Table:
+
+|p|q|$p \oplus q$|
+|-|-|-|
+|0|0|0
+|0|1|1
+|1|0|1
+|1|1|0
+
+## "Bi-implies" operator (iff)
+
+This is the negation of $\oplus$.
+
+![bi-implication](/notes/images/bi-implication.png)
+
+|p|q|$p \leftrightarrow q$
+|-|-|-|
+0|0|1
+0|1|0
+1|0|0
+1|1|1
+
+### Putting Conditionals Together
+
+|p|$\neg$|p|$\lor$|p|
+|-|-|-|-|-|
+0|1|0|1|x
+1|0|1|1|x
+
+### How to Do Elizabeth's Truth Tables
+
+This is the order of how to do the truth tables 
+
+|p|q|$\neg(p \land q)$|
+|-|-|-|
+T|T|-|
+T|F|-|
+F|T|-|
+F|F|-|
+
+First apply the $\land$ rule for the parenthesis
+
+|p|q|$\neg(p \land q)$|
+|-|-|-|
+T|T|T|
+T|F|F|
+F|T|F|
+F|F|F|
+
+Next apply the $\neg$ operator
+
+|p|q|$\neg(p \land q)$|
+|-|-|-|
+T|T|__F__ T|
+T|F|__T__ F|
+F|T|__T__ F|
+F|F|__T__ F|
+
+The bolded outcome is the final answer!
 
 
 # Feb 3 - Quiz 1 In-Class! 

@@ -21,6 +21,8 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 -->
 
+# MCS 3.4.2 and $\forall x$ 14-15 and equivalences and example proof and proof techniques and direct proof
+
 # _Propositions_ and _operators_: MCS 1.1 and $\forall x$ 4.3 and MCS3-3.2.0 and $\forall x$ 5 and about $\rightarrow$ and operators
 
 ## MCS 1.1

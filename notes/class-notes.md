@@ -16,6 +16,107 @@ pandoc -f markdown-implicit_figures -s -o class-notes.pdf class-notes.md
 
 # Feb 10
 
+## Do Now
+
+Represent the problem with voting we discussed earlier as a venn diagram.    _hint_: Make one set (or variable) to represent __people who are 18+__ and a second intersecting set to represent __people who voted__.
+
+How can i write that with an "if-then" statement? 
+
+* "if you voted, then you _must_ be over 18."
+* "if you're under 18, then you can't vote."
+
+### Truth Table Example
+
+![Truth Table 2](images/truthtable2.png)
+
+## Boolean Algebra
+
+Example: Prove 3(x+y) = 3x+3y. Let $x, y \in \mathbb{N}$. 
+
+Try:
+
+* x=0 and y=0. 3(0+0) = 3(0)+3(0).
+* x=1 and y=0. 3(1+0) = 3(1)+3(0).
+* x=2 and y=0. 3(2+0) = 3(2)+3(0).
+* ...
+
+## "Is equivlent to" $\equiv$. 
+
+### Anatomy of an Equivalence Proof
+
+Here's an example of a proof: Prove $(P \lor Q) \lor (R \lor Q) \equiv (P \lor Q) \lor R$
+
+You must start with the left-hand side of the equation and must end with the right-hand side of the equation. You must provide justification for each step, and every expression in between must be equivalent.
+
+|sign|proposition|reasoning|
+|-|-|-|
+||$(P \lor Q) \lor (R \lor Q)$ | Given
+$\equiv$ | $(P \lor Q) \lor (Q \lor R)$|commutativity
+$\equiv$ | $((P \lor Q) \lor Q) \lor R$|associativity
+$\equiv$ | $(P \lor (Q \lor Q)) \lor R$ | associativity
+$\equiv$ | $(P \lor Q) \lor R$ | simplification
+
+## IMPORTANT LOGICAL RULES
+
+__[Logical Rules](https://www.cs.virginia.edu/~emo7bf/cs2120/s2023/axioms.html)__
+
+## Equivalences 
+
+### Simplifications
+
+Simplifications have the property that they make expressions smaller, with fewer operators. The first five important ones are:
+
+|long|simplified|name of rule|
+|-|-|-|
+$\neg \neg P$ | P | double negation
+$\neg \top$ | $\bot$ | definition of $\bot$
+$P \land \bot$ | $\bot$ | simplification
+$P \land \top$ | P | simplification
+$P \lor \top$ | P | simplification
+$P \lor \bot$ | $\top$ | simplification
+
+#### Proof using opposite of simplificaiton
+
+Prove: $P \equiv P \land (P \leftrightarrow \top)$. Sneaky tactic is to switch the sides and solve. 
+
+* Start with the parenthesis. How do I simplify $p \leftrightarrow \top$?
+    * $\top$ : Simplification!
+* Now do $P \land \top$
+    * $P$: Simplification!
+* Thus, $P \equiv P$
+
+|sign|proposition|rule
+|-|-|-|
+x|$P \land (P \leftrightarrow \top)$ | given
+$\equiv$ | $P \land P$ | simplification
+$\equiv$ | P | simplification.
+
+Now you can rewrite the table to "expand" it and properly write the equation:
+
+|sign|proposition|rule|
+|-|-|-|
+||P|given
+$\equiv$|$P \land P$ | simplification
+\$equiv$ | $P \land (P \leftrightarrow \top)$ | simplification
+
+### Definition of Implication
+
+Prove: $A \rightarrow (B \oplus A) \equiv \neg A \lor (B \oplus A)$
+
+* think about it: $A \rightarrow B \equiv \neg A \lor B$ where $A = P$ and $B = (Q \oplus P)$
+
+|sign|proposition|rule|
+|-|-|-|
+||$p \rightarrow (Q \oplus P)$ |given
+$\equiv$| $\neg p \lor (Q \oplus P)$ | definition of implication
+
+
+
+
+
+
+
+
 # Feb 8 
 
 ## Reminders from Quizzes
@@ -129,24 +230,6 @@ Q = it is a dog
 ### Venn Diagram of "Implies"
 
 ![implies](images/implies.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Feb 6 - Conditionals

@@ -14,11 +14,13 @@ pandoc -f markdown-implicit_figures -s -o class-notes.pdf class-notes.md
 
 -->
 
+# Feb 10
+
 # Feb 8 
 
 ## Reminders from Quizzes
 
-* Any powerset must be a set, i.e. $P(S) = \{\emptyset, ..., S\}
+* Any powerset must be a set, i.e. $P(S) = \{\emptyset, ..., S\}$
 * Sequences are in params (...)
 * Sets are in curly braces {...}
 * $\{\emptyset\} \neq \{\}$
@@ -31,7 +33,7 @@ Drop by a TA office hours _first_, then if the TA affirms that you got it right,
 
 There are four cars below, each with a letter __on one side__, and a __number on the other__ side.I make the unsubstantiated claim that __"if a card has a number less than 18, then there must be a vowel (A) on the other side of that card.__" You are allowed to flip over __only two cards__ to prove or disprove my claim.
 
-![Do Now](/notes/images/donow.png)
+![Do Now](images/donow.png)
 
 ### Evaluating Propositions
 
@@ -46,7 +48,96 @@ $\neg ( n < 18)$ | T | T
 
 Note that: $\neg(n < 18) \equiv (n \ge 18)$
 
-A proposition: __"Either card does _not_ have a number less than 18, or it has a vowel."__ Let's rephrase it as __"either the number the number is $\ge 18$ or it has a vowel."__
+A proposition: __"Either card does _not_ have a number less than 18, or it has a vowel."__ Let's rephrase it as __"either the number the number is $\ge 18$ or it has a vowel, or both."__ Here is the associated truth table:
+
+||A |B
+|-|-|-|
+n < 18 | T | F
+$\neg ( n < 18)$ | T | T
+
+
+### Same problem, rephrased
+
+We now have a group of 4 people at a polling place. Some people are casting a ballot, others are not. You must be at least 18 years old to vote. Each person has an ID card -- one side their age, the other with a letter. The letter _A_ on the voter's ID card indicates they didn't vote. The letter _B_ indicates that they did vote. Your job is to figure out if anyone voted illegally. You can flip over two cards to decide. 
+
+![Do Now](images/donow.png)
+
+Which one do you flip? 
+
+* not 1, they didn't vote
+* yep, flip 2 since you don't know whether or not it's right.
+* Nope, not 3, you know they're a legal voter
+* yep, flip 4. 
+
+So, $(n \ge 18)$ OR (isVowel) $\equiv$ if ($n < 18$) then (isVowel)
+
+### "Implies" Operator
+
+Truth table for "implies" operator. If it helps, think p = "the person voted" and q = "they're over 18."
+
+|p|q|p$\rightarrow$q|
+|-|-|-|
+0|0|1
+0|1|1
+1|0|0
+1|1|1
+
+Note that $\neg p \lor q$ is the same as $p \rightarrow q$
+
+
+### Doin this Truth Table Her Way
+
+Remember that $\neg$ is a unary operator, if there aren't any parenthesis (like in this example) you should be evaluating $\neg p$ first. Each operator has its own column.
+
+Make sure to put a BOX around your answers (my answers are bolded lol)
+
+|p|q|$\neg p \lor q$
+|-|-|-|
+0|0|1  __1__
+0|1|1  __1__ 
+1|0|0  __0__
+1|1|0  __1__
+
+
+Another truth table her way. Make sure to put the final answer under the $\land$ symbol. the first one you evaluate is within the parenthesis, second one (final answer) is under the $\land$, in a box/bolded.
+
+|A | B | C | $(A \lor B ) \land C$
+|-|-|-|-|
+|0|0|0|-|
+|0|0|1|-|
+|0|1|0|-|
+|0|1|1|-|
+|1|0|0|-|
+|1|0|1|-|
+|1|1|0|-|
+|1|1|1|-|
+
+
+
+### Another way to understand implication
+
+P = My animal is a poodle
+Q = it is a dog
+
+|p|q|p$\rightarrow$q|
+|-|-|-|
+0|0|1
+0|1|1
+1|0|0
+1|1|1
+
+### Venn Diagram of "Implies"
+
+![implies](images/implies.png)
+
+
+
+
+
+
+
+
+
 
 
 
@@ -132,7 +223,7 @@ There are two possible inputs to a "not" operator - it is either a $\top$ input 
 
 Here is an image that contains all the truth tables for the truth table values for "not" 
 
-![Truth Table](/notes/images/truth%20table.png)
+![Truth Table](images/truthtable.png)
 
 ### "And" Operator
 
@@ -165,7 +256,7 @@ An example:
 * I want fries __or__ a drink. - you can have both!
 * I want it for here __or__ I want it to go. - you can only have one!! Note that this is the use of $\oplus$
 
-![Xor](/notes/images/xor.png)
+![Xor](images/xor.png)
 
 Truth Table:
 
@@ -180,7 +271,7 @@ Truth Table:
 
 This is the negation of $\oplus$.
 
-![bi-implication](/notes/images/bi-implication.png)
+![bi-implication](images/bi-implication.png)
 
 |p|q|$p \leftrightarrow q$
 |-|-|-|

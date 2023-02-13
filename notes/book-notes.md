@@ -18,10 +18,409 @@ forall x solution book: http://forallx.openlogicproject.org/solutions/forallxsol
 cd notes
 pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
+Slides:
+    Sets Slides: 
+        (First Week) https://docs.google.com/presentation/d/1BXSO-TkmlSSkd3IIVM2yxjG03KVn0roCMBNhjLEHjK0/edit?usp=sharing 
+
+        (set-builder, power set, disjoint) https://docs.google.com/presentation/d/1T2rP6N1PVJkJpt6T9g6k48b1BzLF9N6d-X0LG6QqvV8/edit?usp=sharing
+
+    Proofs Slides: 
+        https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
+
 
 -->
 
-# MCS 3.4.2 and $\forall x$ 14-15 and equivalences and example proof and proof techniques and direct proof
+# Predicates: MCS 1.2 and $\forall_{x}$ 21.0 - 21.3 and skim MCS 4.1.0
+
+## Predicates
+
+A __predicate__ is a proposition whose truth depends on the value of one or more variables. So "_n_ is a perfect square" is a predicate, as you don't know whether it's true or false until you know the value of _n_. 
+
+We use special notation to mark a predicate, very similar to function notation in math: $P(n) ::=$ "_n_ is a perfect square." Note that this is a _boolean_! It returns either true (_n_ is a perfect square) or false (_n_ is not a perfect square).
+
+### 21.1 - Decomposing Sentences
+
+Consider the sentence "Will is a logician. All logicians wear funny hats. $\therefore$ will wears a funny hat." It is not sufficient to break down this sentence into three points in TFL, as the sentence "all logicians wear funny hats" is not a proposition that can be encoded in one letter. Thus, we need to use _first-order logic_, or _FOL_ to achieve this. Here's the basic idea of _FOL_:
+
+* __Names__: we indicate these with lowercase letters. For instance, '_b_' might stand for Bertie. 
+* __Predicates__: predicates are expressions like '___ is a dog' or '___ is a logician.' They are sentences that are not complete on their own but need a name to be completed.  We use uppercase letters to represent predicates. 
+    * The expression D(_b_) will be a sentence that symbolizes "Bertie is a dog."
+* __Quantifiers__: For instance $\exists$ represents "There is at least one...", so we could read out $\exists_{x}D(x)$ as 'there is at least one thing, x, such that x is a dog.'
+
+### 21.2 - Names
+
+A _singular term_ is a word/phrase referring to a _specific_ person or place or thing. _Proper names_ pick out individuals. In FOL, names are lowercase letters '_a_' through '_r_.' We can also add subscripts to them like $a, b, c, ..., r, a_{1}, f_{32}, j_{390}$.
+
+### 21.2 - Predicates
+
+The simplest predicates are just properties of individuals (names). In FOL, predicates are capital letters $A$ through $Z$, with or without subscripts. We might write them as:
+
+* $A(x):$ ____ $_{x}$ is angry.
+* $H(x):$ ____ $_{x}$ is happy.
+
+You may start to see how we can symbolize English sentences with these notations. For example:
+
+1. "Elsa is angry"
+    * $A(e)$
+1. "Gregor and Marybeth are angry"
+    * $A(g) \land A(e)$
+1. "If elsa is angry, then so are Gregor and Marybeth"
+    * $A(e) \rightarrow (A(g) \land A(m))$
+
+## MCS 4.1.0 
+
+### Sets
+
+The conventional set is written C = {red, green, blue} or something else. This works fine for small finite sets. Others can be indicated by how to generate a list of them: $D ::= \{1, 2, 4, 8, 16, ...\}$. Also recall that the order of the elements is not significant. 
+
+### Popular Sets
+
+|Symbol|Set|elements|
+|-|-|-|
+$\emptyset$ | the empty set | none
+$\mathbb{N}$ | nonnegative integers | 0, 1, 2, 3...
+$\mathbb{Z}$ | integers |...3, 2, 1, 0, 1, 2, 3...
+$\mathbb{Q}$ | rational numbers | $\frac{1}{2}$ 16, etc
+$\mathbb{R}$ | real numbers | $\pi$, $e$, $\sqrt{2}$
+$\mathbb{C}$ | complex numbers | $i$, $\frac{19}{2}$, etc. 
+
+### Comparing and Combining Sets 
+
+$S \subseteq T$ indicates that the set S is a _subset_ of set _T_, which means that every element of S is also an element of T. Think of it as $\le$.  This is stuff you already learned elsewhere so I won't take notes on it again.
+
+# Equivalence Proofs and Direct Proof: MCS 3.4.2 and $\forall x$ 14-15 and equivalences and example proof and proof techniques and direct proof
+
+## MCS 3.4.2 - Proving Equivalences
+
+A proposition with _n_ variables has $2^{n}$ lines, so adding more and more propositions can become more and more tedious. An alternative approach is to use algebra to prove equivalence. To do this, try to remove all things except _not_, _and_, and _or_. Trick such as $A \rightarrow B$ can be turned into not(A) or (B). Below is a list of equivalence axioms. 
+
+* A and B $\leftrightarrow$ B and A (commutativity of _and_)
+* (A and B) and C $\leftrightarrow$ A and (B and C) (associativity of _and_)
+* $\top$ and A $\leftrightarrow$ A (identity for _and_)
+* $\bot$ and A $\leftrightarrow$ $\bot$ (zero for _and_)
+* A and A $\leftrightarrow$ A (impotence for _and_)
+* A and $\bar{A}$ $\leftrightarrow \bot$ (contradiction for _and_)
+* not($\bar{A}$) $\leftrightarrow$ A (double negation)
+* A or $\bar{A} \leftrightarrow \top$
+* not(A and B) $\leftrightarrow$ $\bar{A}$ or $\bar{B}$ (DeMorgan for _and_)
+* not(A or B) $\leftrightarrow$ $\bar{A}$ and $\bar{B}$ (DeMorgan for _or_)
+
+### Example
+
+Here's an example of converting any formula into a normal form. Take, for example, not((A and B) or (A and C)). 
+
+1. Start by applying DeMorgan's Law:
+    1. not(A and B) and not(A and C)
+1. Now Apply DeMorgan's Law again:
+    1. ($\bar{A}$ or $\bar{B}$) and ($\bar{A}$ or $\bar{C}$)
+1. Now apply the distributivity of _and_ over or by distributing ($\bar{A}$ or $\bar{B}$) to get:
+    1. (($\bar{A}$ and $\bar{A}$) or ($\bar{B}$ and $\bar{A}$)) or (($\bar{A}$ and $\bar{C}$) or ($\bar{B}$ and $\bar{C}$)).
+1. Now we can use communativity and associativity to drop parenthesiss around things being _or_'ed:
+    1. $\bar{A}$ or ($\bar{B}$ and $\bar{A}$) or ($\bar{A}$ and $\bar{C}$) or ($\bar{B}$ and $\bar{C}$).
+1. With some extra magic, we now get:
+    1. (A and $\bar{B}$ and $\bar{C}$) or ($\bar{A}$ and $\bar{B}$ and $\bar{C}$) or ($\bar{A}$ and B and C) or ($\bar{A}$ and B and $\bar{C}$) or ($\bar{A}$ and $\bar{B}$ and C) or ($\bar{A}$ and $\bar{B}$ and $\bar{C}$) or
+
+## $\forall X$ 14-15
+
+### Chapter 14: The Very Idea of Natural Deduction
+
+The aim of a _natural deduction system_ is to show that particular arguments are valid in a way that allows us to understand the reasoning that the arguments might involve. Unlike truth tables, we manipulate sentences in accordance with rules that we have set down as good rules. 
+
+One of the most reasonable reasons why one would use natural deduction is because evaluating truth tables with over 1024 lines (2^10) is unreasonable. 
+
+### Chapter 15: Basic Rules for TFL 
+
+We will develop a _natural deduction_ system. For each connective, there will be _introduction_ rules that allow us to prove a sentence that has connective as the main logical operator, and _elimination_ rules, that allow us to prove something given a sentence that has connective as the main logical operator.
+
+#### 15.1: The idea of a formal proof
+
+A _formal proof_ is a sequence of sentences. The last line of a formal proof is the conclusion. As an illustration, consider $\neg (A \lor B) \therefore \neg A \land \neg B$. 
+
+We will start by writing the premise 1. $\neg(A \lor B)$ with a line underneath it. Everything written above the line is an _assumption_, and everything written below the line will either be something that follows form the assumption or a new assumption. Since we hope to conclude that $\neg A \land \neg B$, we will conclude our proof with _n_. $\neg A \land \neg B$.
+
+As another illustration, suppose we wanted to consider $A \lor B, \neg(A \land C), \neg(B \land D) \therefore \neg C \lor D$. The argument has three premises:
+
+1. $A \lor B$
+1. $\neg (A \land C)$
+1. $\neg (B \land \neg D)$
+
+   _n_. $\neg C \lor D$
+
+ #### 15.2: Conclusion
+
+If we want to show that Ludwig is both reactionary and libertarian, we can use natural deduction to adopt the following: 
+
+* R: Ludwig is reactionary
+* L: Ludwig is libertarian
+
+If we were somewhere on lines 8 and 15 for R and L, respectively, then we could write the following proof as follows:
+
+* 8 |  R
+* 15| L
+*   | $R \land L \qquad \land I 8, 15$
+
+Furthermore, if you had already proved that Ludwig was both libertarian and reactionary, then you could use _elimination_ rules to prove conclude that ludwig is reactionary:
+
+* x | $L \land R$
+* | $R \qquad \land E x$
+
+#### 15.3: Conditional
+
+Consider the argument "If Jane is smart then she is fast. Jane is smart $\therefore$ Jane is fast. 
+
+Notice how this follows a straightforward conditional elimination rule ($\rightarrow E$):
+
+* _m_ | $A \rightarrow B$
+* _n_ | _A_
+* | $B \qquad \rightarrow E m, n$
+
+This rule is also sometimes called _modus ponens_. THis is an elimination rule, because it allows us to obtain a sentence that may not contain '$\rightarrow$' having started with a sentence that does contain '$\rightarrow$.' 
+
+Now, let's consider the instance where we state: "Ludwig is reactionary. Therefore if Ludwig is libertarian, then Ludwig si both reactionary _and_ libertarian."
+
+![Ludwig](images/ludwig.png)
+
+Notice how an additional assumption ('Ludwig is libertarian') is necessary for the sake of the argument. To indicate that we're no longer dealing with just our original assumption 'R.' We are now in a position to use $\land I$. Now we have shown that, on the additional assumption 'L' that we can obtain '$R \land L$' or that we can conclude '$L \rightarrow (R \land L)$.' The idea of the rule $\rightarrow I$ is invoked when making additional assumptions.
+
+However, one must be diligent when using these, as we must close the subproof to signify when we have returned to the main proof. Thus, we stipulate that "to cite individual lines when applying a rule, those lines must (1) come before the application of the rule, but (2) not occur within a closed subproof."
+
+![Subproof](images/subproof.png)
+
+#### Biconditional
+
+In order to prove $W \leftrightarrow X$ we need to prove _X_ on the assumption _W_ and _W_ on the assumption _X_. The biconditional rule $\leftrightarrow I$ therefore requires two subproofs. See below.
+
+![Biconditional Proof Table](images/biconditionalrpoof.png)
+
+#### Disjunction
+
+Suppose that Ludwig is reactionary. Then Ludwig is either reactionary or libertarian. TO say that Ludwig is either reactionary or libertarian is to say something weaker than to say that Ludwig is reactionary. 
+
+![Disjunction Introduction Rules](images/disjunct-rules.png)
+
+#### Contradiction and Negation
+
+The rule for introducing negation is that we can use it whenever we explicitly contradict ourselves, i.e. whenever we find both a sentence and its negation appearing in our proof:
+
+![Negation](images/negation-proof.png)
+
+There are more rules that I couldn't be bothered to include, so read them yourself. Considering what is taught in class almost never overlaps with $\forall X$, don't waste your time unless it's legitimately covered in class.
+
+## Logic Rules (Equivalences)
+
+Two expressions are equivalent if they have the same truth value.
+
+### Simplifications
+
+They are equivlaences that also work backwards. Here are "the big 5:"
+
+|long|simplified|name of rule|
+|-|-|-|
+$\neg \neg P$ | P | double negation
+$\neg \top$ | $\bot$ | definition of $\bot$
+$P \land \bot$ | $\bot$ | simplification
+$P \land \top$ | P | simplification
+$P \lor \bot$ | P | simplification
+$P \lor \top$ | $\top$ | simplification
+
+Here's another important table (remember how to read it!)
+
+|operands|$\rightarrow$|$\leftrightarrow$|$\oplus$|$\land$|$\lor$
+|-|-|-|-|-|-|
+P op P | $\top$ |$\top$| $\bot$ | P | P 
+P op $\neg P$ | $\neg P$ |$\bot$ | $\top$| $\bot$|$\top$
+$\neg P$ op P | $\neg P$ |$\bot$ | $\top$| $\bot$|$\top$
+$\top$ op P | P  | P | $\neg P$ | P |$\top$
+P op $\top$ | P  | P | $\neg P$ | P |$\top$
+$\bot$ op P | $\top$ | $\neg P$ | P | $\bot$ | P
+P op $\bot$ | $\neg P$ | $\neg P$ | P | $\bot$ | P
+
+#### Associative and Commutative Properties
+
+A binary operators is commutative if its operands can be swapped without changing the meaning of the operation. A binary operator is associative if the pair of them can be re-parenthesized without changing the meaning of their joint operation.
+
+|Operator|Associativity|Commutativity|
+|-|-|-|
+$\neg$ | not a binary operator | not a binary operator
+$\land$ | $(P \land Q) \land R \equiv P \land (Q \land R)$ | $P \land Q \equiv Q \land P$
+$\lor$ | $(P \lor Q) \lor R \equiv P \lor (Q \lor R)$ | $P \lor Q \equiv Q \lor P$
+$\oplus$ | $(P \oplus Q) \oplus R \equiv P \oplus (Q \oplus R)$ | $P \oplus Q \equiv Q \oplus P$
+$\rightarrow$ | not associative | not commutative |
+$\leftrightarrow$ | $(P \leftrightarrow Q) \leftrightarrow R \equiv P \leftrightarrow (Q \leftrightarrow R)$ | $P \leftrightarrow Q$
+
+Note that mixing operators doesn't always hold. Also, it is common to write several operators in a row with/without parenthesis, such as $P \lor Q \lor R \lor S$ instead of $P \lor (Q \lor (R \lor S))$ Parenthesis can be changed with associativity or because they are redundant. 
+
+#### Other equivalences
+
+|Form 1| Form 2| Name of Rule|
+|-|-|-|
+$A \rightarrow B$ | $\neg A \lor B$ | definition of implication
+$A \land (B \lor C)$ | $(A \land B) \lor (A \land C)$ | Distributive Law
+$A \lor (B \land C)$ | $(A \lor B) \land (A \lor C)$ | Distributive Law
+$(A \land B) \lor C$ | $(A \lor C) \land (B \lor C)$ | Distributive Law
+$(A \lor B) \land C$ | $(A \land C) \lor (B \land C)$ | Distributive Law
+$\neg(A \land B)$ | $(\neg A \lor \neg B)$ | DeMorgan's
+$\neg(A \lor B)$ | $(\neg A \land \neg B)$ | DeMorgan's
+$(A \leftrightarrow B)$ | $A \rightarrow B \land B \rightarrow A$ | definition of implication
+$(A \oplus B)$ | $(A \lor B) \land \neg(A \land B)$ |  definition of exclusive or
+$A \oplus B$ | $\neg(A \leftrightarrow B)$ | | 
+$A \leftrightarrow B$ | $\neg(A \oplus b)$ | xnor
+$P \rightarrow (A \lor Q)$ | $(P \land \neg A) \rightarrow Q$ |
+
+### Entails
+
+#### Logical Entailment
+
+|Given|Entails|Name|
+|-|-|-|
+$\bot$ | _x_ | |
+| | $\top$ | | 
+| | $A \lor \neg A$| excluded middle
+$A \land B$| A | |
+A and B | $A \land B$ | 
+A | $A \lor B$ | 
+$A \lor B$ and $\neg B$ | A | disjunctive syllogism
+$A \rightarrow B$ and $B \rightarrow C$ | $A \rightarrow C$ | hypothetical syllogism; transitivity of implication
+$A \rightarrow B$ and A | B | modus ponens
+$A \rightarrow B$ and $\neg B$ | $\neg A$ | modus tolens
+$A \leftrightarrow B$ | $A \rightarrow B$ | 
+$A \rightarrow C, B \rightarrow C$, and $A \lor B$| C | 
+$A \rightarrow B, C \rightarrow D$, and $A \lor C$ | $B \lor D$
+$A \rightarrow B$ | $A \rightarrow (A \land B)$ | 
+$\neg(A \land B), A$ | $\neg B$|
+
+#### Assume-and-Prove entailment
+
+A proof assumes that A and derives B entails that $A \rightarrow B$. This is commonly used in the inductive step of a proof by induction: 
+
+* $A \vdash B$
+* $\therefore A \rightarrow B$
+
+A proof that assumes A and derives $\bot$ entails that $\neg A$. This is called "proof by contradiction" or an "indirect proof." 
+
+* $A \vdash \bot$
+* $\therefore \neg A$
+
+A proof $x \in S \vdash P(x)$ entails $\forall_{x} \in S . P(x).$ This is called "universal induction." 
+
+* $x \in S \vdash P(x)$
+* $\therefore \forall_{x} \in S . P(x)$
+
+If P(x) and _x_ is some specific member of S, that entails $\exists_{x} \in S . P(x)$. This is called "existential instantiation." 
+
+* $x \in S$
+* P(x)
+* $\therefore \exists_{x} \in S . P(x)$
+
+#### Set Entailment
+
+|Given | Entails|
+|-|-|
+P(x) and $x \in S$ | $\exists_{x} \in S . P(x)$
+$\forall_{x} \in S . P(x)$ and $T \subseteq S$ | $\forall_{x} \in T . P(x)$
+$\exists_{x} \in S . P(x)$ and $T \supseteq S$  | $\exists_{x} \in T. P(x)$
+$\forall_{x} \in S . P(x)$ and $S \neq \emptyset$ | $\exists_{x} \in S. P(x)$
+$\vert S \vert \neq \vert T \vert$ | $S \neq T$
+$\vert S \vert < \vert T \vert$ | $S \nsupseteq T$
+$\exists_{x} \in S . P(x)$ | $S \neq \emptyset$
+
+#### Qualified Entailments
+
+|Given| Entails| Names|
+|-|-|-|
+$\exists_{x} \in S . P(x)$ | P(s), for any $s \in S$ we care to pick | universal instantiation
+$\exists_{x} \in S . P(x)$ | $s \in S \land P(s)$ where _s_ is an otherwise-undefined new variable | existential instantiation
+$s \in S \vdash P(s)$ | $\forall_{x} \in S . P(x)$ | universal generalization
+$P(s) \land s \in S$ | $\exists_{x} \in S . P(x)$ | existential generalization
+
+### Mathematical Identities
+
+The following are all true for all real numbers where both sides of the equal sign are defined:
+
+* $\log_{a}(a^{x}) = x$
+* $a^{\log_{a}(x)} = x$
+* $\log_{a}(xy) = \log_{a}(x) + \log_{a}(y)$
+* $\log_{a}(\frac{x}{y}) = \log_{a}(x) - \log_{a}(y)$
+* $\log_{a}(x^{y}) = y \log_{a}(x)$
+* $\log_{a}(x) = \frac{\log_{b}(x)}{\log_{b}(a)}$
+* $\log_{a^{b}}(x) = b^{-1}\log_{a}(x)$
+
+Also the following are true:
+
+* $(a \in \mathbb{Z}) \land (a > 1) \vDash$ (_a_ has at least two factors)
+* $(a \in \mathbb{Z}) \land (a > 1) \land$ (_a_ has exactly two factors) $\equiv$ (_a_ is prime)
+* Each integer greater than 1 has exactly one prime factorization
+
+## Example Proof: DeMorgan's Law
+
+_Theorem 1:_ For any expressions P and Q, the expression $\neg(P \land Q)$ is equivalent to the expression $(\neg P) \lor (\neg Q)$
+
+Option 1: Brute-Force a Truth Table
+
+![DeMorgan Truth Table](images/detable.png)
+
+Option 2: Proof by Cases: prose
+
+_Proof_: Let __N__ represent the expression $\neg(P \land Q)$ and __O__ represent the expression $(\neg P) \lor (\neg Q)$. The proof is by case analysis. There are two cases, either P is true or it is false. 
+
+* Case 1: P is true:
+    * __N__ is $\neg(\top \land Q)$; using the identity of _and_, this can be re-written as $\neg Q$. __O__ is $(\neg \top) \lor (\neg Q)$, which is equivalent to $\bot \lor (\neg Q)$; using the identity of __or__, this can be re-written as $\neg Q$. Because __N__ and __O__ are equivalent to the same thing, they are equivalent to each other. Thus the theorem holds in this case. 
+* Case 2: P is false:
+    * __N__ is $\neg(\bot \land Q)$; using the zero of _and_ this can be re-written as $\neg \bot$ which is $\top$. __O__ is $(\neg \bot) \lor (\neg Q)$ which is equivalent to $\top \lor (\neg Q)$; using the zero of _or_, this can be re-written as $\top$. Thus, because __N__ and __O__ are equivalent to the same thing, they are equivalent to each other. Thus, the theorem holds in this case.
+
+Because the theorem holds in all cases, it is true. $\blacksquare$.
+
+Option 3: TFL
+
+![DeMorgan's Law TFL](images/demorgantfl.png)
+
+TFL Proofs by cases helps demonstrate two important principles:
+
+1. The goal of proof by cases is to add extra information in each case, visible here as the extra given in each sub-proof
+1. The cases need to be exhaustive, so that the _or_ of all of them is equivalent to $\top$. In TFL, this is ensured by adding specific proof rules (such as LEM) that only apply when this is the case. 
+
+
+## Proof Techniques
+
+### Apply Equivalence Rules
+
+In a small-step proof, write an equivalent expression and cite the rule used to reach it. 
+
+![Equivalence Proof 1](images/equivproof1.png)
+
+You can also use prose instead:
+
+![Prose Proof](images/proseproof1.png)
+
+Also apply rearranging - utilizing the associative, communities, and distributive properties of operators. Use simplifying - removing double negation and the ones and zeroes effects of tautologies and contradictions.
+
+### Apply Entailment
+
+Because $A \equiv B$ implies $A \vDash B$, you can use equivalence rules in a proof that applies entailment. There are many more entailments (called "proof rules") than equivalence rules, so using them can make a proof construction much easier. A proof using "proof rules" is called a _direct proof_. 
+
+## (Guide to a) Direct Proof
+
+### Axioms
+
+An __axiom__ is something we make true without a proof. Sometimes the larger truths used as axioms during a proof are called __logic rules__ or __proof rules__. 
+
+Direct proof rules are of two types:
+
+1. Equivalences: if $A \equiv B$ then A is true whenever B is true and false whenever it is false. 
+    * Any expression that is equivalent to true is a __tautology__. Anything that is equivalent to false is called a __contradiction__.
+1. Entailments: if $A vDash B$ then _A_ being true is sufficient to establish the truth of _B_, but not vice versa. _B_ could be true even when _A_ is false. 
+    * $A \vDash B$ and $A \rightarrow B \equiv \top$ are two ways of saying the same thing
+    * if $A \equiv B$ then both $A \vDash B$ and $B \vDash A$.
+
+### Strategy
+
+Proofs are like a puzzle - look where you are and pick the piece that makes the most progress. Some tips include:
+
+* See where you are: you want to proceed from the last step, but in some cases you may want to have several chains you combine on later.
+* See what can fit: You can always add double negation and always can add on an $\lor \bot$ or an $\land \top$, though those are rarely helpful.
+* Pick one that makes progress: You want to use the rules that get you closer to the goal. Don't undo what you've done. Turn everything into ands, ors, and work on those. Use DeMorgan. If you don't see anything else that works, pick a step that changes the formula a lot (like distribution) or one that simplifies it. 
+* Work backwards: When you want to prove that $A \equiv B$, you can start with _A_ and show it is equivalent to _B_, or you can work backwards; start with _B_ and show it's equivalent to _A_. 
+
 
 # _Propositions_ and _operators_: MCS 1.1 and $\forall x$ 4.3 and MCS3-3.2.0 and $\forall x$ 5 and about $\rightarrow$ and operators
 
@@ -432,7 +831,7 @@ $\{1,2\} \subset$ the integers | $\{1, 2.3\} \subset$ the integers
 
 $A \supseteq B$ means $B \subseteq A$; $A \supset B$ means $B \subset A$
 
-* the symbol "$\supseteq$" is pronounced "is a superset of". The "$\supset$" synbol is pronounced "is a proper superset of." 
+* the symbol "$\supseteq$" is pronounced "is a superset of". The "$\supset$" is pronounced "is a proper superset of." 
 
 ### Sets from other sets
 
@@ -537,7 +936,7 @@ The notation "$\exists x \in S . P(x)$" means "there is at least one element of 
 
 ### Converting "$\forall x \in S...$" to "$\forall x...$"
 
-If a domain is not specifed and all quantifiers are given with sets, the implicit domain is union of all such sets or any superset containing that union.
+If a domain is not specified and all quantifiers are given with sets, the implicit domain is union of all such sets or any superset containing that union.
 
 ### Converting "$\forall x . ...$" to "$\forall x \in S...$"
 
@@ -593,7 +992,7 @@ Because _x_ and _y_ both refer to a value, changing the value of _x_ has no impa
 
 Within a single problem, if one assigns _x=2_, then x=2 and this cannot change. 
 
-##### Discrete math values have related programming entitites
+##### Discrete math values have related programming **entities**
 
 Sets are values in discrete mathematics, just like numbers are: unchangeable Platonic ideals. Everything in discrete mathematics is a mathematical construct and thus a value, not an entity.
 
@@ -605,7 +1004,7 @@ The purpose of a proof is to establish the truth of an assertion with absolute c
 * Keep a linear flow: proofs are written like mathematical mosaics.. the steps of an argument should follow one another in an intelligible order.
 * A proof is an essay: a proof looks like an essay with some equations thrown in.
 * Avoid symbolism: use words when you can!
-* Introduce notation thoughtfully: An argument can be easily simplified with a variable or defining a new term, but do this sparingly becuase the reader then has to remember all of that! 
+* Introduce notation thoughtfully: An argument can be easily simplified with a variable or defining a new term, but do this sparingly because the reader then has to remember all of that! 
 * Structure long proofs: Use preliminary lemmas to cite repeatedly.
 * Be wary of the obvious: what is obvious to one reader might not be to another - you don't have to prove every single claim you say, but don't use phrases like "clearly" or "obviously" to bully your reader into thinking they're dumb or accept it as true just because
 

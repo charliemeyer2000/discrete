@@ -72,8 +72,8 @@ $\neg \neg P$ | P | double negation
 $\neg \top$ | $\bot$ | definition of $\bot$
 $P \land \bot$ | $\bot$ | simplification
 $P \land \top$ | P | simplification
-$P \lor \top$ | P | simplification
-$P \lor \bot$ | $\top$ | simplification
+$P \lor \bot$ | P | simplification
+$P \lor \top$ | $\top$ | simplification
 
 #### Proof using opposite of simplificaiton
 
@@ -97,7 +97,7 @@ Now you can rewrite the table to "expand" it and properly write the equation:
 |-|-|-|
 ||P|given
 $\equiv$|$P \land P$ | simplification
-\$equiv$ | $P \land (P \leftrightarrow \top)$ | simplification
+$\equiv$ | $P \land (P \leftrightarrow \top)$ | simplification
 
 ### Definition of Implication
 

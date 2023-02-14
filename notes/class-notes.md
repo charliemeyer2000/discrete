@@ -367,7 +367,7 @@ When dealing with propositions, we abstract away difficulties of defining, and w
 
 |Concept|Java/C|Python|This class| Bitwise|Name|other
 |-------|------|------|----------|--------|----|-----|
-true|`true`|`True`|$\top$ or 1| -1|tautology|T
+true|`true`|`True`|$\top$ or 1| 1|tautology|T
 false|`false`|`false`|$\bot$ or 0|0|contradiction|F
 
 The most "mathematically rigorous" way to describe True or False is: $\top$: True; and $\bot$: False. You can also use 1: True; 0: False. 

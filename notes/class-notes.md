@@ -12,7 +12,103 @@ class website: https://www.cs.virginia.edu/~emo7bf/cs2120/s2023/
 cd notes
 pandoc -f markdown-implicit_figures -s -o class-notes.pdf class-notes.md
 
+Slides:
+    Sets Slides: 
+        (First Week) https://docs.google.com/presentation/d/1BXSO-TkmlSSkd3IIVM2yxjG03KVn0roCMBNhjLEHjK0/edit?usp=sharing 
+
+        (set-builder, power set, disjoint) https://docs.google.com/presentation/d/1T2rP6N1PVJkJpt6T9g6k48b1BzLF9N6d-X0LG6QqvV8/edit?usp=sharing
+
+    Proofs Slides: 
+        https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
+
 -->
+# Feb 13
+
+## Do Now
+
+Make a Truth Table for the expression $\neg p \land \neg q$. Then make a truth table for $\neg (p \land q)$. Are they the same?
+
+* No! I made the truth tables in my iPad but they're not. Recall distributing a $\neg$ across parenthesis reverses or -> and, and -> or.
+    * So, $\neg(P \land Q) \neq \neg P \land \neg Q$
+
+![Do Now](images/twotables.jpg)
+
+## Boolean Algebra
+
+__Associative Property__: You can change the order in which you perform operations and not change the outcome. So, for example, (2+3)+5=2+(3+5) is true whereas (2-3)-5 $\neq$ 2-(3-5). 
+
+For our case, we will be dealing with rules that operate over boolean values. 
+
+Which symbols are associative?
+
+* $\neg$ - __NO__: it is a unary operator
+* $\lor$ - __YES__: switching the order doesn't matter
+    * $(A \lor B) \lor C \equiv A \lor (B \lor C)$
+    * Think of this as a Venn Diagram - both sides are equivalent!
+* $\land$ - __YES__: switching the order doesn't matter
+    * $A \land (B \land C) \equiv A \land (B \land C)$
+    * Same - think of it as a Venn Diagram. 
+* $\oplus$ - __YES__
+* $\leftrightarrow$ - __YES__
+* $\rightarrow$ - __NO__
+    * Take a look at these two truth tables:
+* Be careful when you use the property over different operators!! Note that expressions like $(A \land B) \lor C$ is not equivalent to $A \land (B \lor C)$!!
+
+|A|B|C|$A \rightarrow (B \rightarrow C)$ | $(A \rightarrow B) \rightarrow C$|
+|-|-|-|-|-|
+0|0|0|__1__ 1|1 __0__
+0|0|1|__1__ 1|1 __1__
+0|1|0|__1__ 0|1 __0__ 
+0|1|1|__1__ 1|1 __1__
+1|0|0|__1__ 1|0 __1__
+1|0|1|__1__ 1|0 __1__
+1|1|0|__0__ 0|1 __0__ 
+1|1|1|__1__ 1|1 __1__
+
+Note how we could have stopped on the first row of the $(A \rightarrow B) \rightarrow C)$ since those two rows aren't equal. If you say something is $\equiv$ then it must be true for all possibilities!
+
+### Associativity
+
+![Associativity](images/associative.jpg)
+
+### Communitive Property
+
+Communative property is when you can swap the operands' position.
+
+Which symbols are communative:
+
+* $\neg$ - __NO__
+* $\lor$ - __YES__
+* $\land$ - __YES__
+* $\oplus$ - __YES__
+* $\leftrightarrow$ - __YES__
+* $\rightarrow$ - __NO__
+
+Here's an example of a proof using associativity and commutativity
+
+![Commutative and Associative Proof](images/assandcomm.jpg)
+
+### DeMorgan's and/or
+
+* Or lends itself to union
+* And lends itself to intersection
+
+So, that is, 
+
+* $\neg (P \lor Q) \equiv \neg P \land \neg Q$
+* That is to say that $(p \cup q)^{c} \equiv p^{c} \cap q^{c}$
+* Same in the opposite direction!
+
+Here's an example of a proof using DeMorgan's Laws:
+
+![DeMorgan Proof 1](images/DMlaw.jpg)
+
+### Distributive Property
+
+Here's an example proof using the Distributive Property:
+
+![Proof Using Distributive Property](images/distributivelaw.jpg)
+
 
 # Feb 10
 
@@ -109,9 +205,6 @@ Prove: $A \rightarrow (B \oplus A) \equiv \neg A \lor (B \oplus A)$
 |-|-|-|
 ||$p \rightarrow (Q \oplus P)$ |given
 $\equiv$| $\neg p \lor (Q \oplus P)$ | definition of implication
-
-
-
 
 
 

@@ -18,15 +18,6 @@ forall x solution book: http://forallx.openlogicproject.org/solutions/forallxsol
 cd notes
 pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
-Slides:
-    Sets Slides: 
-        (First Week) https://docs.google.com/presentation/d/1BXSO-TkmlSSkd3IIVM2yxjG03KVn0roCMBNhjLEHjK0/edit?usp=sharing 
-
-        (set-builder, power set, disjoint) https://docs.google.com/presentation/d/1T2rP6N1PVJkJpt6T9g6k48b1BzLF9N6d-X0LG6QqvV8/edit?usp=sharing
-
-    Proofs Slides: 
-        https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
-
 
 -->
 

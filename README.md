@@ -7,3 +7,5 @@ The main reason I did this is becuase a lot of the readings are all over the pla
 As you can tell, this is also the first class where I've seriously put effort into making good notes, using LaTeX and markdown simultaneously with Pandoc to make my notes functional, accurate, readable, and accessible. 
 
 Start a pull request if you want to add anything to this. Also, if you want to contact me about anything, email me: abs6bd@virginia.edu
+
+Also, the website for the S2023 course is [here](https://www.cs.virginia.edu/~emo7bf/cs2120/s2023/)

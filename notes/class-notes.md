@@ -70,7 +70,27 @@ $\equiv$ | $P \land (R \land \neg Q)$ | commutative
 $\equiv$ | $P \land (\neg Q \land R)$ | commutative
 
 
+5: Prove: $(X \rightarrow Y) \land (\neg X \rightarrow \neg Y) \equiv X \leftrightarrow Y$
 
+|symbol|equation|reasoning|
+|-|-|-|
+|| $(X \rightarrow Y) \land (\neg X \rightarrow \neg Y)$ | given
+$\equiv$ | $(X \rightarrow Y) \land (\neg \neg X \lor \neg Y)$ |definition of implication
+$\equiv$ | $(X \rightarrow Y) \land (X \lor \neg Y)$ | Double negation
+$\equiv$ | $(X \rightarrow Y) \land (\neg Y \lor X)$ | commutative
+$\equiv$ | $(X \rightarrow Y) \land (Y \rightarrow X)$ | definition of implication
+$\equiv$ | $X \leftrightarrow Y$ | definition of bimplication
+
+6: Prove $\neg (P \lor M) \rightarrow \neg M \equiv \top$
+
+|symbol|equation|reasoning|
+|-|-|-|
+||$\neg (P \lor M) \rightarrow \neg M$ | given
+$\equiv$ | $\neg \neg (P \lor M) \lor \neg M$ | definition of implication
+$\equiv$ | $(P \lor M) \lor \neg M$ | double negation
+$\equiv$ | $P \lor (M \lor \neg M)$ | associativity
+$\equiv$ | $P \lor \top$ | simplification
+$\equiv$ | $\top$ | simplification
 
 
 # Feb 13

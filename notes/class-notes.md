@@ -22,6 +22,57 @@ Slides:
         https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
 
 -->
+# Feb 15
+
+Did an in-class worksheet. The answers were not fully gone through so here's the four questions and their correct answers that we went over in class:
+
+1: Prove $A \land (A \lor B) \equiv A$
+
+|symbol|Equation|Reasoning|
+|-|-|-|
+||$A \land (A \lor B)$ | Given
+$\equiv$ | $A \lor (\bot \land B)$ | distributive 
+$\equiv$ | $A \lor \bot$ | simplification
+$\equiv$ | A | simplification
+
+2: Prove $(P \lor \neg p) \rightarrow P \equiv P$
+
+|symbol|equation|reasoning|
+|-|-|-|
+||$(P \lor \neg P) \rightarrow P$ | given
+$\equiv$ | $\neg(P \lor \neg P) \lor P$ | definition of implication
+$\equiv$ | $(\neg P \land \neg \neg P) \lor P$ | DeMorgan's Law
+$\equiv$ | $(\neg P \land P) \lor P$ | Double Negation
+$\equiv$ | $\bot \lor P$ | simplification
+$\equiv$ | P | simplification
+
+3: Prove $\neg A \land \neg B \equiv \neg A \land (B \rightarrow A)$
+
+|symbol|equation|reasoning|
+|-|-|-|
+||$\neg A \land \neg B$ | given 
+$\equiv$ | $(\neg A \land \neg B) \lor \bot$ | simplification
+$\equiv$ | $(\neg A \land \neg B) \lor (\neg A \land A)$ | simplification
+$\equiv$ | $\neg A \land (\neg B \lor A)$ | Distributive Property
+$\equiv$ | $\neg A \land (B \rightarrow A)$ | Definition of implication
+
+4: Prove: $R \land \neg(P \rightarrow Q) \equiv P \land (\neg Q \land R)$
+
+|symbol|equation|reasoning|
+|-|-|-|
+||$R \land \neg(P \rightarrow Q)$ | Given
+$\equiv$ | $R \land \neg(\neg P \lor Q)$ | definition of implication
+$\equiv$ | $R \land ( \neg \neg P \land \neg Q)$ | DeMorgan's Law
+$\equiv$ | $R \land (P \land \neg Q)$ | double negation
+$\equiv$ | $R \land (\neg Q \land P)$ | commutative 
+$\equiv$ | $(R \land \neg Q) \land P$ | associative
+$\equiv$ | $P \land (R \land \neg Q)$ | commutative 
+$\equiv$ | $P \land (\neg Q \land R)$ | commutative
+
+
+
+
+
 # Feb 13
 
 ## Do Now

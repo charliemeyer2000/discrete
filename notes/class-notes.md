@@ -24,14 +24,15 @@ Slides:
 -->
 # Feb 15
 
-Did an in-class worksheet. The answers were not fully gone through so here's the four questions and their correct answers that we went over in class:
+Did an in-class worksheet. These are the correct answers
 
 1: Prove $A \land (A \lor B) \equiv A$
 
 |symbol|Equation|Reasoning|
 |-|-|-|
 ||$A \land (A \lor B)$ | Given
-$\equiv$ | $A \lor (\bot \land B)$ | distributive 
+$\equiv$ | $(A \lor \bot) \land (A \lor B)$ | distributive property
+$\equiv$ | $A \lor (\bot \land B)$ | simplification
 $\equiv$ | $A \lor \bot$ | simplification
 $\equiv$ | A | simplification
 
@@ -46,6 +47,15 @@ $\equiv$ | $(\neg P \land P) \lor P$ | Double Negation
 $\equiv$ | $\bot \lor P$ | simplification
 $\equiv$ | P | simplification
 
+An alternate solution is:
+
+|symbol|equation|reasoning|
+|-|-|-|
+||$(P \lor \neg P) \rightarrow P$ | given
+$\equiv$ | $\top \rightarrow P$ | simplification
+$\equiv$ | $\neg \top \lor P$ | definition of implication
+$\equiv$ | $\bot \lor P$ | simplification
+$\equiv$ | $P$ | simplification
 3: Prove $\neg A \land \neg B \equiv \neg A \land (B \rightarrow A)$
 
 |symbol|equation|reasoning|

@@ -9,7 +9,7 @@ header-includes:
 ---
 <!-- 
 cd practice
-pandoc -s -o quiz1practice.pdf quiz1practice.md 
+pandoc -s -o _.pdf _.md 
 -->
 
 # Practice

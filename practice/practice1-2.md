@@ -24,7 +24,7 @@ $\equiv$ | $A \lor (\bot \land B)$ | simplification
 $\equiv$ | $A \lor \bot$ | simplification
 $\equiv$ | A | simplification
 
-2: Prove $(P \lor \neg p) \rightarrow P \equiv P$
+2: Prove $(P \lor \neg P) \rightarrow P \equiv P$
 
 |symbol|equation|reasoning|
 |-|-|-|
@@ -98,19 +98,23 @@ Prove: $A \oplus B \equiv \neg (A \leftrightarrow B)$
 |-|-|-|
 ||$A \oplus B$ | given
 $\equiv$ | $(A \lor B) \land \neg (A \land B)$ | definition of XOR
-$\equiv$ | $(A \lor B) \land (\neg A \lor \neg B)$ | DeMorgan's
-$\equiv$ | $(\neg \neg A \land \neg B) \lor \neg (\neg B \lor A)$ | double negation
-$\equiv$ | $\neg (\neg A \lor B) \lor \neg (\neg B \lor A)$ | DeMorgan's Law
-$\equiv$ | $\neg (\neg A \lor B) \lor \neg (B \rightarrow A)$ | definition of implication
-$\equiv$ | $\neg (A \rightarrow B) \lor \neg (B \rightarrow A)$ | definition of implication
-$\equiv$ | $\neg ((A \rightarrow B) \land (B \rightarrow A))$ | DeMorgan's Law
-$\equiv$ | $\neg (A \leftrightarrow B)$ | definition of biimplication
+$\equiv$ | $((A \land \neg (A \land B)) \lor (B \land \neg (A \land B)))$ | distribute
+$\equiv$ | $((A \land (\neg A \lor \neg B)) \lor (b \land (\neg A \lor \neg B)))$ | DeMorgan
+$\equiv$ | $((A \land \neg A) \lor (A \land \neg B)) \lor (B \land (\neg A \lor \neg B)))$ | distribute
+$\equiv$ | $((A \land \neg A) \lor (A \land \neg B)) \lor ((B \land \neg A) \lor (B \land \neg B))$ | distribute
+$\equiv$ | $(\bot \lor (A \land \neg B)) \lor (B \land \neg A) \lor (B \land \neg B))$ | simplify
+$\equiv$ | $(\bot \lor (A \land \neg B)) \lor ((B \land \neg A) \lor \bot)$ | simplify
+$\equiv$ | $(A \land \neg B) \lor ((B \land \neg A) \lor \bot)$ | simplify
+$\equiv$ | $(A \land \neg B) \lor (B \land \neg A)$ | simplify
+$\equiv$ | $(\neg \neg A \land \neg B) \lor (\neg \neg B \land \neg A)$ | double negation
+$\equiv$ | $\neg (\neg A \lor B) \land \neg (\neg B \lor A)$ | De Morgan
+$\equiv$ | $\neg ((\neg A \lor B) \land (\neg B \lor A))$ | De Morgan
+$\equiv$ | $\neg ((A \rightarrow B) \land (B \rightarrow A))$ | definition of implication
+$\equiv$ | $\neg (A \leftrightarrow B)$ | definition of bi implication 
 
 Another Solution (not sure if it's legal though)
 
 * Use Definition of xor: $A \oplus B \equiv \neg (A \rightarrow B)$. The purpose of the question above was to show another way to do that, though. 
-
-
 
 
 
@@ -153,9 +157,10 @@ $\equiv$ | $P \land (\neg P \lor Q)$ | definition of implication
 $\equiv$ | $(P \land \neg P) \lor (P \land Q)$ | Distributive 
 $\equiv$ | $(\bot) \lor (P \land Q)$ | simplification
 $\equiv$ | $(P \land Q)$ | simplification
-$\equiv$ | $P \land Q$ | simplification
+$\equiv$ | $P \land Q$ | associativity
 
 The answer on the website has the stripping of parenthesis around $(\bot)$ and therefore does one less step than me but same difference.
+
 
 ### Question 4
 
@@ -188,7 +193,7 @@ Prove $P \rightarrow (A \lor Q) \equiv (P \land \neg A) \rightarrow Q$
 |operator|expression|rule used|
 |-|-|-|
 ||$P \rightarrow (A \lor Q)$ | given
-$\equiv$ | $\neg P \lor (A \lor Q)$ | definition of negation
+$\equiv$ | $\neg P \lor (A \lor Q)$ | definition of implication
 $\equiv$ | $(\neg P \lor A) \lor Q$ | associativity
 $\equiv$ | $\neg \neg (\neg P \lor A) \lor Q$ | double negation
 $\equiv$ | $\neg(P \land \neg A) \lor Q$ | DeMorgan

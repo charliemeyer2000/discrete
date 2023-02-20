@@ -10,7 +10,246 @@ header-includes:
 
 # Weekend Quizzes
 
-This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong, but I doubt it. Sorry!
+This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong. Or hopefully i get a 100% every time. 
+
+## Mod1Multi2
+
+Q1: For each sub-question below, indicate whether the rule can nbe directly applied (with no intermediate steps) to the expression $((P \rightarrow Q) \rightarrow R) \lor (P \land Q)$
+
+Q1.1: Double Negation
+
+* Yes, this can be directly applied
+
+Q1.2: Associativity
+
+* No, this cannot be directly applied
+
+Q1.3: Commutativity
+
+* Yes, this can be directly applied
+
+Q1.4: Definition of implication
+
+* Yes, this can be directly applied
+
+Q1.5: Distributive Law
+
+* Yes, this can be directly applied
+
+Q1.6: DeMorgan's Law
+
+* No, this cannot be directly applied
+
+Q1.7: Definition of Exclusive Or
+
+* Recall that definition of exclusive or is $P \oplus Q \equiv (P \lor Q) \land \neg (P \land Q)$
+* Therefore, no, this cannot be directly applied
+
+Q1.8: Simplification
+
+* No, this cannot be directly applied
+
+Question 2: Which of the following is equivalent to $((P \land \neg P) \lor (P \rightarrow P)) \rightarrow ((P \land \neg P) \lor \bot)$
+
+|equation| rule used|
+|-|-|
+$((P \land \neg P) \lor (P \rightarrow P)) \rightarrow ((P \land \neg P) \lor \bot)$ | Given
+$((P \land \neg P) \lor (P \rightarrow P)) \rightarrow (\bot \lor \bot)$ |simplification
+$((P \land \neg P) \lor (P \rightarrow P)) \rightarrow \bot $ | simplification
+$((P \land \neg P) \lor \top) \rightarrow \bot $ | simplification
+$(\bot \lor \top) \rightarrow \bot $ | simplification
+$\top \rightarrow \bot$ | simplification
+$\bot$ | simplification
+
+Question 3: For each sub-question below, indicate which expressions are logically equivalent to:
+$(\neg A \lor B) \land (\neg B \lor A)$
+
+Q3.1: $(\neg A \lor B) \land \neg (B \land \neg A)$
+
+* Yes, this is logically equivalent through use of demorgan and double negation: $(\neg A \lor B) \land \neg(B \land \neg A) \equiv (\neg A \lor B) \land (\neg B \lor \neg \neg A) \equiv (\neg A \lor B) \land (\neg B \lor A)$
+
+Q3.2: $A \leftrightarrow B$
+
+* Yes, this is logically equivalent through using definition of biimplication and definition of implication. $A \leftrightarrow B \equiv (A \rightarrow B) \land (B \rightarrow A) \equiv (\neg A \lor B) \land (\neg B \lor A)$
+
+Q3.3: $A \lor (B \land \neg B)$ 
+
+* $A \lor (B \land \neg B) \equiv A \lor \bot \equiv A$. Thus, not equivalent.
+* $A \lor (B \land \neg B) \equiv (A \lor B) \land (A \lor \neg B) \not\equiv (\neg A \lor B) \land (\neg B \lor A)$. Also just distrubute to see it's not equivalent.
+
+Q3.4 $\neg (\neg A \lor B) \lor (\neg B \land A)$
+
+* $\neg (\neg A \lor B) \lor (\neg B \land A) \equiv (A \land B) \lor (\neg B \land A)$. Therefore not logically equivalent.
+
+Question 4: For each sub-question below, indicate whether the rule can be directly applied (with no intermediate steps) to the expression $P \land (\neg P \lor Q)$. 
+
+Q4.1: Double Negation
+
+* Yes
+
+Q4.2: Associativity
+
+* No
+
+Q4.3: Commutativity
+
+* Yes
+
+Q4.4: Definition of Implication 
+
+* Yes
+
+Q4.5: Distributive Law
+
+* Yes
+
+Q4.6: DeMorgan's Law
+
+* No (need an intermediate double negation step)
+
+Q4.7: Definition of Bi-Implication
+
+* No
+
+Q4.8: Definition of exclusive or
+
+* No.
+
+Q5: Which of the following is equivalent to $\neg ((\neg Q \lor Q) \rightarrow ((Q \leftrightarrow P) \oplus Q))$?
+statement | rule used|
+|-|-|
+$\neg ((\neg Q \lor Q) \rightarrow ((Q \leftrightarrow P) \oplus Q))$ | given 
+$\neg (\top \rightarrow ((Q \leftrightarrow P) \oplus Q))$ | simplification
+$\neg (\neg \top \lor ((Q \leftrightarrow P) \oplus Q))$ | definition of implication
+$\neg (\bot \lor ((Q \leftrightarrow P) \oplus Q))$ | simplification
+$(\top \land \neg ((Q \leftrightarrow P) \oplus Q))$ | DeMorgan's
+$(\top \land \neg (\neg(P \oplus Q) \oplus Q))$ | other definition of bi-imp
+$\top \land \neg (\neg P \oplus (Q \oplus Q))$ | associative
+$\top \land \neg (\neg P \oplus \bot)$ | simplification
+$\top \land \neg \neg P$ | simplification
+$P$ | double negation + simplification
+
+The step between "other definition of bi-imp" and "associative" is a little sus but the truth tables check out so it makes sense. Plus, the truth table for the entire equation is: 
+
+|q|p|$\neg ((\neg Q \lor Q) \rightarrow ((Q \leftrightarrow P) \oplus Q))$|
+|-|-|-|
+1|1|1
+1|0|0
+0|1|1
+0|0|0
+
+So, it looks like no matter what _q_ is, the value of the expression $\neg ((\neg Q \lor Q) \rightarrow ((Q \leftrightarrow P) \oplus Q))$ is always just _p_!
+
+Q6: Which of the following expressions are equivalent to $(P \land Q) \lor (\neg R \leftrightarrow Q)$? 
+
+Q6.1: $(P \land Q) \lor ((R \lor Q) \land (\neg Q \lor R))$
+
+|expression|rule used|
+|-|-|
+$(P \land Q) \lor ((R \lor Q) \land (\neg Q \lor R))$ | given
+$(P \land Q) \lor ((\neg R \rightarrow Q) \land (Q \rightarrow \neg R))$ | def bi implication
+$(P \land Q) \lor ((R \lor Q) \land (\neg Q \lor R))$ | definition of implication (twice)
+
+Not equivalent, consider the instance when p = 0, q = 1, and r = 0.
+
+Q6.2: $(P \land Q) \lor (R \lor Q)$
+
+|expression|rule used|
+|-|-|
+$(P \land Q) \lor (R \lor Q)$ | given
+$((P \land Q) \lor R) \lor ((P \land Q) \lor Q)$ | distributive
+$((P \land Q) \lor R) \lor (Q \lor (P \land Q))$ | commutative
+$(P \land Q) \lor (R \lor Q) \lor (P \land Q)$ | associative
+$((P \land Q) \lor (P \land Q)) \lor (R \lor Q)$ | associative and commutative in one step cuz im lazy
+$(P \land Q) \lor (R \lor Q)$ | simplification
+
+I just went in a circle there so I don't see any way to get to $\neg R \leftrightarrow Q)$. So I think they're not equivalent. Also consider the case where p = 0, q = 0, and r = 1; they're not the same.
+
+6.3: $(P \land Q) \lor (R \oplus Q)$ 
+
+|expression|rule used|
+|-|-|
+$(P \land Q) \lor (R \oplus Q)$ | given
+$(P \land Q) \lor \neg(R \leftrightarrow Q)$ | simplification / xnor
+
+Through truth tables these are equivalent.
+
+6.4: $(P \lor R) \land (Q \lor R) \oplus (P \lor Q)$ 
+
+|statement|rule|
+|-|-|
+$(P \lor R) \land (Q \lor R) \oplus (P \lor Q)$ | given
+$(R \lor (Q \land P)) \oplus (P \lor Q)$ | associativity and distributive
+
+There's no way! Therefore, not equivalent. Also check through truth tables, in the instance where p = 1, q = 1, and r = 0 they are not equivalent.
+
+6.5: $(P \oplus R) \oplus (P \lor Q)$
+
+* $\neg ((P \oplus R) \leftrightarrow (P \lor Q))$
+* $\neg ( ((P \oplus R) \rightarrow (P \lor Q)) \land ((P \lor Q) \rightarrow (P \oplus R)))$
+* $\neg((\neg(P \oplus R) \lor (P \lor Q) \land \neg (P \lor Q) \lor (P \oplus R)))$
+
+Using truth tables, not equivalent. If $P = \top \land Q = \top \land R = \bot$, this is a counterexample.
+
+For $(P \land Q) \lor (\neg R \leftrightarrow Q)$, you get $\bot$, but when you do the same for $(P \oplus R) \oplus (P \lor Q)$
+
+Question 7: 
+
+Which expressions are equivalent to $A \lor B$?
+
+Q7.1 $(((A \land B) \lor B) \oplus (A \lor B)) \oplus B$
+
+* yes (truth table)
+
+Q7.2: $((A \lor B) \rightarrow (A \land B)) \oplus (A \land B)$
+
+* No (truth table). In fact, it's the exact opposite truth table output.
+
+Q7.3: $((\neg B \land A) \oplus \neg B) \lor (A \land B)$
+
+* no (truth table)
+
+Q7.4: $\neg (\neg (A \lor B) \land \neg A)$
+
+* yes (truth table)
+
+Q7.5: $(\neg (A \leftrightarrow B) \rightarrow B) \rightarrow B$
+
+* Yes (truth table)
+
+Q8: Consider the proof: 
+
+![Question 8 Table](images/Question8Table.png)
+
+Q8.1: What goes in blank A?
+
+* $\neg(\neg A \lor B) \lor \neg (B \rightarrow A)$
+
+Q8.2: What goes in blank B?
+
+* $(\neg \neg A \land \neg B) \lor \neg (\neg B \lor A)$
+
+Q8.3: What goes in blank C?
+
+* $(B \land \neg A) \lor (A \land \neg B)$
+
+
+Question 9: Consider the following proof: 
+
+![Question 9 Table](images/Question9Table.png)
+
+Q9.1: What is blank A?
+
+* $(\top \rightarrow \neg (P \land \neg Q)) \land (\neg \top \lor (Q \rightarrow P))$
+
+Q9.2: What is blank B?
+
+* DeMorgan's
+
+Q9.3: What is blank C?
+
+* $\top \lor ((P \rightarrow Q) \land (Q \rightarrow P))$
+
 
 ## Mod1Multi1
 

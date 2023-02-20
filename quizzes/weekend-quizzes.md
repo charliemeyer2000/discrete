@@ -16,6 +16,7 @@ This is the work that I did for the weekend quizzes. Hopefully I go back into my
 
 Q1: For each sub-question below, indicate whether the rule can nbe directly applied (with no intermediate steps) to the expression $((P \rightarrow Q) \rightarrow R) \lor (P \land Q)$
 
+
 Q1.1: Double Negation
 
 * Yes, this can be directly applied
@@ -55,9 +56,9 @@ Question 2: Which of the following is equivalent to $((P \land \neg P) \lor (P \
 |-|-|
 $((P \land \neg P) \lor (P \rightarrow P)) \rightarrow ((P \land \neg P) \lor \bot)$ | Given
 $((P \land \neg P) \lor (P \rightarrow P)) \rightarrow (\bot \lor \bot)$ |simplification
-$((P \land \neg P) \lor (P \rightarrow P)) \rightarrow \bot $ | simplification
-$((P \land \neg P) \lor \top) \rightarrow \bot $ | simplification
-$(\bot \lor \top) \rightarrow \bot $ | simplification
+$((P \land \neg P) \lor (P \rightarrow P)) \rightarrow \bot$ | simplification
+$((P \land \neg P) \lor \top) \rightarrow \bot$ | simplification
+$(\bot \lor \top) \rightarrow \bot$ | simplification
 $\top \rightarrow \bot$ | simplification
 $\bot$ | simplification
 

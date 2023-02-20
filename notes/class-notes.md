@@ -20,8 +20,44 @@ Slides:
 
     Proofs Slides: 
         https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
+    Week of Feb 20 (Predicates, Quantifiers)
+        https://docs.google.com/presentation/d/1p8KMkLQc4YXO913QA5ObaHqo7mTHaUkwNxtfW0Ka_bs/edit?usp=sharing
 
 -->
+# Feb 20
+
+## Review Mod1Multi2
+
+Question 1: Can you apply simplification $((P \rightarrow Q) \rightarrow R) \lor (P \land Q)$? 
+
+* Yes!! Recall that simplification can go _both_ ways. You could add an $\lor \bot$. 
+
+Question 2: $(P \lor R) \land (Q \lor R) \oplus (P \lor Q)$
+
+* This question was taken off because there are no parenthesis to tell you which order to do things. Thus, it should either be:
+    * $((P \lor R) \land (Q \lor R)) \oplus (P \lor Q)$ 
+    * $(P \lor R) \land ((Q \lor R) \oplus (P \lor Q))$
+
+### Good to have in your back pocket
+
+|english phrase| DMT phrase|
+|-|-|
+If p then q | p implies q
+if p, q | p only if q
+p is sufficient for q | a sufficient condition for q is p
+q if p | q whenever p
+q when p | q is necessary for p
+a necessary condition for p is q | q follows from p
+q unless $\neg p$ | q provided that p
+
+### Predicates and First-Order Logic
+
+
+
+
+
+
+
 # Feb 17
 
 Practice before Mod1Quiz2:

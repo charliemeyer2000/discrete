@@ -52,6 +52,36 @@ q unless $\neg p$ | q provided that p
 
 ### Predicates and First-Order Logic
 
+We can only do so much with atomic propositions. To say more interesting things like "All files that are larger than 1,000 blocks are to be moved to backup provided that they have not been referenced within the last 100 days and that they are not in system files," we need more!
+
+* Atomic propositions: just letters that reference a proposition, e.g. P = "It is sunny today" or Q = "It's Friday"
+* A predicate is a proposition that has a(n) argument(s).
+
+### Predicates
+
+Three different definitions of a predicate:
+
+* A function that evaluates to true or false
+* A proposition missing the noun(s)
+* A proposition template
+
+Determine the predicate and the arguments of the following sentence: "Sam loves Diane." 
+
+* L(x, y) = ___x loves ___y
+* "Sam loves Diane" formalizes to L(Sam, Diane)
+* "Diane doesn't love Sam" formalizes to $\neg L(\text{Diane}, \text{Sam})$
+* "I love lucy" formalizes to $L(i, Lucy)$
+* Note that $L(\text{Sam}, \text{Diane}) \not\equiv L(\text{Diane}, \text{Sam})$! It is _not_ commutative. Think of this L(x, y) as a binary function. Love is directional. Diane can loves Sam without Sam loving Diane
+
+What about the statement "Everyone loves Raymond?"
+
+* First you have to specify what your "universe" or "domain" is. Let's say our domain is U = {A, B, C, Raymond}. 
+* $\forall_x \in U . L(x, \text{Raymond})$
+<!-- * note that this answer doesn't encode Raymond not loving himself. So, if you want to encode that, do something like this:
+    * $\forall_x \in U . \exists_y \in U . L(x, \text{Raymond}) \land x \neq y$ -->
+* This is a "for all" operator which is synonymous with a repetitive "and" operator, since you could also just write it as L(A, Raymond) $\land$ L(B, Raymond) $\land$ L(C, Raymond) $\land$ L(Raymond, Raymond)
+* Also note that you don't have to specify what set the quantifier is in if the domain is specified, as it assumes it is in the domain if not specified
+
 
 
 

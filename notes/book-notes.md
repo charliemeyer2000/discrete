@@ -20,6 +20,419 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 
 -->
+# $\forall_{x} 21.4-24$ and MCS 3.6 and skim $\forall_{x} 25, 26$ and bus example, and practice exercises in $\forall_{x}$ 22, 23 and Spring 2020 Class Examples
+
+## $\forall_{x} 21.4-24
+
+### Quantifiers
+
+The symbol $\forall$ is the __universal quantifier__. So, for example, we could symbolize the sentence "Everyone is happy" with the expression $\forall_{x} H(x)$. The expression $\forall_{x}$ represents that you can pick anyone and put them in _x_, and the subsequent H(_x_) means, of that thing you picked, it is happy. 
+
+The __existential quantifier__, $\exists$, also requires a variable. We can represent the sentence "Someone is angry" as $\exists_{x} A(x)$ - "there is something, x ,such that x is angry." 
+
+More examples of these quantifiers include:
+
+* No one is angry: $\neg \exists_{x} A(x)$
+* There is someone who is not happy: $\exists_{x} \neg H(x)$
+* Not everyone is happy: $\neg \forall_{x} H(x)$
+
+### Domains
+
+__Domain__ is a collection of things that we are talking about. Quantifiers _range over_ the domain. Additionally, in FOL, the domain must include at least one thing.
+
+* A domain must have _at least_ one member. A name must pick out _exactly_ one member of the domain, but a member of the domain may be picked out by one name, many names, or none at all.
+
+#### Non-referring terms
+
+Each name must pick out exactly one member of the domain. A name cannot refer to more than one thing; it is a _singular_ term. If you are talking about something that isn't in the domain, any sentence/expression is _meaningless_ if it talks about a non-existent thing. 
+
+### Common quantifier phrases
+
+Take these four example sentences:
+
+1. Every coin in my pocket is a quarter 
+1. Some coin on the table is a dime 
+1. Not all the coins on the table are dimes 
+1. None of the coins in my pocket are dimes. 
+
+And take these four statements under the domain "all coins:"
+
+1. P(x) ___x is in my pocket
+1. T(x) ___x is on the table
+1. Q(x) ___x is a quarter
+1. D(x) ___x is a dime
+
+A sentence can be symbolized as $\forall_{x}(F(x) \rightarrow G(x))$ if it can eb paraphrased in English as "every F is G." We can symbolize sentence (1) as $\forall_x (P(x) \rightarrow (Q(x))$. htis is because it is paraphrased as "for any coin, _if_ that coin is in my pocket _then_ it is a quarter." We can symbolize sentence (2) as $\exists_x (T(x) \rightarrow D(x))$
+
+A sentence can be symbolized as $\exists_x (F(x) \land G(x))$ if it can be paraphrased in English as 'some F is G.' Sentence (3) can be paraphrased as "it is not the case that every coin on the table is a dime," so it can be written $\neg \forall_x (T(x) \rightarrow D(x))$ or $\exists_x(T(x) \land \neg D(x))$ Finally, Sentence (4) can be paraphrased as "it is not the case that there is some dime in my pocket" and symbolized as $\neg \exists_x (P(x) \land D(X))$. Note how this can also be written as $\forall_x (P(x) \rightarrow \neg D(x))$. 
+
+### Empty Predicates
+
+A predicate that applies to nothing in the domain is called an __empty predicate__. Suppose we wanted to symbolize the two sentences in the domain of animals
+
+1. every monkey knows sign language
+1. Some monkey knows sign language
+
+* M(x): ___x is a monkey
+* S(x): ___x knows sign language
+
+Sentence (1) can be symbolized as $\forall_x (M(x) \rightarrow S(x))$ and sentence (2) as $\exists_x (M(x) \land (S(x))$. Consider the scenario where the domain contains no monkeys. it is possible for sentence (1) to be true while sentence (2) is false. 
+
+This idea can be boiled down into this definition: When _F_ is an empty predicate, a sentence $\forall_x (F(x) \rightarrow ...)$ will be vacuously true.
+
+### Picking a Domain
+
+Picking domains changes the way that you write sentences in FOL. For example, the sentence "every rose has a thorn" in the domain of "all roses by _only_ roses" can be expressed as $\forall_x T(x)$ (where T(x) is ___x has a thorn). However, if we were to expand the domain to "people and plants," then the sentence "every rose has a thorn" is symbolized by $\forall_x (R(x) \rightarrow T(x))$, where T(x) is ___x has a thorn and R(x) is ___x is a rose. 
+
+### Paraphrase and Scope
+
+For the two sentences over the domain "people:"
+
+1. If Kim is a bassist, then she is a rockstar
+1. If a person is a bassist, then she is a rockstar. 
+
+* B(x): ___x is a bassist
+* R(x): ___x is a rock star 
+
+Sentence (1) is expressed as $B(k) \rightarrow R(k)$ whereas sentence (2) is expressed as $\forall_x (B(x) \rightarrow R(x))$
+
+Now what if we wanted to express the sentences:
+
+1. If everyone is a bassist, then Lars is a bassist
+1. If everyone is such that, if they are a bassist, then Lars is a bassist
+
+We can express sentence (1) as $\forall_x B(x) \rightarrow B(l)$ where _l_ represents Lars. We can also express sentence (2) as $\forall_x (B(x) \rightarrow B(l))$. Notice the difference in parenthesis/scope. 
+
+### Many-placed predicates
+
+Other predicates conern the _relation_ between two things. These are __two-place__ predicates. So, in order to express sentences ike ___ loves ___, then we need to keep track of the gaps.
+
+In the domain of "people," let _i_ be _Irme_ and _k_ be _Karl_. We can express the sentence "Karl loves Irme" as L(k, i). Sentences like "Karl loves Irme, but not vice versa" can be written as $L(k, i) \land \neg L(i, k)$. Make sure to pay attention to the order of the places!
+
+### Order of Quantifiers
+
+Consider:
+
+1. For every person x, there is some person that x loves
+1. There is some particular person whom every person loves. 
+
+We can symbolize (1) as $\forall_x \exists_y L(x, y)$. Sentence (2) can be symbolized as $\exists_y \forall_x L(x, y)$. The point is, make sure to keep track of order. A simple example to emphasize this is the logical fallacy "every dog has its day $\therefore$ there is a day for all the dogs." Nope!
+That's cringe :open_mouth:
+
+### More Symbolization Examples
+
+Over the domain "people and dogs," and 
+
+* D(x): ___x is a dog
+* F(x, y): ___x is a friend of ___y
+* O(x, y): ___x owns ___y
+* _g_: Geraldo
+
+Let's try to symbolize:
+
+1. Geraldo is a dog owner
+1. Someone is a dog owner
+1. All of Geraldo's friends are dog owners
+1. Every dog owner is a friend of a dog owner
+
+* Sentence (1) can be paraphrased as "There is a dog that Geraldo owns": $\exists_x(D(x) \land O(g, x))$
+* Sentence (2) can be paraphrased as "There is some y such that Y is a dog owner": $\exists_y(\text{y is a dog owner})$ -> $\exists_y \exists_x (D(x) \land O(y, x))$. Notice how we basically just put sentence (1) inside of of the "y is a dog owner" part! :cool:
+* Sentence (3) can be paraphrased as "Everyone who is a friend of Geraldo is a dog owner": $\forall_x [F(x, g) \rightarrow \text{x is a dog owner}]$ -> $\forall_x[F(x, g) \rightarrow \exists_z(D(z) \rightarrow O(x, z))]$
+* Sentence (4) can be written as "For any x that is a dog owner, there is a dog owner who x is a friend of." $\forall_x[\text{x is a dog owner} \rightarrow \exists_y(\text{y is a dog owner} \land F(x, y))]$ -> $\forall_x [\exists_z(D(z) \land O(x, z)) \rightarrow \exists_y(\exists_z(D(z) \land O(y, z)) \land F(x, y))]$. 
+
+Notice how we used previous statements and built off of them to create more complex sentences. 
+
+### Suppressed Quantifiers
+
+Go read that yourself i'm not paraphrasing 17th century english writing.
+
+
+### Identity 
+
+Let's say you have a domain of "people" and have the statement O(x, y) ___x owes money to ___y. If you were to say "Pavel owes money to everyone," we write this as $\forall_xO(p, x)$ but this implies that Pavel owes money to himself. We can make reasonable assumptions from living on Earth and understanding the horrifically difficult english language that we meant something like 
+
+1. Pavel owes money to everyone else
+1. Pavel owes money to everyone other than Pavel
+1. Pavel owes money to everyone except Pavel himself
+
+but that wasn't encoded in the original FOL statement. So how do we express these things??
+
+### Adding Identity
+
+The symbol '=' is a two-place predicate: x=y ___x is identical to ___y. So if we were to build upon the examples from the identity section, we can express the sentences above as $\forall_x(\neg x = p \rightarrow O(p, x))$. This is understood as "for all x, if x is not Pavel, then x is owed money by Pavel."
+
+### There are at least...
+
+Consider the sentences 
+
+1. There is at least one apple
+1. There are at least two apples
+1. There are at least three apples
+
+* A(x) ___x is an apple
+
+We can symbolize (1) as $\exists_x A(x)$. However, sentence two has more complexity. Not only does it have to state that there are at least two apples, but it also has to encode that there are two _unique_ apples. It thus can be symbolized as $\exists_x \exists_y ((A(x) \land A(y)) \land \neg x = y)$ Continuing with this trend, if we wanted to specify that there are at least _three unique_ apples, then we'd have to say $\exists_x \exists_y \exists_z [((A(x) \land A(y)) \land A(z)) \land ((\neg x = y \land \neg y = z) \land \neg x = z)]$.
+
+### There are at most...
+
+Now consider
+
+1. There is at most one apple
+1. There are at most two apples
+
+Sentence (1) can be paraphrased also as "it is not the case that there are at least two apples" or that "if you picked up an apple and then picked up another apple, you picked up the same apple." So you can write it as $\neg \exists_x \exists_y [(A(x) \land A(y)) \land \neg x = y]$ or $\forall_x \forall_y [(A(x) \land A(y)) \rightarrow x = y]$. Same thing with sentence (2), just add the appropriate amount of variables to consider the possibility of two unique apples at most. I'm not gonna write it out.
+
+### There are exactly...
+
+Consider
+
+1. There is exactly one apple
+1. There are exactly two apples
+
+(1) can be understood as "there is at least one apple _and_ at most one apple so thus can be written as $\exists_x A(x) \land \forall_x \forall_y[(A(x) \land A(y)) \rightarrow x= y]$, but you can also understand sentence (1) as just "There is a thing _x_ which is an apple, and everything which is an apple is just _x_ itself" which can be written as $\exists_x [ A(x) \land \forall_y (A(y) \rightarrow x = y)]$
+
+(2) can be paraphrased as "There are at least two different apples, and every apple is one of those two apples." This then can be written as $\exists_x \exists_y[((A(x) \land A(y)) \land \neg x= y) \land \forall_z(A(z) \rightarrow (x = z \lor y = z))]$
+
+Finally, consider the very bland statement "There are exactly two things" or "there are exactly two objects." Words like "thing" or "object" apply trivially to everything. So we can thus represent them as $\exists_x \exists_y [\neg x = y \land \forall_z (x = z \lor y =z )]$.
+
+
+## MCS 3.6 - Predicate Formulas
+
+### Quantifiers
+
+Here are some ways to express "always true" and "sometimes true"
+
+Always True:
+
+|Statement|ReWritten|
+|-|-|
+For all $x \in D, P(x)$ is true | For all $x \in \mathbb{R}, x^2 \ge 0$
+P(x) is true for every _x_ in the set D | $x^2 \ge 0$ for every $x \in \mathbb{R}$
+
+Sometimes True
+
+|Statement|ReWritten|
+|-|-|
+There is an $x \in D$ such that P(x) is true | There is an $x \in \mathbb{R}$ such that $5x^2 - 7 = 0$
+P(x) is true for some _x_ in the set D. | $5x^2-7=0$ for some $x \in \mathbb{R}$
+
+All of these sentences "quantify" how often the predicate is true. Specifically, an asserting that a predicate is always true is called __universal quantification__ and an assertion that a predicate is sometimes true is called __existential quantification__.
+
+### Mixing Quantifiers
+
+Be careful of the order in which you present quantifiers, for it can change the meaning of a sentence.
+
+### Variables over one domain
+
+When all the variables in a formula are taken from the same domain, you don't have to mention that every time. For example, instead of $\forall_x \in D \exists_y \in D . Q(x, y)$ we can just write $\forall_x \exists_y . Q(x, y)$. 
+
+### Negating Quantifiers
+
+Two examples of negation of quantifiers:
+
+$\neg (\forall_x . P(x))$ is equivalent to $\exists_x \neg (P(x))$. An example of this in english is:
+
+1. Not every likes ice cream.
+1. There is someone who does not like ice cream.
+
+$\neg (\exists_x . P(x))$ is equivalent to $\forall_x \neg(P(x))$. AN example of this in english is:
+
+1. There is no one who likes being mocked.
+1. Everyone dislikes being mocked.
+
+### Validity of Predicate Formulas
+
+For a predicate formula to be valid it must be true no matter what the domain of discourse may be. 
+
+
+## Skim $\forall_x \text{Chapters 25 \& 26}$
+
+The notes are only on the very important things of this chapter since I only skimmed it.
+
+There are 6 kinds of symbols in FOL
+
+1. Predicates - _A, B, C, D, ..., Z_ or with subscripts. 
+1. Names - _a, b, c, ..., z_ or with subscripts.
+1. Variables - _s, t, u, v, w, x, y, z_ or with subscripts
+1. Connectives - $\neg, \land, \lor, \rightarrow, \leftrightarrow$
+1. Brackets - (,)
+1. Quantifiers - $\forall, \exists$
+
+## Bus Example
+
+### Introduction
+
+Question - What does the statement "everyone can fit in a bus" mean? Answer: It depends on __context__. So, what is context? Context is the change in the likely meaning of an ambiguous word or situation. How do we know what a given context means? Some of it is intrinsic ("this part has to mean _x_ or that part won't make sense") whereas other parts are mostly _cultural_, i.e. we assume the statement "everyone can fit into a car to mean..."
+
+|Everyone can fit in a | Suggests (to me)|
+|-|-|
+car | Partition: several cars, more car seats than people
+costume | Any can fit each: costumes are baggy enough for any build
+auditorium | Any can fit in each seat: each auditorium has more seats than people
+
+### Partition
+
+> Everyone can fit in a bus by dividing people between buses
+
+$\exists$: A partition.
+
+Let _B_ be the set of buses, _P_ be the set of people and _c_: $B \rightarrow \mathbb{N}$ be a function giving the capacity of a bus. Then this case is: 
+
+$$\exists_f : B \rightarrow \mathcal{P}(P) . (\forall_b \in B . \vert f(b) \vert \le c(b)) \land (\forall_p \in P . \exists_b \in B . p \in f(b))$$
+
+That is, 
+
+* "there's some mapping from buses to sets of people that both" 
+    * "$\exists_f : B \rightarrow \mathcal{P}(P) .$"
+* "the number of people mapped to each bus is within the bus' capacity"
+    * "$(\forall_b \in B . \vert f(b) \vert \le c(b))$"
+* "and every person s in the set mapped to by some bus"
+    * "$(\forall_p \in P . \exists_b \in B . p \in f(b))$"
+
+### Any can fit in the set (set fits)
+
+> Everyone can fit in a bus, so we only need one bus
+
+$\forall$ buses, set fits.
+
+Let _B_ be the set of buses, _P_ be the set of people, and _f(x, y)_ be a predicate asserting that _x_ can fit in _y_. Then this case is: 
+
+$$\exists_b \in B . f(P, b)$$
+
+### Any can fit in each
+
+> everyone can fit in a bus, even the largest person in the world.
+
+$\forall \text{ person} \forall \text{ bus, person fits in bus}$
+
+This is formalized in mathematics by saying the "fit in a bus" predicate applies to any person we happen to pick. Let _B_ be the set of buses, _P_ be the set of people, and _f(x, y)_ be a predicate asserting that _x_ can fit in _y_. Then:
+
+$$\forall_p \in P, b \in B . f(p, b)$$
+
+### One can fit in the set
+
+> Everyone can fit in a bus, so we only need one of the big buses.
+
+$\exists \text{ bus, set fits}$
+
+When we say "a bus" we mean one bus. In math, we distinguish these two ideas: $\forall_x$ means "no matter which _x_ we pick" and $\exists_x$ means "it is possible to pick the right _x_." Let _B_ be the set of buses, _P_ be the set of people, and _f(x, y)_ be a predicate asserting _x_ can fit in _y_. Then:
+
+$$\exists_b \in B . f(P, b)$$
+
+### One can fits each
+
+> Everyone can fit in a bus; even the largest person in the world can fit on a big bus
+
+$\exists \text{ bus } \forall \text{ person perosn fits in a bus}$
+
+Let _B_ be the set of buses, _P_ be the set of people, and _f(x, y)_ be a predicate asserting _x_ can fit in _y_. Then the case is:
+
+$$\exists_b \in B . \forall_p \in P . f(p, b)$$
+
+
+### Each has one that can fit it
+
+> everyone can fit in a bus; there are buses with high doors and ceilings for tall people, buses with wide doors and aisles for wide people, and so on.
+
+$\forall \text{ person } \exists \text{ bus, person fits in bus}$
+
+Let _B_ be the set of buses, _P_ be the set of people, and _f(x, y)_ be a predicate asserting _x_ can fit in _y_. Then the case is:
+
+$$\exists_p \in P . \exists_b \in B . f(p, b)$$
+
+## Practice Exercises in $\forall_x \text{ Chap. 22 \& 23}$
+
+Not doing them since it's more important to do practice she gives us first. May go back to this later, but it could also be in the "practice" section.
+
+## Spring 2020 Class Examples (English to Quantifiers)
+
+$\space$|$\space$|
+|-|-|
+domain:|people
+H(x): | _x_ is happy
+C(x): | _x_ is in this class
+A(x, y): | _x_ appreciates _y_
+_t_ :| The Teacher
+
+* Everyone is happy:
+    * $\forall_x . H(x)$
+* Everyone in this class is happy
+    * $\forall_x . C(x) \rightarrow H(x)$
+* Someone is happy:
+    * $\exists_x . H(x)$
+* Someone in this class is happy
+    * $\exists_x . C(x) \land H(x)$
+* Everyone is not happy:
+    * $\neg \forall_x .  H(x)$
+* Someone is unhappy:
+    * $\neg \exists_x .  H(x)$
+* Only one person is happy (there are multiple ways of saying this):
+    * "Someone is happy, and everyone other than them is unhappy"
+        * $\exists_x . H(x) \land \forall_y . ((x \neq y) \rightarrow \neg H(y))$
+    * "If two people are happy, they are the same person." 
+        * $\exists_x . \exists_y . (H(x) \land H(y)) \rightarrow (x = y) \land (\exists_z . H(z)$
+        * Note that this both includes "if two people are happy, then they are the same person" and "there is at least one person who is happy."
+    * "If two people are distinct, at least one is unhappy."
+        * $\exists_{x, y} . (x \neq y) \rightarrow (\neg H(x) \lor \neg H(y)) \land \exists_z . H(z)$
+        * Note that this both includes the "if two people are distinct, then at least one is unhappy" and "at least one person is happy."
+* Only one person in this class is happy (there are multiple ways of saying this):
+    * "Someone in the class is happy, and everyone in the class other than them is unhappy."
+        * $\exists_x . (C(x) \land H(x)) \land (\forall_y . (C(y) \land (x \neq y)) \rightarrow \neg H(y))$
+    * "If two people are both in the class and both happy, they are the same person"
+        * $\exists_{x, y} . (C(x) \land C(y) \land H(x) \land H(y)) \rightarrow (x = y)$
+* Everyone appreciates someone (for everyone, there is someone they appreciate)
+    * $\forall_x . \exists_y . A(x, y)$
+* Everyone appreciate someone else (For everyone, there is someone (not them) that they appreciate)
+    * $\forall_x . \exists_y . (A(x, y) \land x \neq y)$
+* Everyone appreciates someone who appreciates them (due to ambiguity, there are multiple interpretations):
+    * "For everyone, there is someone that they appreciate and appreciates them"
+        * $\forall_x .  \exists_y . (A(x, y) \land A(y, x))
+    * "For everyone, they appreciate everyone who appreciates them"
+        * $\forall_x . \forall_y . A(x, y) \rightarrow A(y, x)$ or $\forall_{x, y} . A(x, y) \rightarrow A(y, x)$ or $\forall_{x, y} . A(x, y) \leftrightarrow A(y, x)$
+* Everyone appreciates someone else who appreciates them
+    * For everyone, there is someone (not them) that they appreciate and appreciates them:
+        * $\forall_x . \exists_y . (x \neq y) \land A(x, y) \land A(y, x)$
+        * There's some ambuguity there, so We should write it more formally as $\forall_{x, y} . (x \neq y) \rightarrow (A(x, y) \leftrightarrow A(y, x))$
+* Everyone appreciates a person who appreciates them
+    * If "a person" means "everyone," we have:
+        * $\forall_x . \forall_y . A(x, y) \rightarrow A(y, x)$
+    * If "A person" means "someone"
+        * $\forall_x . \exists_y . A(x, y) \land A(y, x)$
+* Everyone in this class appreciates someone in this class
+    * For everyone if they are in this class then there is someone who is in this class and they appreciate them:
+        * $\forall_x . C(x) \rightarrow (\exists_y . C(y) \land A(x, y))$
+        * Can be rewritten as $\forall_x . \exists_y . C(x) \rightarrow (C(y) \land A(x, y))$
+* There's someone in this class that everyone in the class appreciates
+    * $\exists_x . C(x) \land (\forall_y . C(y) \rightarrow A(x, y))$
+* Those in this class only appreciate people in this class
+    * For anyone, if you are in the class then for anyone, if they are not in the class you don't appreciate them
+        * $\forall_x . C(x) \rightarrow (\forall_y . \neg C(y) \rightarrow \neg A(x, y))$
+    * For any two people, if one appreciates the other and one is in the class, so is the other
+        * $\forall_{x, y} . ((A(x, y) \land C(x)) \rightarrow C(y)$
+        * Can also be written as $\forall_{x, y} . A(x, y) \rightarrow (C(x) \rightarrow C(y))$
+* The teacher only appreciates those who appreciate someone in class
+    * For anyone, if the teacher appreciates them then there is someone in the class they appreciate
+        * $\forall_x . A(t, x) \rightarrow (\exists_y . C(y) \land A(x, y))$
+    * There's someone in the class such that anyone the teacher appreciates appreciates that person.
+        * $\exist_x . C(x) . \forall_y . A(t, y) \rightarrow A(x, y)$
+    * 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Predicates: MCS 1.2 and $\forall_{x}$ 21.0 - 21.3 and skim MCS 4.1.0
 

@@ -22,6 +22,20 @@ Slides:
         https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
 
 -->
+# Feb 17
+
+Practice before Mod1Quiz2:
+
+Review
+
+$\neg (A \land B)$ and $(\neg A \lor \neg B)$ - DeMorgan's
+
+If you were to go from $\neg Q \lor R$ to $\neg (Q \land \neg R)$, make sure to also include the step of double negation in between : $\neg (Q \land \neg \neg R)$
+
+Associativity Rule - when in doubt, you can always do expressions as variables. 
+
+
+
 # Feb 15
 
 Did an in-class worksheet. These are the correct answers
@@ -36,7 +50,7 @@ $\equiv$ | $A \lor (\bot \land B)$ | simplification
 $\equiv$ | $A \lor \bot$ | simplification
 $\equiv$ | A | simplification
 
-2: Prove $(P \lor \neg p) \rightarrow P \equiv P$
+2: Prove $(P \lor \neg P) \rightarrow P \equiv P$
 
 |symbol|equation|reasoning|
 |-|-|-|

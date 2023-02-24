@@ -24,6 +24,99 @@ Slides:
         https://docs.google.com/presentation/d/1p8KMkLQc4YXO913QA5ObaHqo7mTHaUkwNxtfW0Ka_bs/edit?usp=sharing
 
 -->
+# Feb 22
+
+### Universal Quantifier
+
+$\forall$ = "for all" or "given any." It expresses that a propositional function can be satisfied by _every member of the domain_. 
+
+### Ambiguous Question
+
+"Everybody does not love Chris" or "Everybody hates Chris." How cna you rephrase this?
+
+* For all people, each one does not love Chris.
+    * $\forall_x . \neg L(x, \text{Chris})$
+* There does not exists one person who loves Chris.
+    * $\neg (\forall_x . L(x, \text{Chris}))$
+    * This can be translated as "It is not the case that across all the people everybody loves Chris."
+
+
+### $\exists$: Exists - Existential Quantifier
+
+Consider the exists symbool, the complement to $\forall$. This means "there exists" or "there is at least one" or "for some." It expresses that a propositional function _can be satisfied by at least one member of the domain_.
+
+"There does not exist one person who loves Chris."
+
+* $\neg (\exists_x . L(x, \text{Chris})) \text{ or } \neg \exists_x . L(x, \text{Chris})$
+
+You can also use $\not\exists$ instead of $\neg \exists$. You can also do $\exists_x \exists_y$ as $\exists_{x, y}$
+
+### Interesting paradox
+
+Remember that:
+
+* $\neg \exists_x L(x, \text{Chris})$ means "There does not exist one person who loves Chris."
+* $\forall_x \neg L(x, \text{Chris})$ means "For all people, each one does not love Chris."
+
+Therefore:
+
+$$\neg \exists_x . L(x, \text{Chris}) \equiv \forall_x . \neg L(x, \text{Chris})$$
+$$\not\equiv$$
+$$\exists_x . \neg L(x, \text{Chris}) \equiv \neg \forall_x . L(x, \text{Chris})$$
+
+### What does the . mean?
+
+Note that $\exists_x . L(x) \equiv (L(x))$. This just specifies scope.
+
+### Importance of Domains Example
+
+Is the logical expression $\forall_x . Q(x)$ true or false with $Q(x) = (x^2 \ge x)$. False!!
+
+* Well, I mean... what is the domain? That's the trick question! We need to specify what _x_ is before we can evaluate this expression.
+
+Now, here's a different question:
+
+$\forall_x \in \mathbb{Z} (Q(x))$ ? 
+
+* $\top$
+
+$\forall_x \in \mathbb{R} . Q(x)$?
+
+* $\bot$
+
+We can evaluate these since they have a specific domain!
+
+### $\exists$ and $\forall$
+
+Associate "for all" with _and's_ since it becomes false if just _one_ truth value is false, and associate "there exists" with _or's_ since it becomes true if just one truth value is true. 
+
+### $\exists$ and $\forall$
+
+What about:
+
+* $\forall_x \in \empty . Q(x)$
+    * $\top$ - _vacuously_ true. 
+
+consider it as a for loop:
+
+``` python
+def for_all(S)
+    Q = True
+    for x in S:
+        Q = Q and Q(x)
+    return Q
+```
+
+* $\exists_x \in \empty . Q(x)$
+    * $\bot$ - _vacuously_ false
+
+
+
+
+    
+
+
+
 # Feb 20
 
 ## Review Mod1Multi2

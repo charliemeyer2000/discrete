@@ -20,6 +20,7 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 
 -->
+
 # $\forall_{x} 21.4-24$ and MCS 3.6 and skim $\forall_{x} 25, 26$ and bus example, and practice exercises in $\forall_{x}$ 22, 23 and Spring 2020 Class Examples
 
 ## $\forall_{x} 21.4-24

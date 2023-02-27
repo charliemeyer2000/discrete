@@ -21,9 +21,48 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 -->
 
+# $\forall_x 11.4 - 11.7$
+
+## $\forall_x 11.4-11.7$ 
+
+This was extra notes tacked on that wasn't in the calendar initially.
+
+### 11.4 - Entailment and Validity
+
+The sentences $A_1, A_2, ... , A_n$ entail the sentence $L$ if there is no valuation of the sentence which makes all of $A_1, A_2, ... , A_n$ true and $L$ false. 
+
+Consider this with a truth table. Let us check whether $\neg L \rightarrow (J \lor L)$ and $\neg L$ entail $J$. We simply need to check whether there is any valuation which makes both $\neg L \rightarrow (J \lor L)$ and $\neg L$ true whilst making $J$ false:
+
+![Entailment Truth Table](images/entailmenttable.png)
+
+As we can see, only the row on which $\neg L \rightarrow (J \lor L)$ and $\neg L$ are true is the _second_ row, and that is a row in which $J$ is also true. Therefore, $\neg L \rightarrow (J \lor L)$ and $\neg L$ entail $J$.
+
+### 11.5 - The limits of these tests
+
+Consider the argument "Jan is neither bald nor not-bald." We could express this as $\neg J \land \neg \neg J$, and this is a contradiction. You notice that TFL is just not good sometimes! TFL can only handle truth-functional connectives. 
+
+### 11.6 - The Double Turnstile
+
+The double turnstile $\vDash$ is used in this expression:
+
+$$A_1, A_2, ..., A_n \vDash L$$ 
+
+This shows that the TFL sentences $A_1, A_2, ... , A_n$ together entail $L$. The $\vDash$ is the _double turnstile_. A way to understand this is that the expression $P, P \rightarrow Q \vDash Q$ is just an abbreviation for the english sentence "The TFL sentences 'P' and '$P \rightarrow Q$' entail 'Q.' 
+
+### 11.7 $\vDash$ versus $\rightarrow$
+
+$A \vDash L$ if and only if there is no valuation of the sentence letters that makes _A_ true and _L_ false. $A \rightarrow L$ is a tautology if and only if there is no valuation of the sentence letters that makes $A \rightarrow L$ false. Thus we can conclude that $A \rightarrow L$ is a tautology iff $A \vDash B$. 
+
+Definitions
+
+* $\rightarrow$ is a sentential connective of TFL
+* $\vDash$ is a symbol of augmented English
+
+
+
 # $\forall_{x} 21.4-24$ and MCS 3.6 and skim $\forall_{x} 25, 26$ and bus example, and practice exercises in $\forall_{x}$ 22, 23 and Spring 2020 Class Examples
 
-## $\forall_{x} 21.4-24
+## $\forall_{x} 21.4-24$
 
 ### Quantifiers
 
@@ -63,7 +102,7 @@ And take these four statements under the domain "all coins:"
 1. Q(x) ___x is a quarter
 1. D(x) ___x is a dime
 
-A sentence can be symbolized as $\forall_{x}(F(x) \rightarrow G(x))$ if it can eb paraphrased in English as "every F is G." We can symbolize sentence (1) as $\forall_x (P(x) \rightarrow (Q(x))$. htis is because it is paraphrased as "for any coin, _if_ that coin is in my pocket _then_ it is a quarter." We can symbolize sentence (2) as $\exists_x (T(x) \rightarrow D(x))$
+A sentence can be symbolized as $\forall_{x}(F(x) \rightarrow G(x))$ if it can eb paraphrased in English as "every F is G." We can symbolize sentence (1) as $\forall_x (P(x) \rightarrow (Q(x))$. this is because it is paraphrased as "for any coin, _if_ that coin is in my pocket _then_ it is a quarter." We can symbolize sentence (2) as $\exists_x (T(x) \rightarrow D(x))$
 
 A sentence can be symbolized as $\exists_x (F(x) \land G(x))$ if it can be paraphrased in English as 'some F is G.' Sentence (3) can be paraphrased as "it is not the case that every coin on the table is a dime," so it can be written $\neg \forall_x (T(x) \rightarrow D(x))$ or $\exists_x(T(x) \land \neg D(x))$ Finally, Sentence (4) can be paraphrased as "it is not the case that there is some dime in my pocket" and symbolized as $\neg \exists_x (P(x) \land D(X))$. Note how this can also be written as $\forall_x (P(x) \rightarrow \neg D(x))$. 
 
@@ -387,7 +426,7 @@ _t_ :| The Teacher
     * $\forall_x . \exists_y . (A(x, y) \land x \neq y)$
 * Everyone appreciates someone who appreciates them (due to ambiguity, there are multiple interpretations):
     * "For everyone, there is someone that they appreciate and appreciates them"
-        * $\forall_x .  \exists_y . (A(x, y) \land A(y, x))
+        * $\forall_x .  \exists_y . (A(x, y) \land A(y, x))$
     * "For everyone, they appreciate everyone who appreciates them"
         * $\forall_x . \forall_y . A(x, y) \rightarrow A(y, x)$ or $\forall_{x, y} . A(x, y) \rightarrow A(y, x)$ or $\forall_{x, y} . A(x, y) \leftrightarrow A(y, x)$
 * Everyone appreciates someone else who appreciates them
@@ -415,8 +454,7 @@ _t_ :| The Teacher
     * For anyone, if the teacher appreciates them then there is someone in the class they appreciate
         * $\forall_x . A(t, x) \rightarrow (\exists_y . C(y) \land A(x, y))$
     * There's someone in the class such that anyone the teacher appreciates appreciates that person.
-        * $\exist_x . C(x) . \forall_y . A(t, y) \rightarrow A(x, y)$
-    * 
+        * $\exists_x . C(x) . \forall_y . A(t, y) \rightarrow A(x, y)$
 
 
 
@@ -1280,7 +1318,7 @@ A \ B is defined to mean "a set containing every member of _A_ that is not a mem
 {1, 2, 4, 8} | {2, 4, 6, 8} | {1}
 the integers | the positive numbers | the negative integers
 
-pow(A) or P(A) is defined to mean "the set of all subsets of A"; that is, "a set S such that $\forall x. (x \in S \leftrightarrow (x \subseteq A))$". pow(A) or P(A) is called the power set of _A_ and is the set of all subsets of _A_. Note that every set, even {}, has one subset: {}; thus, a power set is never empty, $\emptyset \in P(A)$ is a tautology, and $\emptyset = P(A)$ is a contradiction regardless of what set _A_ is.
+pow(A) or P(A) is defined to mean "the set of all subsets of A"; that is, "a set S such that $\forall x. (x \in S \leftrightarrow (x \subseteq A))$ ". pow(A) or P(A) is called the power set of _A_ and is the set of all subsets of _A_. Note that every set, even {}, has one subset: {}; thus, a power set is never empty, $\emptyset \in P(A)$ is a tautology, and $\emptyset = P(A)$ is a contradiction regardless of what set _A_ is.
 
 |A|P(A)|
 |-|-|
@@ -1340,7 +1378,7 @@ The notation "$\exists x \in S . P(x)$" means "there is at least one element of 
 * "$\exists x, y \in S$" is shorthand for "$\exists x, y \in S . \exists y \in S$".
 
 ### Converting "$\forall x \in S...$" to "$\forall x...$"
-
+ 
 If a domain is not specified and all quantifiers are given with sets, the implicit domain is union of all such sets or any superset containing that union.
 
 ### Converting "$\forall x . ...$" to "$\forall x \in S...$"

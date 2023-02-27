@@ -20,10 +20,77 @@ Slides:
 
     Proofs Slides: 
         https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
-    Week of Feb 20 (Predicates, Quantifiers)
+    Week of Feb 20 (Predicates, Quantifiers, Group Activity 1)
         https://docs.google.com/presentation/d/1p8KMkLQc4YXO913QA5ObaHqo7mTHaUkwNxtfW0Ka_bs/edit?usp=sharing
+    Week of Feb 27 (Quantifiers, Quiz)
+        https://docs.google.com/presentation/d/1gC3FGG-Y8UvYKBntYS6yFn1g867PqTj8g3sVSRhaphY/edit?usp=sharing 
 
 -->
+# Feb 27
+
+## Warm-Up
+Select all that are equivalent to the situation "Somebody is loved by everybody." If they aren't equivalent, give a counterexample or explain why it's incorrect.
+
+1. $\exists_y . \forall_x (L(x, y))$
+    * Correct
+2. $\forall_x ( \exists_y (L(x, y)))$
+    * Incorrect - this can be phrased as "everybody loves at least one person."
+3. $\exists_y . \forall_x L(y, x)$
+    * Incorrect - this can be expressed as "there exists at least one person who loves everyone."
+    * Consider the situation where someone loves everyone but everyone else doesn't love them back 
+4. $\forall_x . \exists_y . L(y, x)$
+    * Incorrect - "everyone is receiving love"
+5. $\exists_x . \forall_y L(y, x)$
+    * Correct - "there exists somebody who's loved by everybody.
+
+Notice how 1 and 5 are similar! They're the same statement just with "flipped" variables. Also, recall how the syntax of using . instead of parenthesis doesn't change it - they're different ways to say the same thing.
+
+![Quantifiers Matching](images/quantifiersmatching.png)
+
+1. Picture A
+1. Both
+1. Neither
+1. Picture B
+
+### Quick Intro to Multiple Quantifiers
+
+Switching order does not always mean logical equivalence!!
+
+$$\exists_y \forall_x L(x, y) \not \equiv \forall_x \exists_y L(x, y)$$
+
+However, notice how even though L(x, y) is _not_ commutative the variables are commutative over the same quantifiers: $\forall_x \forall_y L(x, y) \equiv \forall_y \forall_x L(x, y)$ and if you are using the same quantifiers you can also write it as $\forall_{x, y} . L(x, y)$
+
+_interesting note: see that $\forall_x \exists_y L(x, y) \vDash \exists_y \forall_x L(x, y)$_
+
+### Think about Boolean Logic with Quantifiers!!
+
+### Examples
+
+|Domain|People|
+|-|-|
+H(x) | x is happy
+C(x) | x is in this class
+A(x, y) | x appreciates y
+
+1. Everyone is happy
+    * $\forall_k . H(k)$
+1. Everyone in this class is happy
+    * $\forall_x . (C(x) \rightarrow H(x))$
+1. Someone is happy
+    * $\exists_x . H(x)$
+1. Someone in this class is happy
+    * $\exists_x . (C(x) \land H(x))$
+    * Note that I used the $\land$ rather than the $\rightarrow$!! This is because it is satisfied if anyone is not in the class __or__ anyone is happy.
+1. Not everyone is happy
+    * $\neg \forall_x H(x)$
+1. Only one person is happy
+    * $\exists_x . H(x) \land \forall_y . (y \neq x) \rightarrow H(y)$
+
+# Feb 24
+
+Group Activity 1 
+
+
 # Feb 22
 
 ### Universal Quantifier
@@ -43,13 +110,13 @@ $\forall$ = "for all" or "given any." It expresses that a propositional function
 
 ### $\exists$: Exists - Existential Quantifier
 
-Consider the exists symbool, the complement to $\forall$. This means "there exists" or "there is at least one" or "for some." It expresses that a propositional function _can be satisfied by at least one member of the domain_.
+Consider the exists symbol, the complement to $\forall$. This means "there exists" or "there is at least one" or "for some." It expresses that a propositional function _can be satisfied by at least one member of the domain_.
 
 "There does not exist one person who loves Chris."
 
 * $\neg (\exists_x . L(x, \text{Chris})) \text{ or } \neg \exists_x . L(x, \text{Chris})$
 
-You can also use $\not\exists$ instead of $\neg \exists$. You can also do $\exists_x \exists_y$ as $\exists_{x, y}$
+You can also use $\not\exists$ instead of $\neg\exists$. You can also do $\exists_x \exists_y$ as $\exists_{x, y}$
 
 ### Interesting paradox
 
@@ -109,12 +176,6 @@ def for_all(S)
 
 * $\exists_x \in \empty . Q(x)$
     * $\bot$ - _vacuously_ false
-
-
-
-
-    
-
 
 
 # Feb 20

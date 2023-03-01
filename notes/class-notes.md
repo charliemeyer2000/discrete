@@ -64,6 +64,11 @@ _interesting note: see that $\forall_x \exists_y L(x, y) \vDash \exists_y \foral
 
 ### Think about Boolean Logic with Quantifiers!!
 
+Domain: {Ann, Bob, Chris} 
+
+* $\exists_y . \forall_x . L(x, y)$. 
+    * $( L(Ann, Ann) \land L(bob, ann) \land L(chris, ann)) \lor (L(ann, bob) \land L(bob, bob) \land L(chris, bob)) \lor (L(Ann, chris) \land L(bob, chris) \land L(Chris, chris))$
+
 ### Examples
 
 |Domain|People|

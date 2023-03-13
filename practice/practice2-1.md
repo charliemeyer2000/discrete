@@ -11,7 +11,7 @@ header-includes:
 cd practice
 pandoc -s -o _.pdf _.md 
 -->
-
+** note that for questions that are like "which of the following are true" i have listed only the correct answers **
 # First-Order Logic (Mod2Quiz1 Practice)
 
 Define C(a, b) to mean "Can cast value _a_ as type _b_." Define H as the set of values {8, False, "True"}. Define the set K to be the set of types {bool, int}. 
@@ -115,11 +115,12 @@ Which of the following are true?
 
 Question 17: Consider 
 
-$$\forall_x . \exists_y . C(x) \rightarrow (H(y) \land L(x, y))$$
+$$\forall_x . \exists_y . C(x) \rightarrow (H(y) \land L(x, y)) \text{  "All people in this class likes at least one happy person"}$$
 
 and 
 
-$$\exists_y . \forall_x . C(x) \rightarrow (H(y) \land (L(x, y)))$$
+$$\exists_y . \forall_x . C(x) \rightarrow (H(y) \land (L(x, y))) \text{  "There is someone who is happy and is liked by everyone in the class."}$$
+
 
 Where H(a) means "a is happy" and C(a) means "a is in this class" and L(a, b) means "a likes b."
 
@@ -318,7 +319,9 @@ Question 48: $\exists_x . \forall_y . E(x) \land ((x \neq y) \rightarrow \neg E(
 
 Question 49: $\forall_x . \exists_y . M(x) \rightarrow (C(y) \land W(x, y))$
 
-* Every math major works with at least one computer science major
+* Every math major works with at least one computer science major OR
+
+
 
 
 

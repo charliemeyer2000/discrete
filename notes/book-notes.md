@@ -21,6 +21,77 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 -->
 
+# 4.3 Functions; 4.4 Relations
+
+## 4.3.1 - Domains and Images
+
+a _function_ assigns an element of one set, called the _domain_, to an element of another set, called the _codomain_. The notation:
+
+$$f: A \rightarrow B$$
+
+shows that _f_ is a function with a domain _A_, and codomain _B_. The familiar notation $f(a) = b$ indicates that _f_ assigns the element $b \in B$ to _a_. Here _b_ would be called the _value_ of _f_ at _a_.
+
+A function with finite domain could be specified by a table. For example, $f_4 (P, Q)$ where _P_ and _Q_ are propositional variables specified by the table:
+
+| P | Q | f_4(P, Q) |
+|---|---|-----------|
+| T | T | T         |
+| T | F | F         |
+| F | T | T         |
+| F | F | T         |
+
+Note that $f_4$ could also have been described by a formula:
+
+$$f_4 (P, Q) ::= [\text{ P implies Q }]$$
+
+A function can also defined a procedure for computing its value at any element in its domain. 
+
+## 4.3.2 - Composition of Functions
+
+Composing functions _f_ and _g_ means that first _f_ is appleid to some argument, _x_, to produce _f(x)_, and then _g_ is applied to that result to produce _g(f(x))_. 
+
+__Definition 4.3.1__: for functions $f : A \rightarrow B$ and $g : B \rightarrow C$, the _composition_, $g \circ f$, of _g_ with _f_ is to be the function from _A_ to _C_ defined by the rule: 
+
+$$(g \circ f )(x) = g(f(x))$$
+
+## 4.4: Binary Relations
+
+_Binary relations_ define relations between two objects. The relation "less than", for example, on the real numbers relates every real number _a_ to a real number _b_, precisely when _a_ is less than _b_. 
+
+__Definition 4.4.1__: A _binary relation_, _R_, consists of a set, _A_, called the _domain_ of _R_, a set, _B_ called on the _codomain_ of _R_, and a subset of $A \times B$, called the _graph of R_.
+
+A relation whose domain is _A_ and codomain is _B_ is said to be "between _A_ and _B_" or "from _A_ to _B_". We write $R : A \rightarrow B$ to indicated that _R_ is a relation from _A_ to _B_. There are some examples below: 
+
+![Binary Relations Diagrams](images/binaryrelations.png)
+
+__Definition 4.4.2__: A binary relation _R_ is:
+
+* A function when it has the $[\le \text{ 1 arrow out }]$ property - every point in the domain column has _at most one arrow coming out of it_. 
+* _surjective_ when it has the $[\ge \text{ 1 arrow in }]$ property - that is, every pint in the righthand, the codomain, has at least one arrow pointing to it.
+* _total_ when it has the $[\ge \text{ 1 arrows out}]$ property.
+* _injective_ when it has the $[\le \text{ 1 arrow in}]$ property.
+* bijective when it has both the $[= \text{ 1 arrow out}]$ and the $[= \text{ 1 arrow in}]$ properties.
+
+Using these definitions, we can see that the diagram of the relation on the left has $[= \text{ 1 out }]$ and $[\ge \text{ 1 in }]$. This means that it is a surjective function. The diagram on the right has the $[= \text{ 1 out }]$ and $[\le \text{ 1 in }]$ properties, which means it is an injective function.
+
+## 4.4.2 - Relational Images
+The idea of an image of a set under a function extends directly to relations. __Definition 4.4.4__: the _image_ of a set _Y_ under a relation _R_, written _R(Y)_ is  the set of elements of the codomain, _B_ of _R_ that ar related to some element in _Y_. In terms of the relation diagram, _R(Y)_ is the set of points with an arrow coming in that starts from some point in _Y_. 
+
+### Inverse Relations and Images
+
+__Definition 4.4.5__: The _inverse_, $R^{-1}$ of a relation $R : A \rightarrow B$ is the relation from _B_ to _A_ defined by the rule:
+
+$$b R^{-1} a \text{ iff } \text{a R b}$$
+
+in other words, $R^{-1}$ is the relation you get by reversing the direction of the arrows in diagram _R_. 
+
+__Definition 4.4.6__: The image of a set under the relation $R^{-1}$ is called the _inverse image_ of the set. That is, the inverse image of a set _X_ under the relation _R_ is defined to be $R^{-1}(X)$.
+
+
+### 4.4.1 - Relation Diagrams
+
+The diagram for a binary relation, _R_, has points corresponding to the elements of the domain appearing in one column. ALl elements of the codomain appear in another column (usually on the right). 
+
 # $\forall_x 11.4 - 11.7$
 
 ## $\forall_x 11.4-11.7$ 

@@ -7,10 +7,157 @@ header-includes:
 - \usepackage{amsmath}
 - \newcommand{\doublearrow}{\leftrightarrow}
 ---
-
+<!-- cd quizzes
+pandoc -s -o weekend-quizzes.pdf weekend-quizzes.md -->
 # Weekend Quizzes
 
 This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong. Or hopefully i get a 100% every time. 
+
+## Mod2Multi1
+
+Assume the following symbols below. The domain is _all people._
+
+|Symbol|Meaning|
+|-|-|
+M(x) | x is a medalist
+A(x) | x is an athlete
+C(x, y) | x coaches y
+F(x, y) | x and y are friends 
+T(x, y) | x and y are teammates
+D(x, y) | x defeated y
+
+Question 1.1: Translate the logic into english: $\exists_x . \forall_y M(y) \rightarrow C(x, y)$
+
+* "There is a coach who has coached every medalist."
+
+Question 1.2: Which of the following is equivalent ot the statement "Not all teammates are friends?"
+
+* $\exists_x \exists_y T(x, y) \land \neg F(x, y)$
+
+Question 1.3: Which of the following is equivalent to "Somebody who didn't win a medal defeated someone."
+
+* $\exists_x \exists_y \neg M(x) \land D(x, y)$
+* None of the other answer choices
+
+Question 1.4: Which of the following are _equivalent_ to the statement "Nobody defeated everyone?"
+
+* $\not\exists_x \forall_y D(x, y)$
+
+* Brian answer: $\forall_x \forall_y . \neg D(x, y)$
+
+Question 2: Suppose that the following are true:
+
+* A, B and C are all finite subsets of the natural numbers: I.e. $A \subset \mathbb{N}, B \subset \mathbb{N}, C \subset \mathbb{N}$
+* A, B, and C are all non-empty
+* $A \subset B$
+* The intersection of B and C is non-empty
+
+Select true $\top$, false $\bot$, or "not enough information to answer" for each of the following.
+
+Question 2.1 $\exists_x \in \mathbb{N} . (x \in A) \rightarrow (x \in B)$
+
+* $\top$
+
+Question 2.2 $\exists_x \in \mathbb{N} . (x \in B) \rightarrow (x \in A)$
+
+* $\top$
+
+Question 2.3: $\forall_x \in \mathbb{N} (x \in A) \rightarrow (x \in B)$
+
+* $\top$
+
+Question 2.4: $\forall_x \in \mathbb{N} (x \in B) \rightarrow (x \in A)$
+
+* $\bot$
+
+Question 2.5: $\forall_x \in \mathbb{N} (x \in B) \rightarrow (x \in C)$
+
+* Not enough information to answer
+
+Question 2.6: $\exists_x \in \mathbb{N} . (x \in B) \rightarrow (x \in C)$
+
+* $\top$
+
+Question 2.7: $\exists_x \in \mathbb{N} . (x \in B) \land (x \in C)$
+
+* $\top$
+
+Question 2.8: $\forall_x \in \mathbb{N} . (x \in B) \land (x \in C)$
+
+* $\bot$
+
+Question 2.9: $\exists_x \in \mathbb{N} . (x \in A) \land (x \in B)$
+
+* $\top$
+
+Question 2.10: $\forall_x \in \mathbb{N} . (x \in A) \land (x \in B)$
+
+* $\bot$
+
+Question 3: Suppose that each of the following is true:
+
+* A, B, and C are all finite subsets of the natural numbers: I.e. $A \subset \mathbb{N}, B \subset \mathbb{N}, C \subset \mathbb{N}$
+* A, B, and C are all non-empty
+* A $\subseteq$ B
+
+Let the following table define predicates P, Q, R all of which have the domain of the integers.
+
+|Symbol|Meaning|
+|-|-|
+P(x) | $x \in A$
+Q(y) | $y \in B$
+R(z) | $z \in C$
+
+Given these subsequent statements, answer the questions below with either true, false, or could be either true or false
+
+Question 3.1: If we know Q(3) is true, then we know P(3) is...
+
+* true
+
+* Brian's Answer: Could be either true or false
+
+Question 3.2: If we know Q(3) is true then we know R(3) is...
+
+* could be either true or false
+
+Question 3.3: If we know P(3) is true, then we know R(3) is...
+
+* false
+
+Question 3.4: If we know R(3) is true, then we know P(3) is ...
+
+* False
+
+Question 3.5: If we know Q(3) is false, then we know P(3) is...
+
+* false
+
+Question 3.6: If we know $\neg(\exists_x \in B . R(x))$ is true, then we know
+
+* $(\forall_x \in B . \neg R(x))$ is true
+
+Question 3.7: If we know $\forall_x \in B . \neg R(x))$ is true, then we know... $(\forall_x \in B . P(x))$...
+
+* could be either true or false
+
+Question 4: Define a predicate H(x, y) which has two natural numbers as arguments, G(x) which has one natural number as an argument. Define set D = {1, 2, 3} and F = {3, 4}. Which of the following are true equivalences?
+
+Q4.1: $\exists_x \in F . \neg G(x)$?
+
+* $\neg G(3) \lor \neg G(4)$
+
+Q4.2: Which is equivalent to $\forall_x \in F . G(x)$
+
+* $G(3) \land G(4)$
+
+Q4.3 Write boolean algebra that is equivalent to $\forall_x \in F . \exists_y \in D .H(x, y)?$
+
+* 
+
+
+
+DONE!
+
 
 ## Mod1Multi2
 

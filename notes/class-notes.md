@@ -26,6 +26,150 @@ Slides:
         https://docs.google.com/presentation/d/1gC3FGG-Y8UvYKBntYS6yFn1g867PqTj8g3sVSRhaphY/edit?usp=sharing 
 
 -->
+# March 3:
+
+<!-- ## Quiz Review
+
+** This is the entire quiz written out **
+
+Question 1
+
+P: the et of people
+L(x, y): the person x likes person y
+D(x, y): person x wants to have dinner with person y
+A(x): person x is allergic to peanuts
+t: the person "Taylor"
+
+GIve a quantified expression to match the english statement, using the symbols above.
+
+Taylor wants to have dinner with everyone who is not allergic to peanuts:
+
+* $\forall_x \in P . \neg A(x) \rightarrow D(t, x)$
+
+There are at least two people who like each other but neither want to have dinner with the other:
+
+* $\exists_{x, y} . L(x, y) \land L(y, x) \land \neg D(x, y) \land \neg D(y, x)$
+
+Everybody likes someone who does not like them
+
+* $\forall_x . \exists_y . \neg L(y, x) \rightarrow$ 
+
+Someone wants to have dinner with everyone who they do not like
+
+* $\exists_x . \forall_y .$
+
+Question 2: Give an english statement for the quantified expression below:
+
+$\forall_x \in P . L(x, x) \rightarrow D(t, x)$
+
+* Taylor wants to have dinner with everyone who likes themselves
+
+$\exists_x \in P . \forall_y \in P . A(x) \land \neg D(x, y)$
+
+* There is someone who is allergic to peanuts and does not want to have dinner with anyone
+
+$\forall_x \in P. (\exists_y \in P . L(y, x)) \rightarrow (\exists_z \in P . D(z, x))$
+
+* if someone likes everyone, then someone wants to have dinner with everyone -->
+
+## A Note on Notation
+
+$\forall_z . (\exists_y . A(y) \lor E(y)) \rightarrow A(z)$
+
+* The period is a replacemenet for the parenthesis which tells us the _scope_ of the quantifiers. Periods tell us that the scope of the quantifier is starting from it to the end of the statement or a closing parenthesis that came before the quantifier.
+* You can rewrite this as:
+    * $\forall_z[(\exists_y[A(y) \lor E(y)]) \rightarrow A(z)]$
+
+### Example
+
+Domain: People. Let F = {Apollo, Britomartis, Cupid, Demeter, Bob}. L(x, y) = x loves y
+
+What is $\forall_x \in F . \forall_y \in F . L(x, y)$ -> everyone loves everyone!
+
+#### Negating Quantifiers
+
+If you see this $\not\exists$, rewrite it as $\neg \exists$. Also, swap the quantifier ($\neg \forall$) to $\exists \neg(Stuff)$. 
+
+* $\neg \exists_x (F(x) \lor A(x))$ becomes $\forall_x \neg (F(x) \lor A(x))$
+    * which also becomes $\forall_x . (\neg F(x) \land \neg A(x))$
+
+### DeMorgan's Practice
+
+Rewrite: $\neg (\neg \forall_{x, y} \in F . L(x, y))$
+
+* $\neg (\exists_{x, y} \in F . \neg L(x, y))$ -> $\forall_{x, y} \in F . L(x, y)$. Note that this was just a double negation!
+
+Rewrite $\neg (\neg \forall_{x, y} \in F . L(x, y))$ in four different ways!!
+
+<!-- ![DeMorgan's Practice](images/demorgan_practice.png) -->
+
+1. $\neg \exists_x \in F . \neg \forall_y \in F . L(x, y)$
+1. $\neg (\exists_x \in F . \exists_y \in F . \neg (L(x, y)))$
+1. $\neg \exists_x \in F . \exists_y \in F . \neg (L(x, y))$
+1. $\neg (\exists_{x, y} \in F . \neg L(x, y))$
+1. $\forall_x \in F . \neg \exists_y \in F . \neg L(x, y)$
+1. $\forall_{x, y} \in F \neg \neg L(x, y)$
+1. $\forall_{x, y} \in F . L(x, y)$
+
+Note that this is all one big loop - all of these are different ways to say the same thing, $\forall_{x, y} \in F . L(x, y)$.
+
+### One Trick to Avoid
+
+Note that $\not\exists_{x, y} . L(x, y) \equiv \neg \exists_x . \exists_y . L(x, y)$
+
+### Questions to Submit for extra credit
+
+Q1: $\exists_x \in F . \exists_y \in F . \neg L(x, y)$
+
+* There exists someone who doesn't love someone
+
+Q2: $\exists_x \in F . \neg \exists_y \in F . L(x, y)$
+
+* There exists someone who doesn't love anyone
+
+Q3: $\forall_x \in F . \not\exists_y \in F . \neg L(x, y)$
+
+* $\forall_x \in F . \neg \not\exists_y \in F . \neg L(x, y)$
+
+* Everyone doesn't love someone. 
+
+### Entailment
+
+#### Convert this deductive argument into Propositional Logic
+
+1. 6 is an even number (P: 6 is an even number)
+1. All real numbers that are even are integers (Q: All real numbers that are even are integers)
+1. 6 is an integer (R: 6 is an integer)
+
+#### Predicate Logic
+
+* $s := 6$
+* E(x) = x is an even number
+* Z(x) = x is an integer
+* Domain: real numbers
+
+1. E(S)
+2. $\forall_x . E(x) \rightarrow Z(x)$
+3. Z(s)
+
+
+#### Universal Quantifiers and Conjunctions
+
+$\forall_x . E(x) \rightarrow Z(x)$: "All real numbers that are even are integers." Note that you must use $\rightarrow$ rather than $\land$. 
+
+$\exists_x . E(x) \land Z(x)$: "There exists a real number that is even and an integer." Note that you used the $\land$ rather than the $\rightarrow$. Using $\rightarrow$ is vacuously true.
+
+#### Entailment
+
+* Metalanguage:
+    * Ex: comments in your code, talking in English about French, analyzing the tone, narrator, and grammar of a passager.
+
+
+
+
+
+
+
 # Feb 27
 
 ## Warm-Up
@@ -44,6 +188,7 @@ Select all that are equivalent to the situation "Somebody is loved by everybody.
     * Correct - "there exists somebody who's loved by everybody.
 
 Notice how 1 and 5 are similar! They're the same statement just with "flipped" variables. Also, recall how the syntax of using . instead of parenthesis doesn't change it - they're different ways to say the same thing.
+
 
 ![Quantifiers Matching](images/quantifiersmatching.png)
 
@@ -89,7 +234,7 @@ A(x, y) | x appreciates y
 1. Not everyone is happy
     * $\neg \forall_x H(x)$
 1. Only one person is happy
-    * $\exists_x . H(x) \land \forall_y . (y \neq x) \rightarrow H(y)$
+    * $\exists_x . H(x) \land \forall_y . (y \neq x) \rightarrow \neg H(y)$
 
 # Feb 24
 
@@ -138,7 +283,7 @@ $$\exists_x . \neg L(x, \text{Chris}) \equiv \neg \forall_x . L(x, \text{Chris})
 
 ### What does the . mean?
 
-Note that $\exists_x . L(x) \equiv (L(x))$. This just specifies scope.
+Note that $\exists_x . L(x) \equiv \exists_x (L(x))$. This just specifies scope.
 
 ### Importance of Domains Example
 

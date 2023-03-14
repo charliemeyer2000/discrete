@@ -25,7 +25,143 @@ Slides:
     Week of Feb 27 (Quantifiers, Quiz)
         https://docs.google.com/presentation/d/1gC3FGG-Y8UvYKBntYS6yFn1g867PqTj8g3sVSRhaphY/edit?usp=sharing 
 
+    Week of March 13: 
+        https://docs.google.com/presentation/d/1yt7ccKng-_423gbQGQrlX_lPDlShJJHI9WJsVLqv_ug/edit?usp=sharing 
 -->
+# March 13:
+
+## Relation
+
+Today we'll learn that a _relation_ can be defined as a subset of a cross product.
+
+$$R(x, y) \subseteq X \times Y$$
+
+Given this definition, which of the following is __NOT__ a valid relation over $A \times B$? I.e., select which of the following are NOT subsets of $A \times B$. Recall that a cross product is a set of sequences. 
+
+Let A = {2, 3, 4} and B = {4, 5}
+
+a. {(4, 4)}
+
+b. {(2, 4), (3, 4), (4, 5)}
+
+c. {(4, 4), (5, 4)}
+
+d. $\{(a, b) \vert a \in A \land b \in B\}$
+
+e. $\{(a, b) \vert a \in A \land b \in B \land b = a + 1\}$
+
+f. $\empty$
+
+Correct answer: c is not a subset of $A times B$ since (5, 4) is not in $A \times B$. 
+
+## Relations
+
+|Math|English|
+|-|-|
+$A \times B$ | the cross product, $A \times B$
+$R \subseteq A \times B$ | R is a relation from A to B
+$a R b; (a,b) \in R$ | a is related to b
+$a R b; (a, b) \not\in R$ | a is not related to b
+
+For sets $A, B \subseteq u$, any subset of $A \times B$ is called a _relation_ from A to B. 
+
+## Binary (Homogenous) Relations and Notation
+
+Let R be a binary homogenous relation on a Set A, that is: 
+
+$x R y$ where $R \subseteq A \times A$. Note that:
+
+$$x R y = R(x, y) := ((x, y) \in R)$$
+
+### Reflexivity
+
+__Definition__: A binary relation R on a set is reflexive iff: 
+
+$$\forall_x \in A . x R x$$ - "All members of the domain are related to themselves."
+
+Some examples of this include $x = x$ or $x \leq x$.
+
+### Irreflexivity
+
+__Definition:__ A binary relation R on a set A is _irreflexive_ iff:
+
+$$\forall_x \in A . \neg x R x$$ 
+
+Some examples of this include $x \neq x$ or $x > x$ or $x < x$.
+
+__Definition__: A function is irreflexive iff its complement is reflexive: $R_{irreflexive} = (R_{reflexive})^C$
+
+#### Proof
+
+* A function is irreflexive iff its complement is reflexive: $R_{irreflexive} = (R_{reflexive})^C$
+* consider any reflexive relation, R(x, y) over any set A.
+* By definition, if R is reflexive, then all members of A must relate to themselves (define these as reflexive pairs). So, the reflexive pairs are a subset of R: $\{(x, x) \in A^2 | R(x, x)\} \subseteq R$
+
+Consider the adjacency matrix for reflexive relations: 
+
+![Adjacency Matrix](images/adjacencymatrix.png)
+
+Now for the irrefleive relation, we can see that the main diagonal will have 0 rather than 1.
+
+* Consider the relation $I = R^C$. Now we will prove that I must be irreflexive. By definition, if I is irreflexive, then we know then none of the reflexive pairs will be present (since a relation R is defined as irreflexive if $\forall_x \in A . \neg x R x$.
+* We know that this is the case for I(x, y) because if an ordered pair is present in R, it will not be a member of $I = R^C$ since by definition
+
+$$I = R^C = \{ (x, y) \in A^2 \vert \neg R(x, y)\}$$
+
+* Following from this definition, for any subset $P \subseteq R \subseteq A^2$, we know those pairs __cannot__ be in the complement ie $R^C \backslash P = R^C = I$. Now consider P to be defined as the reflexive pairs, $\{(x, x) \vert x \in A\}$. Finally, since removing the reflexive pairs resulted in the same set, we know that none of them are present in I. By definition, if no reflexive pairs are present in I(x,y), then the relation is irreflexive. 
+
+
+### Reflexivity over $\mathbb{R}^2$
+
+$$\forall_x \in \mathbb{R} . x R x$$
+
+All members of the domain are related to themselves
+
+* x = y
+* $x \ge y$
+* x < y+1
+
+Look at the desmos example. If x = y is in the graph, then it is reflexive. 
+
+## Symmetry
+
+__Definition:__ A binary relation R on a set A is _symmetric_ iff:
+
+$$\forall_{x, y} \in A . x R y \rightarrow y R x$$
+
+Since x and y are both quantified over the same set A, it follows that $\forall_{x, y} \in A . (x R y \rightarrow y R x) \land (y R x \rightarrow x R y)$ then $\forall_{x, y} \in A . x R y \leftrightarrow y R x$. This is the same thing as commutativity!!
+
+#### Symmetry Example 1
+
+is < symmetric? NO!!
+
+#### Symmetry Example 2
+
+R = {(1, 1), (1, 2), (2, 1), (1, 3), (3, 1)} on the set A = {1, 2, 3}
+
+![Symmetric Matrix](images/symmetricrelation.png)
+
+
+#### Symmetry over $\mathbb{R}^2$
+
+__Definition__: a binary relation R is symmetric iff:
+
+$\forall_{x, y} \in \mathbb{R} . x R y \rightarrow y R x$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # March 3:
 
 <!-- ## Quiz Review

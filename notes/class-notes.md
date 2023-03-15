@@ -52,7 +52,7 @@ e. $\{(a, b) \vert a \in A \land b \in B \land b = a + 1\}$
 
 f. $\empty$
 
-Correct answer: c is not a subset of $A times B$ since (5, 4) is not in $A \times B$. 
+Correct answer: c is not a subset of $A \times B$ since (5, 4) is not in $A \times B$. 
 
 ## Relations
 
@@ -73,7 +73,7 @@ $x R y$ where $R \subseteq A \times A$. Note that:
 
 $$x R y = R(x, y) := ((x, y) \in R)$$
 
-### Reflexivity
+### Properties of Binary Relations: Reflexivity
 
 __Definition__: A binary relation R on a set is reflexive iff: 
 
@@ -81,7 +81,7 @@ $$\forall_x \in A . x R x$$ - "All members of the domain are related to themselv
 
 Some examples of this include $x = x$ or $x \leq x$.
 
-### Irreflexivity
+### Properties of Binary Relations: Irreflexivity
 
 __Definition:__ A binary relation R on a set A is _irreflexive_ iff:
 
@@ -90,6 +90,8 @@ $$\forall_x \in A . \neg x R x$$
 Some examples of this include $x \neq x$ or $x > x$ or $x < x$.
 
 __Definition__: A function is irreflexive iff its complement is reflexive: $R_{irreflexive} = (R_{reflexive})^C$
+
+Irreflexive relations have zeroes down the main diagonal.
 
 #### Proof
 
@@ -111,7 +113,7 @@ $$I = R^C = \{ (x, y) \in A^2 \vert \neg R(x, y)\}$$
 * Following from this definition, for any subset $P \subseteq R \subseteq A^2$, we know those pairs __cannot__ be in the complement ie $R^C \backslash P = R^C = I$. Now consider P to be defined as the reflexive pairs, $\{(x, x) \vert x \in A\}$. Finally, since removing the reflexive pairs resulted in the same set, we know that none of them are present in I. By definition, if no reflexive pairs are present in I(x,y), then the relation is irreflexive. 
 
 
-### Reflexivity over $\mathbb{R}^2$
+### Properties of Binary Relations:  Reflexivity over $\mathbb{R}^2$
 
 $$\forall_x \in \mathbb{R} . x R x$$
 
@@ -121,15 +123,22 @@ All members of the domain are related to themselves
 * $x \ge y$
 * x < y+1
 
-Look at the desmos example. If x = y is in the graph, then it is reflexive. 
+Look at the [desmos example below](https://www.desmos.com/calculator/a7kal08kp3). If x = y is in the graph (shaded), then it is reflexive. 
 
-## Symmetry
+* So, for equations like $(x-1)^2 + 3 > y$, x=y is always in it. Therefore, it is a reflexive relation. If any part of x=y is not in the graph, then it is not reflexive.
+
+
+### Properties of Binary Relations: Symmetry
 
 __Definition:__ A binary relation R on a set A is _symmetric_ iff:
 
 $$\forall_{x, y} \in A . x R y \rightarrow y R x$$
 
 Since x and y are both quantified over the same set A, it follows that $\forall_{x, y} \in A . (x R y \rightarrow y R x) \land (y R x \rightarrow x R y)$ then $\forall_{x, y} \in A . x R y \leftrightarrow y R x$. This is the same thing as commutativity!!
+
+Symmetric matrices can be transposed and the result will be the same matrix.
+
+* $A = A^T$ if and only if $A$ is symmetric.
 
 #### Symmetry Example 1
 
@@ -147,6 +156,127 @@ R = {(1, 1), (1, 2), (2, 1), (1, 3), (3, 1)} on the set A = {1, 2, 3}
 __Definition__: a binary relation R is symmetric iff:
 
 $\forall_{x, y} \in \mathbb{R} . x R y \rightarrow y R x$
+
+A symmetric relation over the reals must include its reflection over y=x and y=-x
+
+#### Examples: Symmetry
+
+Example 1: Let $R \subseteq \mathbb{R}^2$ be defined as: "less than," <
+
+* Not symmetric!!
+
+Example 2: Let R be equal to $L \subseteq P \times P$ be defined as L(x, y) means "x loves y," where P is the set of people.
+
+#### Reflexivity vs. Symmetry
+
+Reflexivity relates to ITSELF vs. Symmetry is relating to something else! However, being symmetric doesn't mean you are reflexive (necessarily). 
+
+
+### Properties of Binary Relations: Antisymmetry and Asymmetry
+
+Asymmetry: __Definition__: A binary relation R on a set A is __asymmetric__ iff $\forall_{x, y} \in A . x R y \rightarrow \neg y R x$
+
+If it is asymmetric, it is irreflexive and thus all values on the "main diagonal" are zeroes.
+
+![Asymmetric Relation](images/asymmetricrelation.png)
+
+Antisymmetry: __Definition__: A binary relation R on a set A is __antisymmetric__ iff $\forall_{x, y} \in A  (x R y \land y R x) \rightarrow x = y$
+
+![Antisymmetric Relation](images/antisymmetricrelation.png)
+
+In antisymmetric relations, reflexivity is allowed but not required. 
+
+
+__Conclusion:__ Asymmetry entails antisymmetry.
+
+
+#### Examples: Less than Sign
+
+The less than sign is asymmetric and thus entails antisymmetry.
+
+#### Examples: Loves
+
+If loves is asymmetric, love is not reciprocated and no one loves themselves. If loves is antisymmetric, love is not reciprocated but you can love yourself.
+
+### Transitivity
+
+__Definition__: A binary relation R on a set A is transitive iff: $\forall_{x, y, z} \in A . (x R y \land y R z) \rightarrow x R z$
+
+![Transitivity](images/transitivity.png)
+
+Note that the arrows are not going in a circle. x goes to y, y goes to z, and then x goes to z. It's hard to visualize in a matrix, easier with vectors. Below is the matrix. Note that the reflexive relationships don't change transitivity.
+
+![Transitivity Matrix](images/transitivitymatrix.png)
+
+#### Examples: Less than Sign. Transitive or Not?
+
+* Transitive! If 3 > 5 and 5 > 8, then 3 > 8
+
+### Equivalence Relation
+
+__Definition:__ A binary relation R on a set A is _an equivalence relation_ iff it is _reflexive, symmetric and transitive_.
+
+* Example: "The equals sign"
+
+### Partial Order
+
+__Definition:__ A binary relation R on a set A is a _partial order_ iff it is _antisymmetric and transitive_.
+
+* Example: "the less than sign < or "A is a subset of B", $A \subseteq B$
+
+### Relations Vocab
+
+* FILL IN
+
+
+### Function
+
+Functions assign an element of one set to another set. Functions are a subset of relation. Functions are special, though - every A can map to _at most_ one B. For example, if we consider $f_1 (x) : \mathbb{R} \rightarrow \mathbb{R}$, then $f_1 (x) = 1/x^2$. In this there are parts of the function that are not mapped.
+
+$$f : A \rightarrow B$$
+
+We are used to the notation $f(a) = b$ indicated that f assigns the element $b \in B$ to the element $a \in A$. 
+
+
+__Codomain__: A function need not be able to return every lement of its codomain. 
+
+__Range__: subset of the codomain
+
+__Domain__: inputs
+
+### Surjective
+
+A surjective function is a function where: $\forall_b \in B, \exists_a \in A, f(a) = b$
+
+#### Examples: $x^2$
+
+Is $x^2$ a surjective function over $\mathbb{R} \rightarrow \mathbb{R}$? NO! It is not surjective because it does not map to every element of the codomain. You can't reach the negatives!! But, $x^2$ is surjective over $\mathbb{R} \rightarrow [0, \infty]$.
+
+### Injective
+
+$\forall_{a_1} \in A, \forall_{a_2} \in A, (f(a_1) = f(a_2) \rightarrow a_1 = a_2)$
+
+This basically means that every input maps to a different output.
+
+### Bijective
+
+Both injective and surjective - one-to-one and every input has an output.
+
+## Summary of Functions 
+
+Here's a photo that summarizes all functions (and non-functions):
+
+![Functions](images/functions.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -212,7 +342,7 @@ $\forall_x \in P. (\exists_y \in P . L(y, x)) \rightarrow (\exists_z \in P . D(z
 
 $\forall_z . (\exists_y . A(y) \lor E(y)) \rightarrow A(z)$
 
-* The period is a replacemenet for the parenthesis which tells us the _scope_ of the quantifiers. Periods tell us that the scope of the quantifier is starting from it to the end of the statement or a closing parenthesis that came before the quantifier.
+* The period is a replacement for the parenthesis which tells us the _scope_ of the quantifiers. Periods tell us that the scope of the quantifier is starting from it to the end of the statement or a closing parenthesis that came before the quantifier.
 * You can rewrite this as:
     * $\forall_z[(\exists_y[A(y) \lor E(y)]) \rightarrow A(z)]$
 

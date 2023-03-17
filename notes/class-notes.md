@@ -28,7 +28,20 @@ Slides:
     Week of March 13: 
         https://docs.google.com/presentation/d/1yt7ccKng-_423gbQGQrlX_lPDlShJJHI9WJsVLqv_ug/edit?usp=sharing 
 -->
-# March 13:
+
+# March 17
+
+## Quiz Study Guide
+
+
+
+###  Finding CounterExamples
+
+* Counterexamples for Transitivity
+
+$(x, y) \vert R(x, y) = \top$ and $(y, z) \vert R(y, z) = \top$ but $(x, z) \vert R(x, z) = \bot$
+
+# March 13, 15:
 
 ## Relation
 
@@ -267,28 +280,6 @@ Both injective and surjective - one-to-one and every input has an output.
 Here's a photo that summarizes all functions (and non-functions):
 
 ![Functions](images/functions.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

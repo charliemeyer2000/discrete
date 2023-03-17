@@ -79,7 +79,7 @@ Which of the following properties does this function have? (total, injective, su
 
 ## Question 10
 
-Consider the XOR operator as a relation; that is $R = (x, y) : x \oplus y\$. Which of the following properties does this relation have (reflexive, symmetric, transitive)?
+Consider the XOR operator as a relation; that is $R = (x, y) : x \oplus y$. Which of the following properties does this relation have (reflexive, symmetric, transitive)?
 
 * Symmetric
 

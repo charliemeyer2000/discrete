@@ -21,6 +21,103 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 -->
 
+I realized that MCS and $\forall_x$ are just not helpful. I will be reading through them but I won't be taking notes on them unless I find something legitimately interesting or helpful. Most helpful things are Elizabeth's writeups or other things.
+
+# MCS 1.8 and MCS 2 and irrationals and open sets and worksheet and sample solutions
+
+## MCS 1.8
+
+A __proof by contradiction__ or __indirect proof__ shows that if a proposition were false, then some false fact would be true. A general method below is as follows:
+
+In order to prove a proposition _P_ by contradiction:
+
+1. Write, "we use proof by contradiction"
+1. Write "Supose _P_ is false"
+1. deduce something known to be falce (a logical contradiction)
+1. Write "This is a contradiction. Therefore, _P_ must be true."
+
+## MCS 2 - Well Ordering Principle
+
+### 2.1 and 2.2 - Well Ordering Principle and Well Ordering Template
+
+Here is a standard way to organize a proof such that it is easy to see that it is correct to prove that "P(n) is true for all $n \in \mathbb{N}$" using the Well Ordering Principle
+
+* Define the set _C_ of _counterexamples_ to _P_ being true. Sepcficially, define
+
+$$C ::= \{n \in \mathbb{N} \vert \text{not}(P(n)) \text{ is true } \}$$
+
+* Assume for proof by contradiction that _C_ is empty
+* By the Well Ordering Principle, there will be a smallest element, _n_ in _C_. 
+* Reach a contradiciton somehow - often by showing that _P(n)_ is true or by showing that there is another member of set _C_ that is smaller than _n_.
+* Conclude that _C_ must be empty, that is, no counterexamples exist.
+
+### Example - Prime Factorization Theorem
+
+Theorem 2.3.1 - Every positive integer greater than one can be factored as a product of primes.
+
+__Proof__: The proof is by well ordering.
+
+Let _C_ be the set of all integers greater than 1 that cannot be factored as a product of primes. We assume _C_ is not empty and derive a contradiction. If _C_ is not empty, there is at least one element $n \in C$ by well ordeirng. The _n_ can't be prime, because a prime by itself is considered a product of primes and no such products are in _C_. So _n_ must be a product of two integers _a_ and _b_ where $1 < a, b < n$. Since _a_ and _b_ are smaller than the smallest element in _C_, we know that $a, b \not\in C$. In other words, _a_ can be written as a product of primes $p_1 p_2 ... p_k$ and _b_ as a product of primes $q_1 ... q_l$ Therefore $n = p_1 ... p_k q_1 ... q_l$ can be written as a product of primes, contradicting the claim that $n \in C$. Our assumption that _C_ is not empty must therefore be false.
+
+## Proofs of Irrationality (Irrationals)
+
+### Non-integral numbers
+
+_Theorem 1_: $\ frac{2}{3} \not\in \mathbb{Z}$. 
+
+_Proof_: Assume that $\frac{2}{3} \in \mathbb{Z}$. That means $\exists_x \in \mathbb{Z} . x = \frac{2}{3}$; i.e. $3x=2$. By the fundamental theorem of arithmetic, each number has a unique prime factorization, which means that both $3x$ and 2 must have the same prime factors. But 3 is a factor of 3x and not a factor of 2, which is a contradiction. Because assume that $\frac{2}{3} \in \mathbb{Z}$ led to a contradiction, it must be the case that $\frac{2}{3} \not\in \mathbb{Z}$.
+
+### Irrational Roots
+
+_Theorem 2_: $\sqrt{2} \not\in \mathbb{Q}$.
+
+_Proof_: Assume that $\sqrt{2} \in \mathbb{Q}$. That means $\exists_{x, y} \in \mathbb{Z} . \frac{x}{y} = \sqrt{2}$ where x and y are relatively prime. Rearranging, we have $x^2 = 2y^2$. By the fundamental theorem of arithmetic, each number has a unique prime factorization, which means that $x^2$ and $2y^2$ must have the same prime factor. Because _x_ and _y_ are relatively prime, at most one of _x_ and _y_ can have 2 in its prime factorization, we thus processed by cases
+
+1. Case 1: 2 is a factor of _x_
+    * Then $x^2$ has 2 as a factor with multiplicity $\ge 2$. Because 2 is not a factor of _y_, $2y^2$ has 2 as a factor with multiplicity 1. But $1 < 2$, which is a contradiction.
+1. Case 2: 2 is not a factor of _x_
+    * Then $x^2$ also does not have 2 as a factor, but $2y^2$ does, which is a contradiction.
+
+Because both cases led to a contradiction, assuming $\sqrt{2} \in \mathbb{Q}$ leads to a contradiction in general, which means it must be the case that $\sqrt{2} \not\in \mathbb{Q}$.
+
+### Irrational Logs
+
+_Theorem 3_: $\log_2 3 \not\in \mathbb{Q}$.
+
+_Proof_: Assume that $\log_2 3 \in \mathbb{Q}$. That means $\exists_{x, y} \in \mathbb{Z} . \frac{x}{y} = \log_2 3$ where x and y are relatively prime. Rearranging, we have $x = \log_2 3 y = \log_2(3^y)$, or $2^x = 3^y$. By the fundamental theorem of arithmetic, each number has a unique prime factorization, which means that both $2^x$ and $3^y$ must have the same prime factors. But all of the $2^x$'s prime factors are 2s and none of $3^y$'s are, which is a contradiction. Because assuming $\log_2 3 \in \mathbb{Q}$ leads to a contradiction, it must be the case that $\log_2 3 \not\in \mathbb{Q}. \blacksquare$
+
+## Open Sets 
+
+### Lack of Largest and Smallest Values
+
+_Theorem 1_: there is no smallest rational number larger than 0. That is, 
+
+$$\forall_{n_1} \in \mathbb{Q}^+ . \exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1$$
+
+_Proof_: We proceed by contradiction. Asume
+
+$$\neg(\forall_{n_1} \in \mathbb{Q}^+ . \exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1)$$
+
+Applying equivalence rules, that is the same as assuming
+
+$$\exists_{n_1} \in \mathbb{Q}^+ . \not\exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1$$
+
+Let _n_ be one such $n_1$. consider $m = \frac{n}{2}$. Because $n \in \mathbb{Q}^+$, _n_ is positive; because 2 > 1, we have 0 < m < n. Because $n \in \mathbb{Q}^+$, _n_ is rational, and the division of two rational numbers is rational, so _m_ must be rational, and because 0 < _m_ we have $m \in \mathbb{Q}^+$. But that contradicts our assumption that $\not\exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1$. Because our assumption led to a contradiction, our assumption must be false; that is
+
+$$\forall_{n_1} \in \mathbb{Q}^+ . \exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1$$
+
+must be true. $\blacksquare$
+
+There are more corrolaries to this theorem but I'm not taking notes on them. read the in your own time.
+
+### Open Sets
+
+_Definition 1_: A non-empty set is said to be __open__ if its members are ordered but it has no largest or smallest element.
+
+_Theorem 3_: For any $q_1, q_2 \in \mathbb{Q} . q_1 < q_2$, the set defined as $\{q \vert q \in \mathbb{Q} \land q_1 < q < q_2\}$ is an open set.
+
+_Proof_: Let $A(q_1, q_2) = \{q \vert q \in \mathbb{Q} \land q_1 < q < q_2\}$. The smallest element of $A(q_1, q_2)$ would be then the smallest rational number larger than $q_1$ which, per corollary 1, does not exist. So $A(q_1, q_2)$ has no smallest element. By a similar logic and corollary 2, $A(q_1, q_2)$ has no largest element. $\blacksquare$.
+
 # 4.3 Functions; 4.4 Relations
 
 ## 4.3.1 - Domains and Images

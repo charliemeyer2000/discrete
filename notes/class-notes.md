@@ -27,19 +27,236 @@ Slides:
 
     Week of March 13: 
         https://docs.google.com/presentation/d/1yt7ccKng-_423gbQGQrlX_lPDlShJJHI9WJsVLqv_ug/edit?usp=sharing 
+    Week of March 20: 
+        https://docs.google.com/presentation/d/1g71pNuiQxqHm4yEVavdJGrKfS1FJk2li6_K5KJx2lmM/edit?usp=sharing 
 -->
+# March 22
 
-# March 17
+## Fundamental Theorem of Arithmetic
 
-## Quiz Study Guide
+For all natural numbers, there exists a factorization of n suh that all factors are prime and the factorization is unique.
+
+## Greatest Common Divisor
+
+A __common divisor__ of a and b is a number that divides them both. The __greatest common divisor__ of a and b is the biggest number that divides them both.
+
+### GCD Examples
+
+* GCD(12,30)
+    * 6
+* GCD(60, 8)
+    * 4
+
+
+Note that the GCD is the "intersection" of the prime factorizations of the two numbers. So, you can find CGD as follows:
+
+* GCD(90, 84)
+    * prime factors of 84 = $2^2 * 3 * 7$
+    * prime factors of 90 = $2 * 3^2 * 5$
+    * GCD(90, 84) = intersection of two prime factors = $2 * 3 = 6$
+
+
+## Relatively Prime - aka Coprime
+
+Two positive integers greater than 1 are __relatively prime__ if and only if gcd(x ,y) = 1. Two numbers that don't have _any_ factors in common besides 1. 
+
+* Prime numbers are co-prime with all other numbers
+* Given the predicate "isCoprime", $C(x, y) \in \mathbb{Z^+}^2$ and the predicate "isPrime" P(x) with domain $\mathbb{N}$: $\forall_x \in \mathbb{Z}^+ . (\forall_y \in \mathbb{Z}+ .  y < x \rightarrow C(x, y) ) \rightarrow P(x)$
+    * In english: "If your number is coprime with all other numbers less than it, then it is prime."
+* 1 is coprime with every other number
+
+## Proof by Contradiction - Natural Numbers (Informally)
+
+__Theorem__: $\frac{1}{2}$ is not an element of the natural numbers. 
+
+Proof, in ideas but not in a formal way:
+
+1. Assume that $\frac{1}{2} \in \mathbb{N}$, means $\exists_x \in \mathbb{N} . \frac{1}{2} = x$
+1. 1=2x
+1. if two numbers are equal, they must have the same prime factorization. 
+1. Prime factorization of $1 = \emptyset$
+1. Prime factorization of $2x = \{2 , x \}$. 
+1. One size has zero factors, one has at least 1?? contradiction. 
+
+## Proof by Contradiction - Natural Numbers (Formally)
+
+__Theorem__: $\frac{1}{2}$ is not an element of the natural numbers. 
+
+1. We proceed by contradiction
+1. Assume $\frac{1}{2} \in \mathbb{N}$
+1. Then, $\exists_x \in \mathbb{N} . x = \frac{1}{2}$, meaning there exists a natural number, x, such that $\frac{1}{2} = x$
+1. By algebra, that means $2x = 1$. 
+1. By the fundamental theorem of arithmetic, both sides of the equation are equal, so 1 and 2x must have the same unique prime factorization.
+1. But the factors of 2x include 2, and the factors of 1 do not. Therein lies the contradiction
+1. Therefore, since the assumption led to a contradiction, $\frac{1}{2} \notin \mathbb{N}$
+
+## Proof by Contradiction - Rational Numbers
+
+Represented by $\mathbb{Q}$, which stands for quotient. That's because all rational numbers can be repreented by a quotient of two integers! AKA an improper fraction.
+
+$$x \in \mathbb{Q} \text{ iff } x = \frac{a}{b} \text{ where } a \in \mathbb{Z} \text { and } b \in \mathbb{Z}^+$$
+
+1. We proceed by contradiction
+1. Suppose that $\sqrt{5} \in \mathbb{Q}$
+1. Then, $\exists_a \in \mathbb{Z} . \exists_b \in \mathbb{Z}^+ . \sqrt{5} = \frac{a}{b}$
+1. Then by algebra, $5 = \frac{a^2}{b^2}$
+1. Then by algebra, $5b^2 = a^2$
+1. So, the factors of $5b^2$ must be the same as the factors of $a^2$ by the fundamental theorem of arithmetic.
+1. The factors of $a^2$ do not include 5, but the factors of $5b^2$ do. Therein lies the contradiction. OR since these two numbers are equal, they have to have the same unique prime factorization. However, $5b^2$ must have an __odd multiplicity__ of factor 5, while $a^2$ has an __even multiplicity of all its factors__, since squaring an integer simply doubles the multiplicity of that integer's original factors.
+1. Because the two numbers are supposed to be equal but do not have the same prime factors, there is a contradiction.
+1. This contradiction means that $\sqrt{5} \notin \mathbb{Q}$
+
+
+# March 20 - Proof (by contradiction)
+
+__Contradiction__ - something that derives to false, $\bot$. __Tautology__ - something that comes out to true, $\top$.
+
+[Proofs Writeup](https://www.cs.virginia.edu/~emo7bf/cs2120/s2023/proofs.html)
+
+## Proof by Contradiction
+
+__Provide a counter-example__ showing that $f(x)=5x$ is _not surjective_ given domain and co-domain of $\mathbb{Z}$.
+
+* $f(x) = 5x$ is not surjective because there is no $x$ in the domain for which $f(x) = 2$ (or any non-multiple of 5)
+* $\not\exists_x \in \mathbb{Z} . (f(x) = 2)$.
+
+__Prove that__ $f(x) = 5x$ is _not surjective_ given domain and co-domain of $\mathbb{Z}$.
+
+1. We proceed by contradiction
+1. Suppose f(x) _is_ a surjective function
+1. By definition, a function is surjecitve if its co-domain is the same set as its range
+1. However, this is not the case for f(x) because there are members of its co-domain that are not part of the function's range; for example, -6 is in the co-domain but not the range.
+1. Therein lies the contradiction, therefore f(x) is not a surjective function $\blacksquare$
+
+## Rational Numbers Proof
+
+Represented by $\mathbb{Q}$ which stands for quotient. That's because all rational numbers can be represented by a quotient of two integers
+
+$$x \in \mathbb{Q} \text{ iff } x = \frac{a}{b} \text{ where } a, b \in \mathbb{Z} \text{ and } b \in \mathbb{Z}^+$$
+
+__Theorem__: there is no smallest rational number larger than 0.
+
+$$\forall_{n_1} \in \mathbb{Q}^+ . \exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1$$
+
+1. We proceed by contradiction
+1. $\neg(\forall_{n_1} \in \mathbb{Q}^+ . \exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1)$
+1. Applying DeMorgan's Law - $\exists_{n_1} \in \mathbb{Q}^+ . \not\exists_{n_2} \in \mathbb{Q}^+ . n_2 < n_1$ - "There exists an element in the domain such that there does not exist another element that is less than the first one." ~ "there exists a smallest positive rational."
+1. Suppose there does exist a smallest rational number. Let's call it _a_, $a=n_1$. 
+1. Because all the numbers are positive rationals, by assigning $n_2$ to be $a/2$ it will be half as small as $a=n_1$, we can assert that $n_2 < n_1$. But this contradicts our assumption, since we stated a smaller positive rational _did not exist_.
+1. Our assumption led to a contradiction, since we can always divide a positive rational number by another rational to get an even smaller one, as shown above. Because our assumption led to a contradiction, our assumption must be false, and we have proven the theorem.
+
+## Number Theory
+
+The study of integers. 
+
+### Intro to Integers - what is a factor?
+
+_a_ is a factor of _b_ iff b can be evenly divided by _a_. THat is, for some non-zero integer _k_, $b = ak$.
+
+### What's Prime?
+
+A prime number is greater than 1 that is divisible only by itself and 1.
+
+### Fundamental Theorem of Arithmetic
+
+"For all positive natural numbers, there exists a factorization of n such that all factors are prime and the factorization is unique."
+
+Note, _multiplicity_ is the number of times a prime factor appears in the factorization.
+
+
+# March 17 - Relations Quiz
+
+
+## Question 1
+
+Consider R(x, y) defined over $\mathbb{Z} \times \mathbb{Z}$ as $x^2 = y^2$. Which of the following properties does this have (reflexive, transitive, symmetric)? 
+
+* Reflexive: yes since $x^2 = x^2$
+* Transitive: yes since $x^2 = y^2$ and $y^2 = z^2$ implies $x^2 = z^2$
+* Symmetric: Commutativity over the equals sign, so yes
+
+## Question 2 
+
+Consider R(x, y) defined over $\mathbb{Q} \times \mathbb{Q}$ as $xy > 2$. Which of the following properties does this have (reflexive, transitive, symmetric)?
+
+* Reflexive: no
+* Transitive: no
+* Symmetric: yes
+
+## Question 3
+
+Consider $f(x, y) = x^2 - x$ defined with domain and co-domain $\mathbb{N}$. Which of the following properties does this have (total, injective, surjective)?
+
+* Total: yes
+* Injective: no
+* Surjective: no
+
+## Question 3
+
+Consider $f(x) = x^3$ defined with domain and co-domain $\mathbb{R}$. Which of the following properties does this have (total, injective, surjective)?
+
+* Total: yes
+* Injective: yes
+* Surjective: yes
+
+## Questions 4 - 6
+
+Consider the function with domain and co-domain $\mathbb{Z}$ defined by the formula $f(x) = \lfloor 1 / x \rfloor$.
+
+### Question 4
+
+Provide a counter-example showing that this function is __not total__. 
+
+* $f(0) = \lfloor 1 / 0 \rfloor = \lfloor \infty \rfloor = \infty$ is not in $\mathbb{Z}$
+
+### Question 5 
+
+Provide a counter-example showing this function is __not injective__. 
+
+* f(2) and f(3) are both 0, so this function is not injective.
+
+### Question 6
+
+Provide a counter example showing this function is __not surjective__.
+
+* There is no x in the domain for which $f(x) = 2$
+
+## Questions 7 - 11
+
+Consider the relation $R(x, y) : x^2 > y$ where _x_ and _y_ are both from $\mathbb{Z}$. 
+
+### Question 7 
+
+Provide a counter-example showing this relation is __not reflexive__.
+
+* $R(1, 1)$
+
+### Question 8
+
+Provide a counter-example showing this relation is __not irreflexive__
+
+* $R(-1, -1)$
+
+### Question 9
+
+Provide a counter-example showing this relation is __not transitive__.
+
+
+Question 10
+
+provide a counter example showing that the following relation R over memebrs of the set S = {0, 1, 2} is _not antisymmetric_. R(x, y) : (x > y) or (2x = y)
+
+* (1, 2)
+
+provide a counter example showing that the relation R defined above is NOT transitive
+
+* (0,0) and (0,2) 
 
 
 
-###  Finding CounterExamples
 
-* Counterexamples for Transitivity
 
-$(x, y) \vert R(x, y) = \top$ and $(y, z) \vert R(y, z) = \top$ but $(x, z) \vert R(x, z) = \bot$
+
 
 # March 13, 15:
 

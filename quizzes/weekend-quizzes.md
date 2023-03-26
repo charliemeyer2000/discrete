@@ -11,7 +11,205 @@ header-includes:
 pandoc -s -o weekend-quizzes.pdf weekend-quizzes.md -->
 # Weekend Quizzes
 
-This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong. Or hopefully i get a 100% every time. 
+This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong (Most likely not). Or hopefully i get a 100% every time. 
+
+## Mod2Multi2
+
+### Question 1: The "Everything but equals" relation
+
+Answer the questions below concerning the relation in which all pairs of integers are related, except for the pairs of equal integers, $R(x, y) : (x < y) \lor (x > y)$
+
+#### Question 1.1 
+
+Select the properties below that apply to the relation defined over the integers defined as follows: $R(x, y) : (x < y) \lor (x > y)$ (reflexive, irreflexive, none of the other options)
+
+* Irrreflexive 
+
+#### Question 1.2
+
+Select all the properties below that apply to the relation defined over integers as $R(x, y) : (x < y) \lor (x > y)$ (Symmetric, antisymmetric, asymmetric, none of the other options)
+
+* Symmetric
+
+### Question 1.3
+
+Is the relation defined over the integers as $R(x, y) : (x < y) \lor (x > y)$ transitive?
+
+* no
+
+### Question 2 - Disjoint Relation 
+
+Answer the questions below concerning the relation in which two subsets of integers are related if they are disjoint, meaning $D(A, B) : \vert A \cap B \vert = 0$. This means two sets A and B are related by D if they have an empty intersection, $A \cap B = \emptyset$.
+
+#### Question 2.1 
+
+Select all the properties that apply to the relation defined over subsets of integers as $D(A, B): \vert A \cap B \vert = 0$ (reflexive, irreflexive, none of the other options)
+
+* Irreflexive
+
+* CORRECT ANSWER: NEITHER
+
+#### Question 2.2
+
+Select all the properties below that apply to the relation defined over subsets of integers as $D(A, B) : \vert A \cap B \vert = 0$ (Symmetric, antisymmetric, asymmetric, none of the other options)
+
+* Symmetric
+
+#### Question 2.3
+
+Consider the "is disjoint" relation defined as $D(A, B) : \vert A \cap B \vert = 0$. Is this relation transitive?
+
+* no
+
+#### Question 2.4 
+
+Consider the "is disjoint" relation defined as $D(A, B) : \vert A \cap B \vert = 0$. If set Q and set R are related by D, pick one of the six.
+
+1. $\forall_x \in \mathbb{Z} . (x \in Q) \oplus (x \in R)$
+1. $\forall_x \in \mathbb{Z} . (x \in Q) \lor \neg (x \in R)$
+1. $\forall_x \in \mathbb{Z} . (x \in Q) \rightarrow \neg (x \in R)$
+1. $\forall S \in P(\mathbb{Z}) . (S \subseteq Q) \rightarrow \neg (S \subseteq R)$
+1. $\forall S \in P(\mathbb{Z}) . (S \subseteq Q) \lor \neg (S \subseteq R)$.
+1. None of the other answer choices. 
+
+* $\forall_x \in \mathbb{Z} (x \in Q) \rightarrow  
+\neg(x \in R)$
+
+#### Question 2.5
+
+Consider the "is disjoint" relation defined as $D(A, B) : \vert A \cap B \vert = 0$. If set Q and set R are related by D, which of the following is entailed? 
+
+1. $\vert Q \backslash R \vert = \vert Q \vert - \vert R \vert$
+1. $\vert Q \times R \vert = \vert Q \vert^2$
+1. $\vert Q \cup R \vert = \vert Q \vert * \vert R \vert$
+1. $\vert Q \cup R \vert = \vert Q \vert + \vert R \vert$
+1. $(\vert Q \cup R) \cap Q \vert = \vert Q \vert * \vert R \vert$
+1. $\vert (Q \cup R) \cap Q \vert = \vert Q \vert + \vert R \vert$
+1. None of the other answer choices.
+
+* $\vert Q \cup R \vert = \vert Q \vert + \vert R \vert$
+
+
+### Question 3 - "Equal Cardinalities" Relation
+
+Answer the questions below concerning the relation in which ets of integers are related if and only if they have equal cardinalities, $E(A, B) : \vert A \vert = \vert B \vert$.
+
+#### Question 3.1
+
+Consider the relation defined over sets of integers as $E(A, B) : \vert A \vert = \vert B \vert$. Is this relation transitive? 
+
+* yes
+
+#### Question 3.2
+
+Select all the properties below that apply to the relation defined over sets of integers as $E(A, B) : \vert A \vert = \vert B \vert$. (Symmetric, asymmetric, antisymmetric, none of the other options)?
+
+* Symmetric
+
+
+#### Question 3.3
+
+Select all the properties below that apply to the relation defined over the sets of integers as $E(A, B) : \vert A \vert = \vert B \vert$. (Reflexive, irreflexive, none of the other options)?
+
+* Reflexive
+
+#### Question 3.4
+
+Consider the "equal cardinalities" relation defined as $E(A, B) : \vert A \vert = \vert B \vert$. If set Q and set R are related by E, which of the following is entailed?
+
+1. $\vert Q \cap R \vert = \vert Q \vert + \vert R \vert$
+1. $\vert Q \cap R \vert > 0$
+1. $\vert Q \cup R \vert = \vert Q \vert * \vert R \vert - \vert R \vert$
+1. $\vert Q \cup R \vert = \vert Q \vert + \vert R \vert + \vert Q \cap R \vert$
+1. $\vert Q \times R \vert = \vert Q \vert ^2$
+1. $Q \times R = R \times Q$
+
+* $\vert Q \times R \vert = \vert Q \vert ^2$
+
+### Question 4
+
+Define the function _f_ to be the floor function, with a domain of$\mathbb{R}$ (real numbers) and a codomain of $\mathbb{Z}$ (the integers), which 'rounds down' a real number -- that is $f(r) = x$ such that _x_ is an integer, and $0 \leq (r-x) < 1$. For example, $f(-1.3) = -2, f(0.2) = 0, \text{ and } f(4) = 4$.
+
+#### Question 4.1
+
+Which properties apply to function _f_? (total, not total)
+
+* total
+
+#### Question 4.2
+
+Which of the following is a valid reasoning why _f_ is not surjective? (I.e. the answer you select must be true and demonstrate why _f_ is not surjective)
+
+* _f_ is surjective  
+
+#### Question 4.3 
+
+Which of the following is a valid reasoning why _f_ is not injective? 
+
+* $\exists_{x, y} \in \mathbb{R} . \exists_z \in \mathbb{Z} . (f(x) = z) \land (f(y) = ) \land \neg (x = y)$
+
+
+
+### Question 5
+
+Consider a function _p_ that maps members of its domain A = {1, 2, 3, 4} to members of its co-domain B = {1,2, 3, 5}. 
+
+$$p(x) = {x \text{ if x < 3 }, 2 \text{ if x = 3 }}$$
+
+#### Question 5.1
+
+Which of the following is a valid reasoning why _p_ is not total?
+
+* $\not\exists_y \in B . y = p(4)$
+
+#### Question 5.2
+
+Which of the following is a valid reasoning why _p_ is not surjective?
+
+* None of the answer choices.
+
+#### Question 5.3
+
+Which of the following is valid reasoning why _p_ is not injective? 
+
+* $(p(3) = 2) \land (p(2) = 2)$
+
+### Question 6
+
+Consider a function _c_ that maps subsets of the natural numbers to the naturals, and counts how many odd numbers there are in a set. For example, $c(\{1, 2, 3\}) = 2, c(\{1\}) = 1$, and $c(\emptyset) = 0$ Consider _c_ to have a domain of $P(\mathbb{N})$ and a codomain of $\mathbb{N}$.
+
+#### Question 6.1
+
+Is _c_ bijective?
+
+* not bijective because it is not injective, but it is total.
+
+#### Question 6.2
+
+Which of the following is a valid reason why _c_ is surjective? 
+
+* $\forall_y \in \mathbb{N} . \exists_x \in P(\mathbb{N}) . c(x) = y$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Mod2Multi1
 
@@ -42,8 +240,6 @@ Question 1.3: Which of the following is equivalent to "Somebody who didn't win a
 Question 1.4: Which of the following are _equivalent_ to the statement "Nobody defeated everyone?"
 
 * $\not\exists_x \forall_y D(x, y)$
-
-* Brian answer: $\forall_x \forall_y . \neg D(x, y)$
 
 Question 2: Suppose that the following are true:
 
@@ -113,8 +309,6 @@ Given these subsequent statements, answer the questions below with either true, 
 Question 3.1: If we know Q(3) is true, then we know P(3) is...
 
 * true
-
-* Brian's Answer: Could be either true or false
 
 Question 3.2: If we know Q(3) is true then we know R(3) is...
 

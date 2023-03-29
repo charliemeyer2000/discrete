@@ -29,7 +29,110 @@ Slides:
         https://docs.google.com/presentation/d/1yt7ccKng-_423gbQGQrlX_lPDlShJJHI9WJsVLqv_ug/edit?usp=sharing 
     Week of March 20: 
         https://docs.google.com/presentation/d/1g71pNuiQxqHm4yEVavdJGrKfS1FJk2li6_K5KJx2lmM/edit?usp=sharing 
+    Week of March 27:
+        https://docs.google.com/presentation/d/1Efsgcxk706GeE3eKjpMngx68e8RGSWQKnodEJxortKg/edit#slide=id.g227cc5dd9b2_5_0 
 -->
+# March 29
+
+## Proof by Cases
+
+Proving "flow" of a proof. If you prove for all cases, then you have proven the statement. 
+
+### Disjunctive Tautology
+
+_Disjunctive_ - things that are or'ed together. _Tautology_ - something that evaluates to true.  Therefore, a __disjunctive tautology__ is a string of things that are or'ed together that evaluates to true.
+
+## Find Disjunctive Tautologies!!
+
+Disk lands in a bucket with: 
+
+![Plinko](images/plinko.png)
+
+* An integer
+* A letter
+* A natural number
+* ~~Red~~
+* Red $\lor$ Blue
+* ~~A $\lor$ B~~
+* $A \lor B \lor \text{ Red }$
+* Left $\lor$ Blye $\lor$ C $\lor$ even number
+
+## Proof by Cases - General Outline
+
+Theorem: $\forall_x \in \mathbb{N} . \{x, x+1\}$ contains an odd natural number. Call this theorem _P_. Recall that 0 is an even number.
+
+Proof:
+
+1. Consider an unknown natural number _y_.
+1. Either y is odd or y is even (Disjunctive tautology)
+1. Cases:
+    1. Case 1: y is odd. Thus, y, an odd number, is in the set $\{y, y+1\}$. Therefore, $\{y, y+1\}$ contains an odd number.
+    1. Case 2: y is even. Thus, y+1, an odd number, is in the set $\{y, y+1\}$. Therefore, $\{y, y+1\}$ contains an odd number.
+1. As both cases resulted in the theorem being true, it must be the case that $\forall_x \in \mathbb{N} . \{x, x+1\}$ contains an odd number $\square$
+
+### Truth Tables are technically proof-by cases!!
+
+Proof by cases to prove DeMorgan's law. Prove: $\neg (P \lor Q) \equiv \neg P \land \neg Q$
+
+Disjunctive Tautology: either - 
+
+* Case 1: P is true, Q is false
+* Case 2: P is true, Q is true
+* Case 3: P is false, Q is false
+* Case 4: P is false, Q is true
+
+This disjunctive tautology covers all of the domain. So it is a disjunctive tautology, domain is $\{\top, \bot\}^2$. We won't actually do the math, but we can show that they're equivalent for all cases. 
+
+### Example
+
+Prove: $\forall_n \in \mathbb{N} . 3 \vert n^4 - 4n^2$. Aka, 3 __evenly divides__ $n^4 - 4n^2$ for all natural number _n_.
+
+Preliminary algebra: $n^4 - 4n^2 = n^2(n^2-4) = n * n (n+2)(n-2)$
+
+_Proof_:
+1. We'll consider the following cases: 3 divides _n_, _n_ is 1 more than a multiple of three, and _n_ is 3 more than a multiple of three.
+
+1. Case 1: _n_ is a multiple of 3
+    * We know that 3 divides $n^4 - 4n^2$ because 3 divides n and $n^4 - 4n^2$ is a multiple of _n_ since it is _n_ times $n(n+2)(n-2)$
+1. Case 2: _n_ is one more than a multiple of 3
+    * In this case n+2 is a multiple of 3, so $n * n(n+2)(n-2)$ must be as well
+1. Case 3: _n_ is 2 more than a multiple of 3
+    * In this case n-2 is a multiple of 3, so $n * n(n+2)(n-2)$ must be as well
+
+1. Since all cases we have that $n^4 - 4n^2$ is a multiple of 3, we can conclude that $\forall_n \in \mathbb{N} . 3$ divides $n^4 - 4n^2$ $\square$
+
+## Pop Quiz!!
+
+Which are valid cases to prove that P(x) is true across the integers? i.e., 
+
+$$\forall_x \in \mathbb{Z} . P(x)$$
+
+1. $\forall_x \in \mathbb{Z}^+ . P(x) \land \forall_x \in \mathbb{Z}^- . P(x) \land P(0)$. This works! This is a disjunctive tautology.
+
+
+### Examples
+
+Prove by contradiciton that for any set S and member x:
+
+$$(\vert S \{x\} \vert = \vert S \vert ) \rightarrow (x \in S)$$
+
+_Proof_: 
+
+1. We proceed by contradiction
+1. Assume $\vert S \{x\} \vert = \vert S \vert$ and $x \not\in S$
+1. By definition of union, We know that $\vert S \cup \{x\} \vert = \vert S \vert + \vert \{x\} \vert - \vert S \cap \{x\} \vert$
+1. We know that $S \cap \{x\} = \emptyset$ because $x \not\in S$
+1. Therefore, we know that $\vert S \cap \{x\} \vert = 0$
+1. We also know that $\vert S \cup \{x\} \vert = \vert S \vert + 1.$
+1. Therein lies the contradiction. 
+
+
+
+
+# March 27
+
+Worksheet 
+
 # March 22
 
 ## Fundamental Theorem of Arithmetic

@@ -13,6 +13,174 @@ pandoc -s -o weekend-quizzes.pdf weekend-quizzes.md -->
 
 This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong (Most likely not). Or hopefully i get a 100% every time. 
 
+## Mod3Multi1
+
+### Question 1
+
+Which of the following constitutes a contradiction? Assume A(x) is a predicate defined for all integers, and that _S_ is a non-empty finite subset of the integers.
+
+* $(\forall_x \in \mathbb{Z} . A(x)) \land (\exists_x \in \mathbb{N} . \neg A(x))$
+* $(\forall_x \in \mathbb{N} . A(x) ) \land (\exists_x \in \mathbb{Z} . \neg A(x))$
+* $(\forall_x \in S . A(x)) \land (\exists_x \in \mathbb{Z} . \neg A(x))$
+* $(\forall_x \in \mathbb{N} . A(x)) \land (\exists_x \in S . \neg A(x))$
+* none of these
+
+* 1
+
+
+
+
+
+### Question 2
+
+Answer the questions below concernign the relation in which two positive integers greater than 1 are related if they are coprime, meaning C(x, y) : gcd(x, y) = 1.
+
+#### Question 2.1 - Reflexivity
+
+Select which property below applies to the "coprime" relation defined over positive integers greater than 1 as $C(x, y) : gcd(x, y) = 1$ (reflexive, irreflexive, none of the other options)
+
+* Irreflexive
+
+#### Question 2.2 - Symmetry
+
+Select which property below applies to the "coprime" relation defined over positive integers greater than 1 as $C(x, y) : gcd(x, y) = 1$ (Symmetric, antisymmetric, asymmetric, none of the other options)
+
+* Symmetric
+
+
+##### Question 2.3 - Transitivity
+
+Is the "coprime" relation, defined over the positive integers greater than 1 as $C(x, y) : gcd(x, y) = 1$, transitive?
+
+* no
+
+
+### Question 3 - "Evenly Divides" Relation
+
+Answer the questions below concerning the relation in which two positive integers are related if the first one evenly divides the second one, meaning $V(x, y) : \frac{y}{x} \in \mathbb{Z}$.
+
+#### Question 3.1 - Reflexivity
+
+Select which property below applies to the relation defined over positive integers as $V(x, y) : \frac{y}{x} \in \mathbb{Z}$ (reflexive, irreflexive, none of the other options, both)
+
+* Reflexive
+
+#### Question 3.2 - Symmetry
+
+Select which property below applies to the relation defined over the positive integers as $V(x, y) : \frac{y}{x} \in \mathbb{Z}$ (Symmetric, antisymmetric, asymmetric, none of the other option, more than one option)
+
+* Antisymmetric
+
+
+### Question 4
+
+For each subquestion below, indicate whether or not it constitutes a contradiction. In each sub-problem:
+
+* S and R are non-empty subsets of $\mathbb{Z}$.
+* A(x), B(x) and C(x) are predicates over the domain $\mathbb{Z}$ that are sometimes true and sometimes false
+* _n_ and _m_ are members of $\mathbb{Z}^+$. 
+
+#### Question 4.1
+
+Is $(S \cap R = \emptyset) \land (\forall_a \in \mathbb{Z} . a \in S) \land (\exists_a \in \mathbb{Z} . a \in R)$ a contradiction?
+
+* no 
+
+#### Question 4.2
+
+Is $(S \cap R = \emptyset) \land (\exists_a \in \mathbb{Z} . a \not\in S \land a \not\in R)$ a contradiction?
+
+* no
+
+#### Question 4.3
+
+Is $(\forall_x \in S . \exists_y \in R . gcd(x, y) = 1) \land (\not \exists_x \in R . \text{ x is prime })$ a contradiction?
+
+* no
+
+#### Question 4.4
+
+Is $(\forall_x \in \S . A(x)) \land (\forall_x \not\in S . A(x))$ a contradiction?
+
+* yes
+
+#### Question 4.5 
+
+Is $(\forall_x \in S . A(x) \rightarrow B(x)) \land (\forall_x \in S . B(x) \rightarrow C(x)) \land (\exists_x \in S . A(x) \land \neg C(x))$ a contradiction?
+
+* yes
+
+
+#### Question 4.6  
+
+Is $\neg(\text{ n divides m}) \land \neg(\text{ m divides n}) \land (gcd(n, m) > 1)$ a contradiction?
+
+* no
+
+### Question 5 
+
+Which of the following statements is entailed by the Fundamental Theorem of Arithmetic? 
+
+1. $\forall_x \in \mathbb{Z}^+ . \forall_y \in \mathbb{Z}^+ .(gcd(x, y) = 1) \rightarrow (x \neq y)$
+1. $\forall_x \in \mathbb{Z}^+ . \forall_y \in \mathbb{Z}^+ .(x \neq y) \rightarrow (\exists_z \in \mathbb{Z}^+ . (z \text{ divides } x ) \oplus (z \text{ divides } y))$
+1. Every member of $\mathbb{Z}^+$ has at least one prime factor.
+
+* 3
+
+### Question 6
+
+Which of the following expressions represent cases that produce a correct proof of $\forall_x \in \mathbb{Z} . P(x)$? 
+
+#### Question 6.1 
+
+Does this expression $(\forall_x \in \mathbb{N} . P(x)) \land (\forall_x \in \mathbb{N} . P(-x))$ entail $\forall_x \in \mathbb{Z} . P(x)$?
+
+* yes
+
+#### Question 6.2
+
+Let S = {x | x is prime}. Does $(\forall_x \in S . \forall_y \in \mathbb{Z} . x \text{ divides } y \rightarrow P(y)) \land P(1) \land P(-1)$ entail $\forall_x \in \mathbb{Z} . P(x)$?
+
+* no
+
+#### Question 6.3
+
+Let S = {x | x is prime}. Does $(\forall_x \in S . \forall_y \in \mathbb{Z} . x \text{ divides } y \rightarrow P(y)) \land P(0)$ entail $\forall_x \in \mathbb{Z} . P(x)$?
+
+* yes
+
+### Question 7
+
+Which of the following are prime factors of 48? 
+
+* {2, 3}
+
+### Question 8
+
+Is the following proposition true or false? 
+
+Every member of the set $\mathbb{Z}^+ \backslash \{1\}$ has at least 2 integers which divide it. 
+
+* true
+
+### Question 9
+
+for the following subquestions, consider the prime factorization of the value $k = 3^08^29^215^5$
+
+#### Question 9.1
+
+What is the multiplicity of 2 in the prime factorization of $k$?
+
+* 6
+
+#### Question 9.2
+
+What is the multiplicity of 3 in the prime factorization of $k$?
+
+* 9
+
+
+
 ## Mod2Multi2
 
 ### Question 1: The "Everything but equals" relation

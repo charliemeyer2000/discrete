@@ -17,21 +17,156 @@ Slides:
         (First Week) https://docs.google.com/presentation/d/1BXSO-TkmlSSkd3IIVM2yxjG03KVn0roCMBNhjLEHjK0/edit?usp=sharing 
 
         (set-builder, power set, disjoint) https://docs.google.com/presentation/d/1T2rP6N1PVJkJpt6T9g6k48b1BzLF9N6d-X0LG6QqvV8/edit?usp=sharing
-
     Proofs Slides: 
         https://docs.google.com/presentation/d/1GfThSz_a312bNEBVl7QGt09YsBJgfgn4CdYqCV03OZc/edit?usp=sharing 
     Week of Feb 20 (Predicates, Quantifiers, Group Activity 1)
         https://docs.google.com/presentation/d/1p8KMkLQc4YXO913QA5ObaHqo7mTHaUkwNxtfW0Ka_bs/edit?usp=sharing
     Week of Feb 27 (Quantifiers, Quiz)
         https://docs.google.com/presentation/d/1gC3FGG-Y8UvYKBntYS6yFn1g867PqTj8g3sVSRhaphY/edit?usp=sharing 
-
     Week of March 13: 
         https://docs.google.com/presentation/d/1yt7ccKng-_423gbQGQrlX_lPDlShJJHI9WJsVLqv_ug/edit?usp=sharing 
     Week of March 20: 
         https://docs.google.com/presentation/d/1g71pNuiQxqHm4yEVavdJGrKfS1FJk2li6_K5KJx2lmM/edit?usp=sharing 
     Week of March 27:
         https://docs.google.com/presentation/d/1Efsgcxk706GeE3eKjpMngx68e8RGSWQKnodEJxortKg/edit#slide=id.g227cc5dd9b2_5_0 
+    Week of April 3:
+        https://docs.google.com/presentation/d/1G-Ui5A-F6qDo15Saf3Vjs-lrmkgoxut6iulddgB_HPo/edit?usp=sharing
 -->
+# April 3
+
+## Do Now
+
+Remind yourself what properties a relation had to possess to be an __"order"__. Then, try to come up with your own relation that has all of those properties?
+
+* An order is a relation that is antisymmetric and transitive + (reflexive ?)
+* Examples:
+    1. "Subset of"
+    1. "Greater than or equal to"
+    1. "Less than or equal to"
+
+## Types of Statements in Proof Land
+
+* __Theorem:__ Some statement that we have proven to be true.
+    * __Conjecture:__ Some statement that we think might be true, but we don't have a proof for it
+* __Lemma:__ A statement that is true, but is not a theorem. It is used to prove a theorem.
+* __Corollary__: A consequence of a theorem.
+* __Axiom__: A statement that is assumed to be true.
+* __Principle___: A theorem that is very useful (and sometimes more complicated than an axiom)
+
+## Order
+
+* A binary relation $R \subseteq A \times A$ is an __order_ of R is reflexive, anti-symmetric and transitive.
+    * it is a "weak order" without being reflexive 
+
+### Example - Draw  $\ge$ relation on the set $\{1, 2, 3, 4\}$
+
+I'm not gonna draw it but it's easy, lmao. Mr. White yo, 
+
+## Order 
+
+* A binary relation $R \subseteq A \times A$ is an __order__ if R is reflexive, anti-symmetric and transitive.
+    * R is a __total order__ if $\forall_{x, y} \in A . R(x, y) \lor R(y, x)$. 
+        * That is, every two elements of A are related
+        * E.g. $R_1 = \{(x, y) \vert x, y \in \mathbb{Z} \land x \leq y\}$
+        * So is alphabetical order of English words
+
+
+## Order Example
+
+![Not Total Order](images/not-total-order.png)
+
+This is not a total order because there is no relation between 2 and 3 or 3 and 2. However, it is antisymmetric and transitive. Consider the adjacency matrix.
+
+![Adjacency Matrix](images/adjacency-matrix-red.png)
+
+## Order Links
+
+* [Total Order](https://en.wikipedia.org/wiki/Total_order)
+* [Partial Order](https://en.wikipedia.org/wiki/Partially_ordered_set#Partial_order)
+* [Connected Relation](https://en.wikipedia.org/wiki/Connected_relation#Formal_definition)
+* [Well-order](https://en.wikipedia.org/wiki/Well-order)
+* [Well-Ordering Principle](https://en.wikipedia.org/wiki/Well-ordering_principle)
+
+## order 
+
+We will be talking about one specific order from this point forward: The binary relation $x \le y$ defined over the naturals. The observation that the natural numbers are well ordered by the less-than-or-equal relation is the basis of the __well-ordering principle__.
+
+### Well-Ordering Principle
+
+Only applicable to non-empty subsets of $\mathbb{N}$. Any non-empty subset of $\mathbb{N}$ has a least element.
+
+* With respect to the usual total order $x \le y$
+* Very useful for proofs!
+
+### WOP - Does it Apply to? 
+
+Does the well ordering-principle apply to these examples? 
+
+* {56, 90, 79, 47}?
+    * yes
+* {0}
+    * yes
+* {}
+    * no
+* $\{2x \vert x \in \mathbb{N}\}$
+    * yes, just the even numbers and zero
+* $\{\frac{x}{2} \vert x \in \mathbb{N}\}$
+    * no
+* $\{\frac{1}{x} \vert x \in \mathbb{N}\}$. 
+    * no
+
+### WOP and Induction
+
+Want to prove a statement $\forall_x \in \mathbb{N} P(x)$? 
+
+* Check that P(0) holds - check all of the "base cases"
+* And whenever P(k) does not hold for some k (where k is a contradiction number), P(k-1) does not hold either
+    * Contradicting well-ordering principle
+    * Contrapositive
+        * if P(k-1) holds for arbitrary k, 
+        * then P(k) also must be true
+* Conclude that $\forall_x \in \mathbb{N} . P(x)$
+
+![WOP and Induction](images/wop-induction.png)
+
+### Well-Ordering Format
+
+1. Starts with proof strategy ('we proceed by contradiction')
+1. Assumption is negation of the goal/theorem
+1. Assert that there is a counterexample, either by saying there exists at least one natural number that makes the theorem false, OR by saying that a set of counter-examples is non-empty
+1. Assumes a set, probably called C, to be a set of these counterexamples
+1. Correctly applies WOP to set C to determine and instantiate a smallest element, probably called x
+1. Correctly arrives at a contradiction (this may take some math)
+1. Concludes contradiction means original goal is proven - "therein lies the contradiction..."
+1. Written in english, not just symbols.
+
+#### Things to Review
+
+Well-Ordering - review [questions 32 and 33](https://kytos.cs.virginia.edu/cs2120/quizzes/review.php?qid=3-2)
+
+### WOP Proof Example
+
+__Prove:__ every positive integer has a unique prime factorization (A). Every positive integer has a prime factorization (not necessarily unique) prime factorization (B). Which entails which? A entails B, or $A \vDash B$
+
+#### FTOA Proof Sketch
+
+__Prove:__ Every positive integer has a not necessarily unique prime factorization (B).
+
+1. Consider the set of values for which the statement is _False_.
+1. Suppose that the set is non-empty
+1. By WOP, we should have a smallest-valued integer in the set. 
+1. We will show that by using smallest value of un-prime-factorable integer, we can always find a smaller one. And if that "smaller one" is not in the original contradiction set, then that's an issue!
+1. Then our negation of the theorem was incorrect: the set of values must _be the empty set_.
+
+#### FTOA Formal Proof
+
+1. We proceed by contradiction. Assume that there exists some value for _x_ in the positive integers that has no prime factorization. Next, suppose set C as some subset of the natural numbers, represents the set of all positive integers which have no prime factorization. We are assuming that C does not equal the empty set. 
+1. Since C is a _non-empty subset of the natural numbers_, WOP suggests that there is a smallest element of C, which we will call _n_.
+1. We certainly know that _n_ is not prime, otherwise _n would be its own prime factorization_. Since _n_ is not prime, there must exist 2 values of _p_ and _q_, neither of which are equal to 1, such that pq = n. Since the product of _p_ and _q_ gives us _n_, it must be the case that either p or q does not have a prime factorization. This is because when we have a product, the prime factors of the product is equal to all the factors of p and q.
+1. NOte that it must be the case that p < n and q < n, since they are factors of _n_. Let's choose _p_ to be the value with no prime factorization. Since _p_ is an element of C, and since p < n, this violates our statement that _n_ was the smallest integer in C. Therein lies our contradiction.
+1. Therefore, we have proven that every positive integer has a prime factorization.
+
+
 # March 31
 
 ## Quiz Review Before Quiz

@@ -16,10 +16,11 @@ def prime_factorization(n):
             return prime_factorization(n // i)
     print(n)
     return n
+
+
     
 
     
 if __name__ == "__main__":
-        n = int(input("Enter a number: "))
-        collatz(n)
+        print(pi_sort([6, 5, 9]))
     

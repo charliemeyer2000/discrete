@@ -32,6 +32,26 @@ Slides:
     Week of March 27:
         https://docs.google.com/presentation/d/1Efsgcxk706GeE3eKjpMngx68e8RGSWQKnodEJxortKg/edit#slide=id.g227cc5dd9b2_5_0 
 -->
+# March 31
+
+## Quiz Review Before Quiz
+
+Prove by contradiction that for any bijective, total functions a(x) and b(y) where: 
+
+1. $a : X \rightarrow Y$
+1. $b: Y \rightarrow Z$
+
+Then the following theorem holds that every z is mapped to via b(a(x)) by exactly one x. 
+
+1. We proceed by contradiction.
+1. Assume $\exists_z$ that is not mapped to.
+1. Case 1:$\exists_{x_1, x_2}  \in X . b(a(x_1)) = b(a(x_2)) = c \land x_1 \neq x_2$. 
+    * Because the function b is injective and total, we know that there is exactly one y that maps to c and because a is a bijection, I know there exists exactly one x that maps to y. Therein lies the contradiction since there are two x's that map to the same y.
+1. Case 2: There is not an x that maps to z. 
+    1. Because a is a bijection, there is an x that maps to z.
+
+
+
 # March 29
 
 ## Proof by Cases

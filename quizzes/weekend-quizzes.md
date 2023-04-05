@@ -125,7 +125,7 @@ Which of the following statements is entailed by the Fundamental Theorem of Arit
 1. $\forall_x \in \mathbb{Z}^+ . \forall_y \in \mathbb{Z}^+ .(x \neq y) \rightarrow (\exists_z \in \mathbb{Z}^+ . (z \text{ divides } x ) \oplus (z \text{ divides } y))$
 1. Every member of $\mathbb{Z}^+$ has at least one prime factor.
 
-* 3
+* 2
 
 ### Question 6
 
@@ -141,13 +141,13 @@ Does this expression $(\forall_x \in \mathbb{N} . P(x)) \land (\forall_x \in \ma
 
 Let S = {x | x is prime}. Does $(\forall_x \in S . \forall_y \in \mathbb{Z} . x \text{ divides } y \rightarrow P(y)) \land P(1) \land P(-1)$ entail $\forall_x \in \mathbb{Z} . P(x)$?
 
-* no
+* yes
 
 #### Question 6.3
 
 Let S = {x | x is prime}. Does $(\forall_x \in S . \forall_y \in \mathbb{Z} . x \text{ divides } y \rightarrow P(y)) \land P(0)$ entail $\forall_x \in \mathbb{Z} . P(x)$?
 
-* yes
+* no
 
 ### Question 7
 

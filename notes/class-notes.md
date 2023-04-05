@@ -32,6 +32,10 @@ Slides:
     Week of April 3:
         https://docs.google.com/presentation/d/1G-Ui5A-F6qDo15Saf3Vjs-lrmkgoxut6iulddgB_HPo/edit?usp=sharing
 -->
+# April 5
+
+## 
+
 # April 3
 
 ## Do Now

@@ -34,7 +34,132 @@ Slides:
 -->
 # April 5
 
-## 
+## Problem
+
+9 people are in a room. Each person shakes hands with each other person in the room. How many handshakes occur? 
+
+* $\frac{(9*9)-9}{2} = 36$
+
+You can also solve it another way:
+
+* $1+2+3+4+5+6+7+8 = 36$
+
+What if the room had 20 people? 100 people? 1000 people? Representing and solving becomes tedious math. We can use __summation notation__. 
+
+## Summation Notation
+
+$$\sum_{i =1}^{n} 2i$$
+
+Think of _i_ as the loop variable, or index. The output of the summation notation evaluates to a number value. The stopping condition is when _i_ is less than or equal to _n_.
+
+* The limits of summation are inclusive but must be integers. They increment by 1.
+
+### Summation Problem 1
+
+$\sum_{i=2}^{4} 3i = 3*2 + 3*3 + 3*4 = 27$
+
+### A note on notation
+
+The second way to represent what we're summing over is to give a __set__. You can also sum over a finite set, as well
+
+$$\sum_{i \in \mathbb{N}}^{} \frac{1}{3^i}$$
+
+This is also valid, using set notation instead of range notation:
+
+$$\sum_{i=2}^{5} 3i = \sum_{x \in A}^{} 3i$$
+$$\text{where } A = \{x \in \mathbb{Z} \vert (2 \ge x) \land (x \leq 5)\}$$
+
+### Summation Problem 2
+
+$\sum_{i=2}^{1} 3i = ?$ 
+
+* the answer is 0 since you start at a default value of 0. consider $\{i \in \mathbb{Z} \vert (2 \ge i) \land (i \leq 1)\}$
+
+### Summation Problem 3
+
+$\sum_{i=2}^{2} 3i = 6$
+
+## How do We express in Summation?
+
+How do we express the handshake problem in summation notation?
+
+$\sum_{i=1}^{n-1} i$
+
+### Summation Differences
+
+Whiel performing WOP we will often run into situations where we have two simlar but different sums such as:
+
+$$\sum_{i=1}^{n} 2i \text{ and } \sum_{i=1}^{n-1} 2i$$
+
+Being able to quickly identify the difference between summations like these two can make it much easier to know how to quicly apply the algebra that accompanies the algebra used in proofs by contradiction using the WOP. These two summations are equivalent when 2n is added to the left side:
+
+### DIY Examples
+
+Determine what needs to be added to the righthandside and lefthandside to be equal.
+
+These are the solutions:
+
+![Diy Examples](images/diyexamples.png)
+
+for the final one it should go from i=x+1 not i = x.
+
+### Sum vs. Explicit
+
+Prove that for all positive integers, P(n) is true:
+
+$\forall_n \in \mathbb{Z}^+ . P(n)$ where $\sum_{i=0}^{i=n-1} i = \frac{n(n-1)}{2}$
+
+1. We proceed by contradiction. That is, suppose that there exists some integer(s) such that P(n) evaluates to false. Define the set C to contain all such counterexamples. Since our assumption is that there is at least one integer or which the theorem does not hold, we know that C is a non-empty set. 
+1. Since C is a non-empty subset of the positive integers, it is a well-ordered set. This means that the well-ordering principle applies, and there must be a smallest element of C. Define integer _x_ to be this minimal element C.
+1. If integer _x_ is the smallest element of C, meaning the smallest counter-example where the equation does not hold, then the next-smallest element is _x-1_, and P(x-1) must be true. 
+1. The math:
+
+$P(x-1): \sum_{i=0}^{(x-1)-1} i = \frac{(x-1)(x-1-1)}{2}$
+
+which simplifies to 
+
+$P(x-1): \sum_{i=0}^{x-2} i = \frac{(x-1)(x-2)}{2}$
+
+Expanding the explicit form gives us:
+
+$P(x-1): \sum_{i=0}^{x-2} i = \frac{x^2-3x+2}{2}$
+
+We can observe that when n = x, we have the following inequality:
+
+$P(x): \sum_{i=0}^{x-2} i \neq \frac{x(x-1)}{2}$
+
+Expanding the explicit form gives us:
+
+$P(x): \sum_{i=0}^{x-1} i \neq \frac{x^2-x}{2}$
+
+We can also observe that when n = x, we have the following inequality:
+
+$P(x): \sum_{i=0}^{x-1} i \neq \frac{x(x-1)}{2}$
+
+Expanding the explicit form gives us:
+
+$P(x): \sum_{i=0}^{x-1} i \neq \frac{x^2-x}{2}$
+
+Next, by algebra, we consider that adding x-1 to both sides of an equation preserves equality, so the following equation must hold:
+
+$P(x-1): \sum_{i=0}^{x-2} i = \frac{x^2-3x+2}{2}$
+
+Then add (x-1) to both sides:
+
+$\sum_{i=0}^{x-1} i = \frac{x^2-3x+2}{2} + (x-1)$
+
+Finally, we simplify the right side to get:
+
+$\sum_{i=0}^{x-1} i = \frac{x^2-2x+1}{2} + \frac{2x-2}{2} = \frac{x^2-x}{2}$
+
+However, therein lies the contradiction because the equation we derived cannot be true at the same time as the fact that $\neg P(x)$. That is, the above equation in conjunction with the statement that x is the smallest counter-example can be represented as follows:
+
+$(\sum_{i=0}^{x-1} i = \frac{x^2-x}{2}) \land (\sum_{i=0}^{x-1} i \neq \frac{x^2-x}{2}) \equiv \bot$.
+
+So right now, we have $\forall_x \in \mathbb{Z} . P(n) \leftrightarrow P(n+1)$. We also need to consider the base case, P(1) which is 0. Now, we have conclusively found a contradiction, as we have proved that across all of the positive integers that if P(n) holds, then P(n-1) must also be true. In logic, that is $\forall_n \in \mathbb{Z}+ . (P(n) \leftrightarrow P(n+1)) \land P(1) = \equiv \forall_n \in \mathbb{Z} . P(n) \square$.
+
+
+
 
 # April 3
 

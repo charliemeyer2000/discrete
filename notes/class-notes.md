@@ -27,11 +27,131 @@ Slides:
         https://docs.google.com/presentation/d/1yt7ccKng-_423gbQGQrlX_lPDlShJJHI9WJsVLqv_ug/edit?usp=sharing 
     Week of March 20: 
         https://docs.google.com/presentation/d/1g71pNuiQxqHm4yEVavdJGrKfS1FJk2li6_K5KJx2lmM/edit?usp=sharing 
-    Week of March 27:
+    Week of March 27: Contradiction (easy)
         https://docs.google.com/presentation/d/1Efsgcxk706GeE3eKjpMngx68e8RGSWQKnodEJxortKg/edit#slide=id.g227cc5dd9b2_5_0 
-    Week of April 3:
+    Week of April 3: Contradiction (hard)
         https://docs.google.com/presentation/d/1G-Ui5A-F6qDo15Saf3Vjs-lrmkgoxut6iulddgB_HPo/edit?usp=sharing
+    Week of April 10: Induction
+        https://docs.google.com/presentation/d/1N9G2pSmTDw-YkT3tt9TUYjo8iS8pg_VdwrR0IgB_Rfc/edit?usp=sharing 
 -->
+# April 10
+
+## Proof Strategies (so far)
+
+### Direct
+
+State with a statement, apply equivalence, entailment, etc. line by line
+
+### Contradiction
+
+Assume the opposite is true, arrive at a falsehood, conclude original must be true
+
+### Cases
+
+Disjunctive tautology - code analog: many "if" statements or a "switch" statement
+
+### Induction
+
+Build up or "domino down." Code analog: for loop or recursion.
+
+## Well-ordering and Induction
+
+* Want to prove a statement $\forall_x \in \mathbb{N} . P(x)$
+    * check that P(0) is true - the "base case"
+    * and check whenever P(k) does not hold for some k, P(k-1) does not hold either
+        * contradicting well ordering principle
+        * Contrapositive ($p \rightarrow q \equiv \neg q \rightarrow \neg p)$:
+            * If P(k-1) holds for arbitray k - the "induction hypothesis."
+            * then P(k) must also be true - the "induction step."
+    * conclude that P(x) is true for all x
+
+* Mathematical principle: 
+
+$$\text{if }P(0) \land \forall_k \in \mathbb{N} . P(k) \rightarrow P(k+1) \text{ then }\forall_x \in \mathbb{N} . P(x)$$ 
+
+### Proof by Induction - example
+
+```python
+def f(n):
+    x = 2
+    for i in range(1, n): # inclusive
+        x += 1
+    return x
+```
+
+#### Proof By Cases - Example
+
+* Case n = 1, f(1) = 3
+* Case n = 2, f(2) = 4
+* Case n = 3, f(3) = 5
+* ...
+
+#### Proof by Cases/Induction - Example
+
+* Case n = 1, f(1) = 3
+* Case n > 1:
+    * Suppose f(n) = 2 + n for some n greater than or equal to 1. Show that doing one more loop produces f(n+1) = (n+1)=2 (inductive step)
+* Conclude f(n) = n+2 for all integers
+
+#### Proof by Induction - Outline
+
+To show that $\forall_n \in \mathbb{Z}^+ . P(n)$ for the previous example that P(n): f(n) = n+2
+
+* We proceed by induction
+* Base Case: P(1) by directly evaluating
+* Inductive Step: $\forall_k \in \mathbb{Z}^+ . P(k) \rightarrow P(k+1)$
+* Case n > 1:
+    * suppose that P(n) is true for some n greater than or equal to 1. Use algebra logic etc to show that P(k+1) is true
+* Conclusion: by the principle of induction for all values k greater than or equal to 1, we have that P(k) must be true. 
+
+### Example
+
+Prove that $\forall_n \in \mathbb{Z}^+ . P(n)$ where $P(n): \sum_{i=0}^{n-1} i = \frac{n(n-1)}{2}$
+
+Proof: 
+
+We proceed by induction. 
+
+__Base Case__: P(1) is true by directly evaluating:
+
+$$\sum_{i=0}^{0} i = \frac{1(1-1)}{2} = 0$$
+
+__Inductive Step__: We will show that if for an arbitrary value of $k$ greater than or equal to 1, if we have P(k), then it also is true that P(k+1). 
+
+* Assume P(k).
+* Manipulate the equality to show that P(k+1) is true.
+
+_Inductive Hypothesis_: Assume summation evaluated at some n-1, where n-1 is an arbitrary positive integer, will be equal to (n-1)(n-2)/2.
+
+Then, considering n = (n-1)+1 will add one more term to the left-hand side summation: An additional n-1. 
+We add this term to both sides of the equation, which results in:
+* = $\frac{(n-1)(n-2)}{2} + n - 1$
+* = $\frac{(n^2 - 2n - n +2)}{2} + n - 1$
+* = $\frac{(n^2 - 3n + 2 + 2n - 2)}{2}$
+* = $\frac{(n^2-n)}{2} = \frac{n(n-1)}{2}$  
+
+for the right-hand side. This proves that if the summation holds for the case of n-1, then it will also hold for the case n for some arbitrary n.  So our induction step is true.
+
+By the principle of induction, for all values of $k$ greater than or equal to 1, we have that P(k) is true. 
+
+## Induction Structure
+
+* Theorem: "P(x) is true for all the naturals."
+* Base Case:
+    * P(0) is true ... (& other base cases)
+* Inductive Step:
+    * Assume P(x) is true for some $\mathbb{Z}$/natural number / x
+    * ...
+    * P(x) can be used to show P(x+1) is true
+* By the principle of induction P(x) is true for all natural numbers
+
+
+
+
+
+
+
+
 # April 5
 
 ## Problem

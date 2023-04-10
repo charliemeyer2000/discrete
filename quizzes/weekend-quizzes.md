@@ -13,6 +13,320 @@ pandoc -s -o weekend-quizzes.pdf weekend-quizzes.md -->
 
 This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong (Most likely not). Or hopefully i get a 100% every time. 
 
+## Mod3Multi2
+
+## Question 1 - Set of Counter-Examples
+
+In this group of problems, you are given two statements, A and B. Select the most specific relationship between the two. (if that means A entails B, and B entails A, select that the two are equivalent). Define:
+
+* P(x) is a predicate with a domain of $\mathbb{N}$
+* C is a set of counter-examples for when P is not true, so $C = \{n \vert n \in \mathbb{N} \land \neg P(n)\}$
+
+### Question 1.1
+
+* Statement A: $(C = \emptyset)$
+* Statement B: $(\not\exists_a \in \mathbb{N} . \neg P(a))$
+
+Options:
+
+* A entails B
+* B entails A
+* A and B are equivalent
+* A and B constitute a contradiction
+* none of the above
+
+My answer: A and B are equivalent
+
+### Question 1.2
+
+* Statement A: $(C = \emptyset)$
+* Statement B: $(\exists_a \in \mathbb{N} . a \not\in C)$
+
+Options:
+
+* A entails B
+* B entails A
+* A and B are equivalent
+* A and B constitute a contradiction
+* none of the above
+
+My answer: A entails B
+
+### Question 1.3
+
+* Statement A: $(C = \emptyset)$
+* Statement B: $(\not\exists_a \in \mathbb{N} . P(a))$
+
+Options:
+* A entails B
+* B entails A
+* A and B are equivalent
+* A and B constitute a contradiction
+* none of the above
+
+My answer: A and B constitute a contradiction
+
+### Question 1.4
+
+* Statement A: $(C = \emptyset)$
+* Statement B: $(\forall_a \in \mathbb{N} . P(a) \leftrightarrow P(a-1))$
+
+Options:
+* A entails B
+* B entails A
+* A and B are equivalent
+* A and B constitute a contradiction
+* none of the above
+
+My answer: none of the above
+
+### Question 1.5
+
+* Statement A: $(C = \emptyset)$
+* Statement B: $(\forall_a \in \mathbb{Z}^+ . P(a) \rightarrow P(a-1))$
+
+Options:
+* A entails B
+* B entails A
+* A and B are equivalent
+* A and B constitute a contradiction
+* none of the above
+
+My answer: none of the above
+
+### Question 1.6
+
+* Statement A: $(C = \emptyset)$
+* Statement B: $(\forall_a \in C . P(a))$
+
+Options:
+* A entails B
+* B entails A
+* A and B are equivalent
+* A and B constitute a contradiction
+* none of the above
+
+My answer: equivalent
+
+## Question 2
+
+To which of the following sets does the Well-Ordering principle apply?
+
+### Question 2.1
+
+Does the well-ordering principle apply to the following set?
+
+$\{x - y \vert (x \in \mathbb{N}) \land (y \in \mathbb{Z}) \land (x > 2y)\}$
+
+* yes
+
+### Question 2.2
+
+Does the well-ordering principle apply to the following set?
+
+$\mathbb{Z} \backslash \mathbb{N}$? 
+
+* no
+
+### Question 2.3
+
+Does the well-ordering principle apply to the following set?
+
+* $\mathbb{Z} \cap \mathbb{N}$?
+
+* yes
+
+### Question 2.4
+
+Does the well-ordering principle apply to the following set?
+
+$\{2x-y \vert (x \in \mathbb{N}) \land (y \in \mathbb{Z}) \land (2x > y)\}$?
+
+* yes
+
+### Question 2.5
+
+Does the well-ordering principle apply to the following set?
+
+$\mathbb{N}^2$
+
+* no
+
+### Question 2.6
+
+Does the well-ordering principle apply to the following set?
+
+$\{x^2 \vert x \in \mathbb{Z}\}$?
+
+* yes
+
+
+## Question 3 - Summation Notation
+
+Select which is equivalent to each expression. Assume function f(x) is defined for all natural numbers including 0. 
+
+### Question 3.1
+
+$\sum_{x=-5}^{-6} x^2 = $?
+
+* None of these (0)
+
+### Question 3.2
+
+$(\sum_{i=0}^{6} 2i) + (\sum_{i=6}^{n} 2i) = $?
+
+Options:
+
+* $2(\sum_{i=0}^{n} (i+6))$
+* $\sum_{i=0}^{n} 2i$
+* $\sum_{i=1}^{n} 2i$
+* $2(\sum_{i=0}^{n} i) + 6$
+* $2((\sum_{i=0}^{n} i) + 6)$
+* none of the above.
+
+My answer: $2((\sum_{i=0}^{n} i) + 6)$
+the correct answer is: none of these, but the answer above is probably what they're shooting for. They didn't consider that the base value is 42 no matter what.
+
+
+### Question 3.3
+
+$\sum_{i=0}^{n} f(i) = $?
+
+Options:
+* $(\sum_{i=0}^{n-2} f(i)) + f(n) + f(n-1) + f(n-2)$
+* None of these
+* $(\sum_{i=0}^{n-2} f(i)) + f(n-1)$
+* $(\sum_{i=0}^{n-2} f(i)) + f(n-2)$
+* $(\sum_{i=0}^{n-2} f(i)) + f(n)$
+* $(\sum_{i=0}^{n-2} f(i)) + f(n) + f(n-1)$
+
+My answer: $(\sum_{i=0}^{n-2} f(i)) + f(n) + f(n-1)$
+
+## Question 4 - WOP, Entailment, and Equivalence
+
+Select whether each of the following statements is equivalent, is entailed by, or has no such relation to the Well-Ordering Principle. Let variable $S$ refer to a set.
+
+### Question 4.1
+
+How is the following statement related to the Well-Ordering Principle?
+
+"All non-empty subsets of the naturals have a greatest element"
+
+Options:
+
+* The well-ordering principle entails this statement
+* They are equivalent
+* They are not related
+
+My answer: they are not related
+
+
+### Question 4.2
+
+How is the following statement related to the well-ordering principle?
+
+$\forall S \subseteq \mathbb{N} . (\exists_x \in \mathbb{N} . x \in S) \rightarrow (\exists_x \in S . \forall_y \in S . x \le y)$
+
+Options:
+
+* They are equivalent
+* They are not related
+* the well-ordering principle entails this statement
+
+My answer: they are equivalent
+
+### Question 4.3
+
+How is the following statement related to the well-ordering principle?
+
+"All non-empty subsets of the naturals have a second smallest element"
+
+Options:
+
+* They are equivalent
+* They are not related
+* the well-ordering principle entails this statement
+
+My answer: not related
+
+
+### Question 4.4
+
+How is the following statement related to the well-ordering principle?
+
+"All non-empty subsets of the rationals have a lest element"
+
+Options:
+
+* They are equivalent
+* They are not related
+* the well-ordering principle entails this statement
+
+My answer: not related
+
+### Question 4.5
+
+How is the following statement related to the well-ordering principle?
+
+"All non-empty proper subsets of the naturals have a least element"
+
+Options:
+
+* They are equivalent
+* They are not related
+* the well-ordering principle entails this statement
+
+My answer: entailed
+
+
+
+### Question 4.6
+
+How is the following statement related to the well-ordering principle?
+
+$\forall S \subseteq \mathbb{N} . (S \neq \emptyset) \rightarrow (\exists_y \in S . \forall_x \in S . x \le y)$
+
+My answer: equivalent
+
+
+### Question 4.7
+
+How is the following statement related to the well-ordering principle?
+
+$\forall S \subseteq \mathbb{N} . (S \neq \emptyset) \rightarrow (\forall_y \in S . \exists_x \in S . x \le y)$
+
+Options:
+
+* They are equivalent
+* They are not related
+* the well-ordering principle entails this statement
+
+my answer: entails 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Mod3Multi1
 
 ### Question 1

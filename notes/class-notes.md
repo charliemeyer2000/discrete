@@ -36,6 +36,87 @@ Slides:
 -->
 # April 12
 
+## Proof by Induction
+
+Structure:
+
+__Theorem__: "P(x) is true for all the natural numbers."
+
+__Base Case__: P(0) is true ... (& potentialls other base cases)
+
+__Inductive Step__: Assume P(x) is true for some integers/positive integers/natural numbers x, and use P(x) to show that P(x+1) is true.
+
+By the principle of induction, P(x) is true for all the natural numbers.
+
+### Problem
+
+
+__Problem__: Prove $\forall_n \in \mathbb{Z}^+$
+
+$$\sum_{i=1}^n 2 = 2n$$
+
+__Solution__:
+
+We proceed by induction.
+
+__Base Case__: This summation is evaluated when $n=1$ is $(2)1 = 2$.
+
+__Inductive Step__: Assume summation evaluated to $x$ will result in 2(x), where x is an arbitrary positive integer> assume summation evaluated at some member of the positive integers x will result in 2(x). Then, considering x+1 will add one more eterm to the left-hand side. Summation: Just another 2. Adding this 2 to the right-hand side gives us: 
+
+$$2(x) + 2 = 2x + 2$$
+$$2(x) + 2 = 2(x+1)$$
+
+This proves that if the theorem holds for some arbitrary x, then it also must hold for some arbitrary x+1. By induction on n, we have proved that this summation is equal to 2n for any value of n in the positive integers.
+
+### Problem 2
+
+Prove for all the natural numbers: $\sum_{i=1}^{n} (2i-1) = n^2$
+
+__Solution__:
+
+We proceed by induction.
+
+__Base Case__: This summation evaluated when $n=0$ sums over nothing, so it results in $0=0$. Note that the base case is 0 since that is the lowest natural number, we want to prove for all naturals!! This summation evaluated when $n=1$, which is equal to $1^2 = n^2$. 
+
+* Make sure your bases cases cover the entire domain of the variable you're inducting over _that create an empty sum_. Aka, think about it as a loop - you want to consider all base cases that create an empty sum.
+
+__Inductive Step__: Assume the summation evaluated at some natural $x$ will be equal to $x^2$. Then, considering the summation evaluated at $x+1$ will add one more term to the sum: _an additional_ $(2i-1)$ where $i = x+1$ or $=2(x+1)$ - 1 = 2z+2-1 = 2x+1$. We add this term to both sides of the equation, which on the right, results are:
+
+$$\text{notice that } (2(x+1) - 1) = 2x+2-1 \text{ which is the next iteration of the sum, what you add to both sides}$$
+$$\text{now add to both sides and simplify}$$
+$$\sum_{i=0}^{x} (2i-1) = n^2$$
+$$\sum_{i=1}^{x} (2i-1) + 2x+1 = x^2 +2x +1$$
+$$\sum_{i=1}^{x+1} (2i-1)= x^2 +2x +1$$
+$$\sum_{i=1}^{x+1} (2i-1)= (x+1)^2$$
+
+This proves that if the summation holds for the case of $n=x$, then it will also hold for the case $x+1$ for some arbitrary $x$. 
+
+### Problem 3
+
+Prove $\forall_n \in \mathbb{Z}^+ . \sum_{i=1}^{n} 2^{-i} = 1-2^{-n}$
+
+__Solution__:
+
+We proceed by induction.
+
+__Base case__: This summation evaluated when $n=1$ sums over nothing, so it results in $\sum_{i=1}^{1}2^{-i} = \frac{1}{2} = \frac{1}{2}$. Note that the base case is 1 since that is the lowest positive integer number. 
+
+__Inductive Step__: Assume that for some integer $n > 1$, then $\sum_{i=1}^{n-1} 2^{-i} = 1-2^{-(n-1)}$. 
+
+$$\text{add } 2^{-n} \text{ to both sides}$$
+$$\sum_{i=0}^{n-1} 2^{-1} + 2^{-n} = 1-2^{-(n-1)} + 2^{-n}$$
+$$\sum_{i=1}^{n} 2^{-1} = 1-2^{-(n-1)} + 2^{-n}$$
+$$\sum_{i=1}^{n} 2^{-1} = 1- \frac{1}{2^{1-n}} +\frac{1}{2^{-n}}$$
+$$\sum_{i=1}^{n} 2^{-1} = 1- \frac{2}{2(2^{n-1})} + \frac{1}{2(2^{n-1})}$$
+$$\sum_{i=1}^{n} 2^{-1} = 1 - \frac{1}{2^{n}}$$
+$$\sum_{i=1}^{n} 2^{-1} = 1-2^{-n}$$
+
+This proves that if the summation holds for the case of $n=x-1$, then it will also hold for the case $x$ for some arbitrary $x$. By the principle of induction, we have proved that this summation is equal to $1-2^{-n}$ for any value of $n$ in the positive integers.
+
+
+
+
+
 
 
 # April 10

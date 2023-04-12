@@ -34,6 +34,10 @@ Slides:
     Week of April 10: Induction
         https://docs.google.com/presentation/d/1N9G2pSmTDw-YkT3tt9TUYjo8iS8pg_VdwrR0IgB_Rfc/edit?usp=sharing 
 -->
+# April 12
+
+
+
 # April 10
 
 ## Proof Strategies (so far)

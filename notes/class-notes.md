@@ -33,7 +33,137 @@ Slides:
         https://docs.google.com/presentation/d/1G-Ui5A-F6qDo15Saf3Vjs-lrmkgoxut6iulddgB_HPo/edit?usp=sharing
     Week of April 10: Induction
         https://docs.google.com/presentation/d/1N9G2pSmTDw-YkT3tt9TUYjo8iS8pg_VdwrR0IgB_Rfc/edit?usp=sharing 
+    Week of April 17: 
+        https://docs.google.com/presentation/d/1bBl7EFtgc2u1f9mywA1SWzjrthrYEVl6NSAQkT_O7b8/edit?usp=sharing
 -->
+# April 17
+
+### Ordered Pair
+
+An ordered pair is a pair of objects where one element is designated first and the other element is designated second, denoted $(a, b)$. 
+
+### Cartesian Product
+
+The Cartesian product of two sets A and B, denoted $A \times B$, is the set of all possible ordered pairs where the elements of A are first and the elements of B are second. Note that the cartesian product of itself can just be writen as $A^2$.
+
+In set-builder notation, $A \times B = \{(a, b) : a \in A \land b \in B\}$.
+
+#### Cartesian Product Example
+
+$\{1, 2\} \times \{3, 4, 5\} = \{(1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5)\}$
+
+Note that the cardinality of the cartesian product is $\vert A \times B \vert = \vert A \vert \cdot \vert B \vert$
+
+#### Cartesian Product Example 2
+
+What is $\{1, 2\} \times \{2, 3\}$? 
+
+* $\{1, 2\} \times \{2, 3\} = \{(1, 2), (1, 3), (2, 2), (2, 3)\}$
+
+#### Cartesian Product Example 3
+
+What is $\{54\}^3$? 
+
+* $\{54\}^3 = \{(54, 54, 54)\}$
+
+#### Cartesian Product Example 4
+
+What is $(\vert \{54\} \vert)^0$?
+
+* 1
+
+### Characters
+
+Letters of an alphabet = abcdefghijklmnopqrstuvwxyz
+
+When characters are in a sequence, we call it a string. Here's an example:
+
+$\{((a, b), c)\} \rightarrow \{(a, (b, c))\} \rightarrow \{(a, b, c)\} \rightarrow \{'abc'\}$.
+
+#### Characters Example
+
+Imagine a state that requires a default license plate to have 3 characters followed by four numbers. How many possible plates?
+
+* $26^3 \cdot 10^4 = 175760000$ 
+
+#### Characters Example 2
+
+How many sequences of the digits of length 4? 
+
+* $10^4 = 10000$
+
+#### Characters Example 3
+
+How many sequences of the digits of length 4 with _no repeats_? 
+
+* $10 \cdot 9 \cdot 8 \cdot 7 = 5040$
+
+You can think about this in "math" language - $A \times (A \backslash \{9\}) \times (A \backslash \{9, 8\}) \times (A \backslash \{9, 8, 7\})$.
+
+### Product Notation
+
+$$\prod_{i=1}^{6} i^2 = 1 \cdot 4 \cdot 9 \cdot 16 \cdot 25 \cdot 36 = 1296$$
+
+$$\prod_{i=1}^{5} i = 1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120 = 5!$$
+
+### Factorial Review
+
+* 3! = 6
+* 1! = 1
+* 0! = 1
+
+#### Factorial Example
+
+How do we represent $10 \cdot 9 \cdot 8 \cdot 7$ as factorials? 
+
+$$\frac{10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}{6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}$$
+
+Which is the same as:
+
+$$\frac{10!}{6!} = \frac{10!}{(10-4)!}$$
+
+## Counting
+
+Given $n$ options for $k$ positions:
+
+* $n^k$: All possible sequences
+* $\frac{n!}{(n-k)!}$: All possible permutations
+* $\frac{n!}{k!(n-k)!}$: All possible combinations (SETS)
+
+![Counting Chart](images/countingchart.png)
+
+### Permutation
+
+A shuffling, re-ordering of a sequence:
+
+$$^nP_k = \frac{n!}{(n-k)!}$$
+
+We're just looking at __how many sequences__ with __unique elements__ (order matters).
+
+For an individual permutation, we've settled on the $k$ elements _and the ordering we want to include_. How could we remove these shufflings, so we're just looking at how many sets with unique elements? How many permutations of the same $k$ elements are possible? __$k!$__.
+
+#### Permutation Example
+
+How many orderings of 4 elements (5, 8, 1, 3) are there?
+
+* $k! = 4! = 24$
+
+### Combination
+
+How many possible __sets__ (no repeats, order doesn't matter).
+
+$n \choose k$ = $_nC_k$ = $\frac{n!}{k!(n-k)!}$
+
+### Practice
+
+Consider a subset of size 3 selected from a set of 8 members? How many possible subsets? 
+
+* 
+
+
+
+
+
 # April 12
 
 ## Proof by Induction

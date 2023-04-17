@@ -163,7 +163,7 @@ _Proof_: Initially, y is between 1 and x (in particular, it is 1). Each pass thr
 
 1. __Case 1: x < 1__
     * In this case, "y is between 1 and x" means $x \le y \le 1$. Because $x \le y$, $\frac{x}{y} \le 1$. Because $y \le 1$, $x \le \frac{x}{y}$. Thus, $x \le \frac{x}{y} \le 1$, meaning it is between 1 and x.
-1. __Case 2: $x \ge 1$
+1. __Case 2: $x \ge 1$__
     * In this case, "y is between 1 and x" means "$1 \le y \le x$." Because $y \le x$, $1 \le \frac{x}{y}$. Because $1 \le y, \frac{x}{y} \le x$. Thus, $1 \le \frac{x}{y} \le x$, meaning it is between 1 and x.
 
 Because $\frac{x}{y}$ is between 1 and x in both cases, it is between them in general. Thus, the loop replaces y with the average of two numbers, both between 1 and x, so it keeps y between 1 and x. Because we start between 1 and x and that doesn't change, the function returns a value that is between 1 and x. 

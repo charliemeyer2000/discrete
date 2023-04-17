@@ -278,8 +278,6 @@ Options:
 
 My answer: entailed
 
-
-
 ### Question 4.6
 
 How is the following statement related to the well-ordering principle?

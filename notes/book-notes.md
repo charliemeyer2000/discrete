@@ -21,7 +21,158 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 -->
 
-I realized that MCS and $\forall_x$ are just not helpful. I will be reading through them but I won't be taking notes on them unless I find something legitimately interesting or helpful. Most helpful things are Elizabeth's writeups or other things.
+I realized that MCS and $\forall_x$ are just not helpful after a little while. I began by diligently taking notes on everything, but I quickly realized that they go into much more depth and also just contain information that isn't covered by Elizabeth's course. I will be reading through them but I won't be taking notes on them unless I find something legitimately interesting or helpful. A note for the future readers - focus on Elizabeth's writeups and notes from class/office hours. They are much more helpful - this is just a way to get ahead and really invest yourself in the material.
+
+# MCS 5.1 - 5.3 and Addendum
+
+## MCS 5.1 - 5.3
+
+### 5.1 - Ordinary Induction
+
+Consider this experiment to understand induction. Imagine a professor brings a bottomless bag of candy to class. She offers to share the candy according to two rules:
+
+1. The student at the beginning gets a candy bar
+1. If a student gets a candy bar, then the following student in line also gets a candy bar.
+
+Consider that this sequence has a concise mathematical description: "If a student _n_ gets a candy bar, then student _n+1_ gets a candy bar for all nonnegative integers _n_."
+
+#### 5.1.1 - Ordinary Induction
+
+The induction principle:
+
+Let P be a predicate on nonnegative integers. If:
+
+* P(0) is true, and
+* P(n) implies P(n+1) for all nonnegative integers n, then
+* P(m) is trye for all nonnegative integers m.
+
+Formulated as proof, this would be written as:
+
+$$\frac{P(0), \forall_n \in \mathbb{N} . P(N) \rightarrow P(n+1)}{\forall_m \in \mathbb{N} . P(m)}$$
+
+#### 5.1.2 - Example
+
+Below is the formula for the sum of the nonnegative integers up to $n$. For all $n \in mathbb{N}$, 
+
+$$1+2+3+...+n = \frac{n(n+1)}{2}$$
+
+To prove by induction, we define a predicate $P(n)$ to be the equation above. Now our job is to prove two things: $P(0)$ is true and that $P(n) \rightarrow P(n+1)$ for all $n \in \mathbb{N}$.
+
+First statement follows because of the convention that a sum of zero terms is equal to 0. So $P(0)$ is true. 
+
+The second statement is a little more complicated. We assume $P(n)$ to prove $P(n+1)$ which is the equation:
+
+$$1+2+3+...+n+(n+1) = \frac{n(n+1)}{2} + (n+1)$$
+
+Which can be written as:
+
+$$1+2+3+...+n+(n+1) = \frac{(n+1)(n+2)}{2}$$
+
+Thus, if $P(n)$ is true, then so is $P(n+1)$.This argument is valid for every non-negative integer $n$, so this establishes the fact required by the induction proof. Therefore, the Induction Principle says that the predicate $P(m)$ is true for all nonnegative integers $m$. 
+
+#### 5.1.3 - A template for Induction Proofs
+
+1. __State that the proof uses ordinary induction__. This establishes structure of the proof.
+1. __Define an appropriate predicate P(n)__. $P(n)$ is called the _induction hypothesis_. The eventual conclusion will be that $P(n)$ is true for all nonnegative $n$. A cleary stated induction hypothesis is incredibly important. In most cases, it can be lifted straight from the proposition you are trying to prove. 
+1. __Prove that P(0) is true__. This is the base case. You might also have to consider multiple base cases depending on the problem.
+1. __Prove that P(n) implies P(n+1) for all nonnegative integers n__. This is the inductive step. 
+1. __Invoke induction__. the induction principle allows you to conclude that $P(n)$ is true for all nonnegative integers $n$. This is the logical capstone of the proof. 
+
+### 5.2 - Strong Induction
+
+_strong induction_ is useful when a simple proof that the predicate holds for $n+1$ does not follow just from the fact that it holds at $n$, but from the fact that it holds for other values $\le n$.
+
+#### 5.2.1 - Rules of Strong Induction
+
+__Principle of Strong Induction__:
+
+Let P be a predicate on nonnegative integers. If:
+
+* P(0) is true, and
+* for all $n \in \mathbb{N}, P(0), P(1), ..., P(n)$ together imply $P(n+1)$,
+
+Then $P(m)$ is true for all $m \in \mathbb{N}$
+
+The only change is that a strong induction proof allows you to make more assumption sin the inductive step. In strong induction, you may assume that $P(0), P(1), ...$ and $P(n)$ are _all_ true when you go to prove $P(n+1)$. Formulated as a rule, strong induction is written as:
+
+$$\frac{P(0), \forall_n \in \mathbb{N} . (P(0) \land P(1) \land ... \land P(n))\rightarrow P(n+1)}{\forall_m \in \mathbb{N} . P(m)}$$
+
+Stated more succinctly:
+
+$$\frac{P(0), [\forall_k \le n \in \mathbb{N}. P(k)] \rightarrow P(n+1)}{\forall_m \in \mathbb{N}.P(m)}$$
+
+#### 5.2.2 - Products of Primes
+
+We'll use strong induction to re-prove the fact that every integer greater than 1 is a product of primes.
+
+_Proof_: We will prove the theorem by strong induction, letting the hypothesis $P(n)$ be "n is a product of primes."
+
+__Base Case__: $(n=2)$: $P(2)$ is true because 2 is prime, so it is a length one product of primes by convention.
+
+__Inductive Step__: Suppose that $n \ge 2$ and that for every number from 2 to $n$ is a product of primes. We must show that $P(n+1)$ holds, namely, that $n+1$ is also a product of primes. We then consider two cases:
+
+1. If $n+1$ is prime, then it is a length one proudct of primes by convention,and so $P(n+1)$ is true.
+1. If $n+1$ is not prime, which by definition meanas $n+1 = k \cdot m$ for some integers $k, m$ between 2 and $n$. Now by the strong induction hypothesis, we know that both $k$ and $m$ are products of primes. By multiplying these products, it follows that $k \cdot m = n+1$ is also a product of primes. Therefore, $p(n+1)$ is true.
+
+So $P(n+1)$ holds for any case, which completes the proof by strong induction that $P(n)$ holds for all $n \ge 2$
+
+### 5.3 Strong Induction vs. Induction vs. Well Ordering
+
+Any well-ordering proof can be reformatted into an induction proof and the other way around. WOP, induction, and strong induction are ultimately just three ways of presenting the same mathematical reasoning.
+
+## Addendum 
+
+### The idea, programmer's version
+
+Suppose I have a loop that iterates over a list. How do I know what the results will be after the loop is over? To formalize this into a proof strategy, we need:
+
+1. Some starting place, the __base case__. 
+1. Some loop-like way of getting from one truth to the next. This is the __inductive step__. It generally works as follows:
+    * We assume it starts true, this assumption is the __inductive hypothesis__
+    * We use that assumption to prove that it will still be true one step later
+1. We conclude it must always be true. This is the __principle of induction__.
+
+### The idea, formal logic version
+
+The __principle of induction__ states that:
+
+$$P(0)$$
+$$P(n) \rightarrow P(n+1)$$
+$$\therefore \forall_x \in \mathbb{N}. P(x)$$
+
+To use it, we first prove $P(0)$ then prove $P(n) \rightarrow P(n+1)$ by assuming $P(n)$ and proving $P(n+1)$. Proving $P(0)$ is the __base case__ and proving $P(n) \rightarrow P(n+1)$ is the __inductive step__. By assuming $P(n)$ we are using the __inductive hypothesis__.
+
+Consider that your base case might include more than just $P(0)$. For example, if you need to prove that all Fibonacci numbers are positive, you might need to define your preducate $P(n)$ to mean "The (n+1)th and (n+2)th Finonacci number are both positive." With this, then your base case becomes P(0) where it is just the 1st and the 2nd are positive. 
+
+### Example
+
+Consider the code:
+
+```python
+
+def babylonain(x):
+    y = 1
+    for i in range(20):
+        y = (y+x/y)/2
+    return y
+```
+
+How could we prove that the end result is between 1 and x? 
+
+_Proof_: Initially, y is between 1 and x (in particular, it is 1). Each pass through the loop y is updated to be the average of two values: y and $frac{x}{y}$. We know one of those (y) is between 1 and x, but is the other? Consider $\frac{x}{y}$. Consider the cases:
+
+1. __Case 1: x < 1__
+    * In this case, "y is between 1 and x" means $x \le y \le 1$. Because $x \le y$, $\frac{x}{y} \le 1$. Because $y \le 1$, $x \le \frac{x}{y}$. Thus, $x \le \frac{x}{y} \le 1$, meaning it is between 1 and x.
+1. __Case 2: $x \ge 1$
+    * In this case, "y is between 1 and x" means "$1 \le y \le x$." Because $y \le x$, $1 \le \frac{x}{y}$. Because $1 \le y, \frac{x}{y} \le x$. Thus, $1 \le \frac{x}{y} \le x$, meaning it is between 1 and x.
+
+Because $\frac{x}{y}$ is between 1 and x in both cases, it is between them in general. Thus, the loop replaces y with the average of two numbers, both between 1 and x, so it keeps y between 1 and x. Because we start between 1 and x and that doesn't change, the function returns a value that is between 1 and x. 
+
+
+
+
+
+
 
 # MCS 1.8 and MCS 2 and irrationals and open sets and worksheet and sample solutions
 

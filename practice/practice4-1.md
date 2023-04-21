@@ -111,7 +111,3 @@ By induction on $n$, we have proven that $\sum_{x=0}^{n} \frac{1}{2^x} = \frac{2
 
 
 
-
-
-
-

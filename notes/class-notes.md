@@ -36,6 +36,10 @@ Slides:
     Week of April 17: 
         https://docs.google.com/presentation/d/1bBl7EFtgc2u1f9mywA1SWzjrthrYEVl6NSAQkT_O7b8/edit?usp=sharing
 -->
+# April 19
+
+
+
 # April 17
 
 ### Ordered Pair
@@ -71,6 +75,8 @@ What is $\{54\}^3$?
 What is $(\vert \{54\} \vert)^0$?
 
 * 1
+
+Note that a set to the 0th power is $\{()\}$, so $\vert \{()\} \vert = 1$.
 
 ### Characters
 
@@ -152,13 +158,36 @@ How many orderings of 4 elements (5, 8, 1, 3) are there?
 
 How many possible __sets__ (no repeats, order doesn't matter).
 
-$n \choose k$ = $_nC_k$ = $\frac{n!}{k!(n-k)!}$
+$n \choose k$ = $_nC_k$ = $\frac{n!}{k!(n-k)!} = \text{ "n choose k" }$
+
 
 ### Practice
 
 Consider a subset of size 3 selected from a set of 8 members? How many possible subsets? 
 
-* 
+* $8 \choose 3$ = $\frac{8!}{3!(8-3)!} = \frac{8!}{3!5!} = \frac{8 \cdot 7 \cdot 6}{3 \cdot 2 \cdot 1} = 56$
+
+Consider a subset of 5 selected from a set of 8 members? How many possible subsets?
+
+* $8 \choose 5$ = $\frac{8!}{5!(8-5)!} = \frac{8!}{5!3!} = \frac{8 \cdot 7 \cdot 6 \cdot 5 \cdot 4}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = 56$
+
+### Practice 2
+
+__Question__: A freshman class consists of 40 students, 30 of which are women. The class needs to select a committee of 7 to represent them in the student senate.
+
+Question 1: How many committees are possible? 
+
+* $40 \choose 7$
+
+Question 2: How many possible committees are there if there must be exactly 5 women on the committee? 
+
+* $30 \choose 5$ $\cdot$ $10 \choose 2$ 
+
+Question 3: How many possible committees are there if there must be _at most_ 5 women on the committee? 
+
+* There has to be at most 5 women. So we want to count up all possible committees that have 0, 1, 2, 3, 4, and 5 committees and add them up. Or, take the compliment by doing "all combos" - "combos that don't work" 
+
+* $40 \choose 7$ - ($30 \choose 7$ * $10 \choose 2$ + $30 \choose 6$ * $10 \choose 3$ )
 
 
 

@@ -91,6 +91,23 @@ $$\sum_{i=0}^{n+1} i = \frac{(n+1)((n+1)+1)}{2}$$
 
 This means that the theorem holds for $n+1$, as well. By the principle of induction, it follows that the theorem holds for all $n \in \mathbb{N}$.
 
+## Question 38
+
+Prove by induction that $\forall_n \in \mathbb{N} . \sum_{x=0}^{n} \frac{1}{2^x} = \frac{2^{n+1} - 1}{2^n}$
+
+We proceed by induction.
+
+* __Base Case__: Consider the case when $n=0$. Then, $\sum_{x=0}^{0} \frac{1}{2^x} = \frac{2^1 - 1}{2^0} = \frac{1}{1} = \frac{1}{2^0} = 1$. Thus, the statement is true for $n=0$.
+* __Inductive Step__: We proceed by induction on $n$. Assume that the theorem holds for some $n$, that is assume $\sum_{x=0}^{n} \frac{1}{2^x} = \frac{2^{n+1} - 1}{2^n}$ for some arbitrary natural number $n > 0$. Then we will show that the equation must hold for $n+1$ as well.
+
+$$\sum_{x=0}^{n} \frac{1}{2^x} + \frac{1}{2^{n+1}} = \frac{2^{n+1} - 1}{2^n} + \frac{1}{2^{n+1}}$$
+$$\sum_{x=0}^{n+1} \frac{1}{2^x} = 2^{-n-1} ( 2^{n+2} - 1)$$
+$$\sum_{x=0}^{n+1} \frac{1}{2^x} = \frac{2^{n+2} -1}{2^{n+1}}$$
+
+By induction on $n$, we have proven that $\sum_{x=0}^{n} \frac{1}{2^x} = \frac{2^{n+1} - 1}{2^n}$ for all $n \in \mathbb{N}$.
+
+
+
 
 
 

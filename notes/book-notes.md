@@ -23,6 +23,69 @@ pandoc -f markdown-implicit_figures -s -o book-notes.pdf book-notes.md
 
 I realized that MCS and $\forall_x$ are just not helpful after a little while. I began by diligently taking notes on everything, but I quickly realized that they go into much more depth and also just contain information that isn't covered by Elizabeth's course. I will be reading through them but I won't be taking notes on them unless I find something legitimately interesting or helpful. A note for the future readers - focus on Elizabeth's writeups and notes from class/office hours. They are much more helpful - this is just a way to get ahead and really invest yourself in the material.
 
+# Logs Writeup
+
+As a summary, you should know that:
+
+* $\log_b (x) = w \equiv b^w = x$
+    * Which implies that $b^{\log_b (x)} = x$
+* $\log_x (y)$ is approximately the number of digits needed to represent $y$ in base $x$
+    * the exact number is $1 + \lfloor \log_x (y) \rfloor$
+* $\log_b (xy) = \log_b (x) + \log_b (y)$ and its related identities:
+    * $\log_a (b^n) = n \log_a (b)$
+    * $\log_b (\frac{x}{y}) = \log_b (x) - \log_b (y)$
+* $\log_b (x) = \frac{\log_a (x)}{\log_a (b)}$
+
+## Definitions
+
+The __log base $b$ of $x$__ is written as $\log_b (x)$ means "the power to which $b$ must be raised to result in $x$."
+
+The log base 10 of x is a continuous parallel to the number of digits needed to write $x$ as a decimal (base-10) integer. 
+
+The log base 2 of $x$ is a continuous parallel to the number of digits needed to write $x$ as a binary (base-2) integer. 
+
+$\ln(x)$ means $\log_e (x)$ where $e$ is $2.71828...$l
+
+## Properties
+
+How important is the base used in a log? 
+
+### Example
+
+$\log_3 (81) = 4$ because $3^4 = 81; 3^4 = (3^2)^2 = 9^2$ so $\log_9 (81) = 2$. But the same reasoning works for other values: if $\log_3 (x) = y$, then $3^y = x$, meaning that $(3^2)^{\frac{y}{2}} = x$ meaning $\log_9 (x) = \frac{y}{2}$.
+
+Suppose a number used 24 digits to write in base 10. How many digits does it take to write in base 1000? 8. Each cluster of 3 digits in base 10 turns into one digit in base 1000, so $\log_{1000} (x) = \frac{1}{3} \log_{10} (x)$.
+
+## Base Identity
+
+$\log_b (x) = \frac{\log_a (x)}{\log_a (b)}$
+
+### Base Identity Corollary
+
+$\log_a (b) = \frac{1}{\log_b (a)}$
+
+## Logs of Multiples
+
+How much larger is the log of $x$ than the log of $1000x$? 
+
+### Logs of Multiples Example
+
+Since $\log_10 (x)$ is the number of digits needed to represent $x$, and $1000 \times x$ requires exactly 3 more digits, it must be the case that $\log_{10} (1000 \times x) = 3 + \log_{10} (x) = \log_{10} 1000 + \log_{10} (x)$.
+
+## Theorem 2
+
+$\log_b (xy) = \log_b (x) + \log_b (y)$
+
+### Corollary
+
+$\log_b (x^n) = n \log_b (x)$
+
+$\log_b (\frac{x}{y}) = \log_b (x) - \log_b (y)$
+
+
+
+
+
 # MCS 5.1 - 5.3 and Addendum
 
 ## MCS 5.1 - 5.3

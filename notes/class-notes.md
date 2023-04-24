@@ -35,10 +35,51 @@ Slides:
         https://docs.google.com/presentation/d/1N9G2pSmTDw-YkT3tt9TUYjo8iS8pg_VdwrR0IgB_Rfc/edit?usp=sharing 
     Week of April 17: 
         https://docs.google.com/presentation/d/1bBl7EFtgc2u1f9mywA1SWzjrthrYEVl6NSAQkT_O7b8/edit?usp=sharing
+    Week of April 24: 
+        https://docs.google.com/presentation/d/1_vdLgJe9uR7KMM-aYUwehJTxlxnF0HiLL-_DhJWcLdY/edit#slide=id.g18f970fe9d4_0_274
 -->
+# April 24
+
+## Quick Review of Logs
+
+the _logarithm_ is the inverse function to exponentiation. This means that the log of a given number $x$ is the exponent to which another fixed number, the base $b$, must be raised, to produce that number $x$.
+
+$$(x^y =z) \equiv (\log_x (z) = y)$$
+
+### Consequences/Limitations of Logs
+
+* Z can be negative but we won't deal with instances where it is negative. But do recall questions like $\log_{-3} (-27) = 3$.
+* $\log_b (1) = 0$
+* $\log_0 (x) = 0$
+* Z cannot be 0, and if x is positive, z cannot be negative OR 0. 
+* For our purposes, $\log_1 (x)$ won't occur because we won't be dealing with 1 as a base.
+
+### Log Rules & Identities
+
+Here's the [logs writeup](https://www.cs.virginia.edu/~emo7bf/cs2120/s2023/logarithms.html). 
+
+Make sure to study the identities since you will be manipulating these identities and other things to solve problems. I also wrote the Logs writeup in the book notes page. 
+
+## Assorted Logs Rules
+
+* $\log_b (x^{\log_a (y)}) = \log_a (y ^ {\log_b (x)})$
+* $a^{\log_b (n)} = n^{\log_b (a)}$
+
+
+
+
+
+
+
+
+
+
+
+
+
 # April 19
 
-
+Quiz
 
 # April 17
 

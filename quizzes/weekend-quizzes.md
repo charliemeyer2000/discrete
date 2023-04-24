@@ -13,6 +13,329 @@ pandoc -s -o weekend-quizzes.pdf weekend-quizzes.md -->
 
 This is the work that I did for the weekend quizzes. Hopefully I go back into my notes to correct the answers I get wrong (Most likely not). Or hopefully i get a 100% every time. 
 
+## Mod4Multi1
+
+### Question 1- Binary Strings
+
+How many binary strings (each number can either be 0 or 1) of length $n$ can be formed such that no two consecutive numbers are identical? 
+
+Options:
+
+* none of these
+* $2^k$
+* $n^k$
+* $\frac{n!}{k!(n-k)!}$
+* $2^n$
+* $\frac{n!}{(n-k)!}$
+* $k^n$
+
+My answer: 2, so none of these
+
+### Question 2 - Beads
+
+A student wants to create a necklace of length $n$ beads. There are $k$ different bead colors. How many unique necklaces can be created, assuming the order of the beads matters? 
+
+Options:
+
+* none of these
+* $2^k$
+* $n^k$
+* $\frac{n!}{k!(n-k)!}$
+* $2^n$
+* $\frac{n!}{(n-k)!}$
+* $k^n$
+
+My answer: $k^n$
+
+
+### Question 3 
+
+Is the following quantified statement true or false?
+
+$\forall_{n, k} \in \mathbb{N} . n \ge k \rightarrow _nP_k > _nC_k$
+
+* False (consider the case where $n=1$ and $k=1$)
+
+### Question 4 - Committees
+
+Answer the questions about filling a committee for a class of $n$ students.
+
+#### Question 4.1 
+
+there are $n$ students in a class. There are $k$ committee positions to fill. How many unique sets of $k$ committee members are there? 
+
+My answer: $\frac{n!}{k!(n-k)!}$
+
+
+#### Question 4.2
+
+Now suppose there are $n$ students in a class. There are $k$ committee positions to fill, but not all $k$ positions need to be filled. How many unique sets of $k$ _or less_ committee members are there?
+
+* My answer: none of these, it should be $\sum_{r=0}^{k} nCr$
+
+
+#### Question 4.3
+
+Now suppose that there are $n$ students in a class, and whoever wants to be on the committee can be, meaning $k$ can be any number. How many unique sets of $k$ committee members are there?
+
+* My answer: $2^n$
+
+### Question 5
+
+Select all of the following that are equivalent to $\frac{n!}{n(n-1)}$
+
+Options:
+
+* $(n-1)!$
+* $(n-2)!$
+* $n!$
+* $(\prod_{i=1}^n i)(n-1)$
+* $(\prod_{i=1}^{n-2} i!)$
+* None of the above
+* $(\prod_{i=1}^{n-1} i) (n!)$
+
+My answers:
+
+* $(n-2)!$
+
+### Question 6
+
+Consider sets A and B defined as below. Which of the following cardinalities is equivalent to $n!$? 
+
+$$A = \{x \vert (x \in \mathbb{N}) \land (0 < x \le n)\}$$
+$$B = \{x \vert (x \in \mathbb{N}) \land 0 < x \le (n-1)!\}$$
+
+Options:
+
+* $\vert B \vert + 1$
+* The number of permutations of distinct elements from the set B
+* $\vert P(A) \cup P(B) \vert$
+* The number of combinations of distinct elements from the set B
+* $\vert A \cap B \vert$
+* none of these
+* $\vert A \cup B \vert$
+* $\vert P(B) \vert +1$
+* $\vert A \cup B \vert$
+* $\vert P(A) \vert$
+* $\vert A \times B \vert$
+
+The cardinality of $A$ is $n$ and the cardinality of $B$ is $(n-1)!$. So, the answer is $\vert A \times B \vert$.
+
+### Question 7
+
+In this group of problems, you are given two statements, A and B. Select the most specific relationship between the two. (if that means A entails B, and B entails A, select that the two are equivalent). Define:
+
+* P(x) is a predicate with a domain of $\mathbb{Z}$. 
+
+#### Question 7.1
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n) \rightarrow P(n+1)$$
+
+Statement B:
+
+$$P(0)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: none of these
+
+#### Question 7.2
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n)$$
+
+Statement B:
+
+$$\forall_n \in \mathbb{N} . P(n) \rightarrow P(n+1)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: A entails B
+
+#### Question 7.3
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n)$$
+
+Statement B:
+
+$$P(4) \rightarrow P(3)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: A entails B
+
+#### Question 7.4
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n)$$
+
+Statement B:
+
+$$P(3) \rightarrow \neg P(4)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: A and B constitute a contradiction
+
+#### Question 7.5 - TODO
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n)$$
+
+Statement B:
+
+$\forall_n \in \mathbb{N} . \neg P(n) \rightarrow \neg P(n+1)$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: B entails A
+
+could be: A entails B
+
+#### Question 7.6
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n) \rightarrow P(n+1)$$
+
+Statement B:
+
+$$P(3) \rightarrow P(5)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: A entails B
+
+#### Question 7.7
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n) \rightarrow P(n+1)$$
+
+Statement B:
+
+$$\forall_{a, b} \in \mathbb{N} . P(a) \rightarrow P(a+b)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: A and B are equivalent
+
+#### Question 7.8
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n) \rightarrow P(n+1)$$
+
+Statement B:
+
+$$\forall_n \in \mathbb{N} . P(n+1) \rightarrow P(n)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: None of these
+
+#### Question 7.9
+
+Statement A:
+
+$$\forall_n \in \mathbb{N} . P(n) \rightarrow P(n+1)$$
+
+Statement B:
+
+$$\forall_n \in \mathbb{N} . \neg P(n+1) \rightarrow \neg P(n)$$
+
+Options:
+
+* None of these
+* A and B constitute a contradiction, i.e. $A \land B \equiv \bot$
+* B entails A
+* A entails B
+* A and B are equivalent
+
+My answer: A and B are equivalent
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Mod3Multi2
 
 ## Question 1 - Set of Counter-Examples

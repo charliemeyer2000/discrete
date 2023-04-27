@@ -38,6 +38,96 @@ Slides:
     Week of April 24: 
         https://docs.google.com/presentation/d/1_vdLgJe9uR7KMM-aYUwehJTxlxnF0HiLL-_DhJWcLdY/edit#slide=id.g18f970fe9d4_0_274
 -->
+# April 26
+
+## Quick Review of Logs
+
+Base 10: 216 = $6 * 10 ^ 0 + 1 * 10 ^ 1 + 2 * 10 ^ 2$
+
+Base 2: 11001 = $1 * 2 ^ 0 + 0 * 2 ^ 1 + 0 * 2 ^ 2 + 1 * 2 ^ 3 + 1 * 2 ^ 4$
+
+* 1 + 0 + 0 + 8 + 16 = 25
+
+It took 5 base-2 binary digits - bits - to represent the base-10 number 25. 
+
+"it took $n$ base-b digits to represent the base-10 number y" where $n = 1 + \log_b (y)$
+
+## PRoof
+
+Proof that $\log_b (x^y) = y * \log_b (x)$
+
+$$x = b^c \leftrightarrow \log_b (x) = c$$
+
+$$\log_b ((b^c)^y)$$
+
+$$y * c = y * \log_b (x)$$
+
+$$y * c = y * c$$
+
+Proof complete.
+
+## Proof
+
+Prove that: $\log_b (x) = \frac{\log_a (x)}{\log_a(b)}$
+
+$$\log_a (b) \cdot \log_b (x) = \log_a (x)$$
+$$\log_a (b^{\log_b (x)}) = \log_a (x)$$
+$$\log_a (x) = \log_a (x)$$ 
+
+Proof complete.
+
+## Proof
+
+Prove $\log_b(x^{\log_a (y)}) = \log_a (y^{\log_b (x)})$
+
+$$\log_b (x) * \log_a (y) = \log_a (y) * \log_b (x)$$
+
+Proof complete.
+
+## Proof
+
+Prove $a^{\log_b (n)} = n^{\log_b (a)}$
+
+$$\log_n (a^{\log_b (n)}) = \log_n (n^{\log_b (a)})$$
+
+$$\log_n (a) * \log_b (n) = \log_b (a)$$
+
+$$\frac{\log_n (a) * \log_b (n)}{\log_b (n)} = \frac{\log_b (a)}{\log_b (n)}$$
+
+$$\log_n (a) = \log_n (a)$$
+
+## Weird Problem
+
+Manipulate the x, y, and z in this problem to make something different: $\log_{x^y} (z)$
+
+$$\frac{\log_x (z)}{\log_x (x^y)}$$
+$$=$$
+$$\frac{\log_x (z)}{y}$$
+$$=$$
+$$y^{-1} * \log_x (z)$$
+$$=$$
+$$\log_x (z^{y^{-1}})$$
+
+## Log Identity Practice
+
+### Question 1
+
+$\log_{\sqrt(3)} (5) = \log_3 (?)$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # April 24
 
 ## Quick Review of Logs

@@ -112,7 +112,53 @@ $$\log_x (z^{y^{-1}})$$
 
 ### Question 1
 
-$\log_{\sqrt(3)} (5) = \log_3 (?)$
+$\log_{\sqrt 3} (5) = \log_3 (?)$
+
+$\log_{\sqrt3} 5 = \frac{\log_3 5}{\log_3 \sqrt3}$
+
+$\log_{\sqrt3} 5 = \frac{\log_3 5}{\frac{1}{2}}$
+
+$\log_{\sqrt3} 5= 2 * \log_3 5$
+
+$\log_{\sqrt3} 5 = \log_3 5^2$
+
+$\log_{\sqrt3} 5 = \log_3 25$
+
+Complete.
+
+### Question 2
+
+$\log_a (b) * \log_a (?) = 1$
+$\log_a (b) * \log_a (b^{-1}) = 1$
+
+Complete.
+
+Elizabeth's solution was:
+
+$\log_a (b) * \log_a (?) = 1$
+
+$\log_a (?) = \frac{1}{\log_a (b)}$
+
+$? = a^{\frac{1}{\log_a (b)}}$
+
+### Question 3
+
+$3^{\log_5 7} = 7^{\log_{x} (y)}$
+
+$\log_7 {3^{\log_5 7}} = \log_{x} (y)$
+
+$\log_7 3 * \log_5 7 = \log_{x} (y)$
+
+$\frac{\log_7 7}{\log_7 5} * \log_7 3 = \log_{x} (y)$
+
+$\frac{\log_7 3}{\log_7 5} = \log_x (y)$
+
+$\log_5 3 = \log_x (y)$
+
+$x = 5, y = 3$
+
+Complete.
+
 
 
 

@@ -86,8 +86,7 @@ Proof complete.
 
 ## Proof
 
-Prove $a^{\log_b (n)} = n^{\log_b (a)}$
-
+ 
 $$\log_n (a^{\log_b (n)}) = \log_n (n^{\log_b (a)})$$
 
 $$\log_n (a) * \log_b (n) = \log_b (a)$$
@@ -95,6 +94,36 @@ $$\log_n (a) * \log_b (n) = \log_b (a)$$
 $$\frac{\log_n (a) * \log_b (n)}{\log_b (n)} = \frac{\log_b (a)}{\log_b (n)}$$
 
 $$\log_n (a) = \log_n (a)$$
+
+CHATGPT
+
+We want to prove that $a^{\log_b (n)} = n^{\log_b (a)}$ for any positive real numbers $a, b,$ and $n$.
+
+Step 1: Start with the given equation
+
+$a^{\log_b (n)} = n^{\log_b (a)}$
+
+Step 2: Write the logarithmic expressions in terms of exponents using the definition of logarithms
+
+$\log_b (n) = \frac{\ln (n)}{\ln (b)}$ and $\log_b (a) = \frac{\ln (a)}{\ln (b)}$
+
+Step 3: Substitute the expressions from step 2 into the original equation
+
+$a^{\frac{\ln (n)}{\ln (b)}} = n^{\frac{\ln (a)}{\ln (b)}}$
+
+Step 4: Simplify the exponents by multiplying them by the reciprocal of the denominator
+
+$a^{\frac{\ln (n)}{\ln (b)}} = n^{\frac{\ln (a)}{\ln (b)}} = \left(e^{\ln(n)}\right)^{\frac{1}{\ln(b)}} = \left(e^{\ln(a)}\right)^{\frac{\ln(n)}{\ln(a)\ln(b)}} = n^{\frac{\ln(a)}{\ln(b)}}$
+
+Step 5: Use the fact that $e^{\ln(x)} = x$ for any positive real number $x$
+
+$a^{\frac{\ln (n)}{\ln (b)}} = n^{\frac{\ln (a)}{\ln (b)}} = n^{\log_a (n^{\frac{\ln (a)}{\ln (b)}})} = n^{\log_b (a)}$
+
+Step 6: Use the property that $a^{\log_a(x)} = x$ for any positive real numbers $a$ and $x$ to simplify the first exponent
+
+$a^{\log_b (n)} = n^{\log_b (a)}$
+
+Therefore, we have shown that $a^{\log_b (n)} = n^{\log_b (a)}$ for any positive real numbers $a, b,$ and $n$.
 
 ## Weird Problem
 
